@@ -1,0 +1,320 @@
+{
+  "meta": {
+    "total_reviews": 2101,
+    "substantive_reviews": 1104,
+    "short_noise_discarded": 997,
+    "source_coverage": {
+      "play_store": 2101,
+      "app_store": 0,
+      "reddit": 0
+    },
+    "source_coverage_warning": "ALL data comes from Play Store only. App Store and Reddit scrapers returned empty. Evidence coverage is single-source."
+  },
+  "behavioral_themes": [
+    {
+      "theme_id": "B3",
+      "label": "Return/refund policy as barrier to trying non-grocery categories",
+      "classification": "behavioral",
+      "count": 79,
+      "pct_of_substantive": 7.2,
+      "rating_dist": {
+        "1": 69,
+        "5": 4,
+        "2": 3,
+        "3": 2,
+        "4": 1
+      },
+      "sample_quotes": [
+        "Absolute scam of a company. ordered a product got defective and they refused to honor return or refund under disguise of non returnable item. Pathetic",
+        "I have been using Blinkit for a long period now, today I am really happy to share my experience, I bought a watch from blinkit, but it was not working as I unboxed it, so I initiated a refund which was quick and in few minutes work, the delivery part",
+        "I am trying to talk to customer executive but failed due to blinkit server issue, I have ordered something related to food and it is bad condition, I want replacement or refund but unable to register my complaint. Now Blinkit team, what is the soluti",
+        "they inform after leaving their godown that they have shortage of item so they have cancelled..if they had informed earlier I wud have ordered another or replace my items",
+        "The reason behind giving 1 star is, their return policy, if a customer orders the wrong item, they don't return or replace, they straight away say we can't return, you should replace the item.",
+        "Kisi Bhi time No Return Policy bol dete hai Or No exchange bhi bol rahe hai install mat karo aapna khud leke aao ja kar",
+        "I returned an order as it was damaged They took the parcel the same day and I was supposed to get my money back but I did not get my money and the assistant chat is the worst part does not allow you to text anything of no use",
+        "compare to flipkart minutes, blinkit services and products and return policy is worst. may be a small platform overall. i bought one product today and requested return because of cheap plastic and smells alot . they said we cannot exchange or return."
+      ]
+    },
+    {
+      "theme_id": "B5",
+      "label": "Convenience-driven habitual repeat purchase",
+      "classification": "behavioral",
+      "count": 66,
+      "pct_of_substantive": 6.0,
+      "rating_dist": {
+        "1": 20,
+        "5": 38,
+        "3": 2,
+        "4": 4,
+        "2": 2
+      },
+      "sample_quotes": [
+        "blinkit charging extra mony on everything i will never buy anything from now from blinkit. recently i purchase a lip balm from here so on others app this lip balm price is 198 or 188. but here 222 rs. this is so bad and now they are started adding 12",
+        "I have been using Blinkit for a long period now, today I am really happy to share my experience, I bought a watch from blinkit, but it was not working as I unboxed it, so I initiated a refund which was quick and in few minutes work, the delivery part",
+        "\"Super fast delivery! All items were fresh, properly packed, and delivered in perfect condition. Great service as always.Blinkit has made daily grocery shopping so convenient! Fantastic packaging, high-quality products, and unbelievably quick deliver",
+        "very dependable, and prompt. Always happy to order from Bl8nkit, over other similar apps. keep it up guys!😊",
+        "compare to flipkart minutes, blinkit services and products and return policy is worst. may be a small platform overall. i bought one product today and requested return because of cheap plastic and smells alot . they said we cannot exchange or return.",
+        "When you need few essentials things urgently, it's a great app to deliver it at your doorstep. Thank you Blinkit.",
+        "this was a very bad experience I ordered a product and I payed online and the amount was deducted from my account but the order was cancelled even I didn't cancelled it and they said the refund will be given in 5 days I hate this type of service from",
+        "it is actually very good it gives us things quickly everyone it is a good app"
+      ]
+    },
+    {
+      "theme_id": "B2",
+      "label": "Quality/freshness uncertainty prevents non-grocery trial",
+      "classification": "behavioral",
+      "count": 56,
+      "pct_of_substantive": 5.1,
+      "rating_dist": {
+        "1": 45,
+        "2": 3,
+        "4": 3,
+        "5": 4,
+        "3": 1
+      },
+      "sample_quotes": [
+        "I am trying to talk to customer executive but failed due to blinkit server issue, I have ordered something related to food and it is bad condition, I want replacement or refund but unable to register my complaint. Now Blinkit team, what is the soluti",
+        "No help or ways to complain if you are away from the delivery location and get a spoiled item. app asks for live pics or video which you being away cam not tKe and upload...result is throw the product and loose money...so keep it in mind before you o",
+        "waste of money bad quality eggs 300 rupees wasted",
+        "never order fresh items like milk, eggs etc. they supply expired or near expiring date.",
+        "worst app , worst customer care service, pathetic indian brand , not at all professional, they host defective items in their platform and do not replace item , typical cheap mindset ,not at all global brand , looks like baniya thugg entrepreneur goya",
+        "worst app having low grade quality product pls do not order from blinkit worst app and company",
+        "Extremely disappointing experience. Blinkit delivered a damaged skincare product as a free gift and then refused to replace it simply because it was free. Whether an item is paid or complimentary, customers should never receive damaged or unusable pr",
+        "Blinkit sent me Rotten, Fungus Laden eggs with 100s of insects crawling in the packet...Someone in my family touched that rotten packet while opening and is now having allergic reaction....shame on you guys ...Fraud company... charging premium but de"
+      ]
+    },
+    {
+      "theme_id": "B7",
+      "label": "Fee/surcharge sensitivity blocking small/trial orders",
+      "classification": "behavioral",
+      "count": 35,
+      "pct_of_substantive": 3.2,
+      "rating_dist": {
+        "3": 4,
+        "1": 15,
+        "5": 4,
+        "4": 9,
+        "2": 3
+      },
+      "sample_quotes": [
+        "Blinkit was one of the most used appa on my phone but now I've seen that some products that I buy often are being sold at prices higher than the MRP.. like seriously?? whats this behaviour?? I won't complain about some delivery fee or stuff but selli",
+        "Extremely disappointed with this order. The Organic Ladyfinger (500 g) came in two 250 g packs, but one entire pack was completely spoiled and had to be thrown away. The Raw Mango (500 g) was the small, round variety with a huge seed and very little ",
+        "Horrible packing , seemed like very very old products being not sold but discarded to the customer. Im extremely humiliated and frustrated at the products I bought which were actually valued worth Rs12000 and the way it was delivered and handed over ",
+        "very good affordable app and lag free app delivery service all is good, no extra charges and very easy to purchase the grocery and more things.",
+        "delivery charges is little higher, after purchasing item worth above ₹600",
+        "frod app extra charge is very high 20 rupay ka 75 water bottle",
+        "i takes 25 ruppes on delivery charges. and there is no cash on delivery on orders less than 50 ruppees.. bruh....",
+        "They do not show the order summary before the payment. Clicking on cart button directly takes the buyer to the payment page. This leads to bizarre extra charges like handling charge, rain charge, delivery charge during peak hours etc. This I think is"
+      ]
+    },
+    {
+      "theme_id": "B6",
+      "label": "Assortment gaps limiting category exploration",
+      "classification": "behavioral",
+      "count": 30,
+      "pct_of_substantive": 2.7,
+      "rating_dist": {
+        "1": 19,
+        "4": 2,
+        "2": 2,
+        "5": 7
+      },
+      "sample_quotes": [
+        "A new Scam by Blinkit, ordered few items and two items were missing, have been trying to contact them but shows were are handling large order try again next time until the complaint window closes. so now it shows cannot entertain your complaint as th",
+        "First order. So pleasantly shocked by such a fast delivery. The price of items was very competitive and attractive compared to amazon. So happy with this first experience although delivery bag was torn badly. But items arrived in less than 15 mins of",
+        "useless only dealer very fast No deals products not available usless ad Amazon fresh far better deals minutes by flip kart cheaper than blinkit bye bye I uninstall app",
+        "Blinkit in rains...bad option. Packaging is never proper.. It's not like plastic bags are not available in the market. You can pack the product in brown paper bag but ask the delivery person to keep a plastic bag to ensure that the products don't rea",
+        "Good App, amazing options. The only con is less professional delivery riders.",
+        "one of the item is missing from the past 3-4 times and now they are saying we delivered it but I didn't get it. paying extra just to be delivered less items. it's a very malicious act. Deleting the app",
+        "koi bhi mehenga product mt kharidna bcz agr part missing hue to ye apki zimewari hogi na ki blinkit ki to es se acha hai amazon or Flipkart se purchase krna",
+        "i ordered plenty items. but few items i didn't recived. i didn't get any support or refund or re deliver my item. i understand mistake can happen but after that proper resolution must. which i feel missing."
+      ]
+    },
+    {
+      "theme_id": "B1",
+      "label": "Price premium awareness vs convenience tradeoff",
+      "classification": "behavioral",
+      "count": 23,
+      "pct_of_substantive": 2.1,
+      "rating_dist": {
+        "3": 2,
+        "4": 6,
+        "1": 12,
+        "2": 1,
+        "5": 2
+      },
+      "sample_quotes": [
+        "Blinkit was one of the most used appa on my phone but now I've seen that some products that I buy often are being sold at prices higher than the MRP.. like seriously?? whats this behaviour?? I won't complain about some delivery fee or stuff but selli",
+        "not the best price , but convenient in cases of urgency .",
+        "compare to flipkart minutes, blinkit services and products and return policy is worst. may be a small platform overall. i bought one product today and requested return because of cheap plastic and smells alot . they said we cannot exchange or return.",
+        "awfull Returning any expensive item is extremely difficult in Blinkit go for Bigbasket and flipkart 20 minutes avoid Blinkit",
+        "First order. So pleasantly shocked by such a fast delivery. The price of items was very competitive and attractive compared to amazon. So happy with this first experience although delivery bag was torn badly. But items arrived in less than 15 mins of",
+        "fast delivery.but prices are high compared to other platforms..",
+        "costly products then amazon and big baskets.",
+        "The quality of products, especially fresh items is usually average. But today thr limits got crossed! I had ordered 1kg potatoes. The entire pack was smelling like rotten egg. I opened the pack and there were 2 slimy rotten potatoes. The whole house "
+      ]
+    },
+    {
+      "theme_id": "B4",
+      "label": "Competitive comparison driving category switching",
+      "classification": "behavioral",
+      "count": 16,
+      "pct_of_substantive": 1.4,
+      "rating_dist": {
+        "1": 12,
+        "5": 4
+      },
+      "sample_quotes": [
+        "compare to flipkart minutes, blinkit services and products and return policy is worst. may be a small platform overall. i bought one product today and requested return because of cheap plastic and smells alot . they said we cannot exchange or return.",
+        "The best app for grocery better than Instamart😋😋",
+        "useless only dealer very fast No deals products not available usless ad Amazon fresh far better deals minutes by flip kart cheaper than blinkit bye bye I uninstall app",
+        "um it's actually good! tho!!! it's far better than zepto or Bigbasket****🫪🫪",
+        "Very disappointing service. Blinkit canceled my order without any reason or prior notice. This wasted my time and caused unnecessary inconvenience. Completely unacceptable. I expected much better service....i was already work in zepto as incharge",
+        "Horrible cost cutting on packaging. Earlier Blinkit used to give good paper bags for packaging. Now they have replaced that with cheap plastic bags, which barely stay intact. I am switching to Amazon Now because of their cost cutting.",
+        "horrible. liars. say 10 mins and take 20... zepto is much better",
+        "Instamart is better, because instamart never adds a surge fee or a fake demand fee, what the hell is a surge fee ??? Use Instamart and save your money."
+      ]
+    },
+    {
+      "theme_id": "B8",
+      "label": "Product description/image mismatch reducing trust for new categories",
+      "classification": "behavioral",
+      "count": 3,
+      "pct_of_substantive": 0.3,
+      "rating_dist": {
+        "1": 3
+      },
+      "sample_quotes": [
+        "Extremely disappointed with this order. The Organic Ladyfinger (500 g) came in two 250 g packs, but one entire pack was completely spoiled and had to be thrown away. The Raw Mango (500 g) was the small, round variety with a huge seed and very little ",
+        "Fraud. These people are cheaters. I ordered Mallika mangoes for our lunch break. Mallika is a premimum quality of mango. When we received them, they were local dushehri mangoes and when eating all the mangoes that we cut were rotten and soiled. We ke",
+        "Fraud Application guys. Don't install - Item received is entirely different from whats shown. & There is absolutely 0 customer care. No way to chat with them or call them."
+      ]
+    },
+    {
+      "theme_id": "B9",
+      "label": "Medicine/pharmacy category positive discovery",
+      "classification": "behavioral",
+      "count": 3,
+      "pct_of_substantive": 0.3,
+      "rating_dist": {
+        "4": 1,
+        "5": 2
+      },
+      "sample_quotes": [
+        "Nice services and it's pretty awesome while placing an order of medicine 💊 and receive physician's call as well to be recommended that what medicine should be taken",
+        "I ordered medical goods like ketofly soap which is advised by the skin doctor. for that order blinkit appointed a on call doctor to verify what issues am facing and the purpose of buying this soap. I told my medication then the doctor on call approve",
+        "medicine delivery is crazy, great work . other things are just fine"
+      ]
+    },
+    {
+      "theme_id": "B10",
+      "label": "Non-grocery electronics/lifestyle trial and disappointment",
+      "classification": "behavioral",
+      "count": 2,
+      "pct_of_substantive": 0.2,
+      "rating_dist": {
+        "1": 2
+      },
+      "sample_quotes": [
+        "wrost app I have order Bluetooth but ist not working I have riesed and I have returned that Bluetooth but i didn't got my refund and I am trying to contact blinkit but they are not responding me",
+        "I ordered charger with cable but after receiving the product the cable quality was very bad .. after complaing with customer support after 2 ,3 attempts the customer support executive denied to help me Telling this isn't their fault so who's responsi"
+      ]
+    }
+  ],
+  "operational_themes": [
+    {
+      "theme_id": "O3",
+      "label": "Payment/billing issues",
+      "classification": "operational",
+      "count": 42,
+      "pct_of_substantive": 3.8,
+      "rating_dist": {
+        "1": 31,
+        "2": 3,
+        "4": 3,
+        "3": 4,
+        "5": 1
+      },
+      "sample_quotes": [
+        "I returned an order as it was damaged They took the parcel the same day and I was supposed to get my money back but I did not get my money and the assistant chat is the worst part does not allow you to text anything of no use",
+        "Your service is extremely disappointing. I placed my order using the Cash on Delivery (COD) option because I currently do not have online or UPI payment available. However, when the delivery person arrived, he insisted that I pay online. When I told ",
+        "this was a very bad experience I ordered a product and I payed online and the amount was deducted from my account but the order was cancelled even I didn't cancelled it and they said the refund will be given in 5 days I hate this type of service from",
+        "worst experience ever, delivery boy cancelled my order and customer care executive charged cancellation charges.Its a big scam they cancelled himself and charged me.I do not recommend any one Blinkit.",
+        "Not able to Pluxee card, tried mutiple time it says Pluxee card can not be added before payment. Tried before purchase to make payment same issue...Tried to add card via account , payment options same issue...",
+        "This has been multiple times when wrong items were delivered. I don't understand how this happens again and again. Seems like the process is not set properly. I had even worst experience with my refund. Blinkit paid partially to my accounts and parti",
+        "they it will redeem automatically wn we pay...but ₹5 extra was cut...v bad",
+        "one of the item is missing from the past 3-4 times and now they are saying we delivered it but I didn't get it. paying extra just to be delivered less items. it's a very malicious act. Deleting the app"
+      ]
+    },
+    {
+      "theme_id": "O1",
+      "label": "Delivery speed complaints",
+      "classification": "operational",
+      "count": 25,
+      "pct_of_substantive": 2.3,
+      "rating_dist": {
+        "1": 17,
+        "5": 4,
+        "3": 4
+      },
+      "sample_quotes": [
+        "Initially there used to be a proper customer service but now the app has the automated AI agent which is utterly unhelpful and frustrating when you are trying to complain about an order. Since it can't distinguish between an order and the add on (all",
+        "two delivery patners for one order I had to waste my time to wait for both when I ordered both the things at same time",
+        "delivery partners said I wil not come to your floor in night and this is our manager rule",
+        "⭐⭐⭐⭐⭐ I'm truly grateful to Blinkit! ❤️ Last night around 11:30 PM, my father urgently needed a Pet Safa product. There was no one else at home, and as a girl, it wasn't safe for me to go out that late. 😔 I ordered it on Blinkit, and it arrived in ju",
+        "Delivery time shown in app is not sure some delay in delivery",
+        "riders not delivered order 2 hours order deliver",
+        "Jis nai phele order kra... usko time par dena dosro ka order ek sath dene k liye delay krte rhte.... starting mai delivery ache the ab bilkul bkar service... dene lge.....................,.......................................?.................. ...",
+        "this app so helpful to late night delivery"
+      ]
+    },
+    {
+      "theme_id": "O2",
+      "label": "App technical issues",
+      "classification": "operational",
+      "count": 15,
+      "pct_of_substantive": 1.4,
+      "rating_dist": {
+        "4": 1,
+        "3": 1,
+        "1": 11,
+        "5": 2
+      },
+      "sample_quotes": [
+        "App freezes, so I need to reinstall it...",
+        "I am not able to login and not getting any otp almost every time download the app, verification problem occurs",
+        "I am happy for blinkit delivery is very slow to deliver",
+        "I have parched canon pixma mg2570s printer it's not working and mixer grinder this apps parched products are low quality item they will deliver to doors it's not good and some time in order misplace the items...",
+        "Nice app but some time is not working properly",
+        "wrost app I have order Bluetooth but ist not working I have riesed and I have returned that Bluetooth but i didn't got my refund and I am trying to contact blinkit but they are not responding me",
+        "They dont take order returns. Their competitors are better and cheaper. Just having a good UI doesnt make the service good. Absolutely disappointed with the application, glitched more than anything. They sent the delivery at the wrong address, they h",
+        "why app support live chat is disable if I have any problem then I have to go for mail why this app support is not working as it is permanently closed or temporary"
+      ]
+    },
+    {
+      "theme_id": "O4",
+      "label": "Delivery partner behavior",
+      "classification": "operational",
+      "count": 15,
+      "pct_of_substantive": 1.4,
+      "rating_dist": {
+        "5": 1,
+        "2": 2,
+        "1": 10,
+        "4": 1,
+        "3": 1
+      },
+      "sample_quotes": [
+        "always whenever I order the delivery partner don't call they just ring the bell on the doorstep",
+        "the delivery partners is so rude 😤 please change your delhivery partnerss !!!!!!!",
+        "very bad experience with blinkit I already paid for my order but I never received it it's been a long time and I still haven't received my refund this is completely unacceptable customer support was not helpful and the delivery boy was not picking up",
+        "Hello Team Blinkit, as you can see i am daily consumer of your products, i am wiriting this today just bause of your very rude behaviour of one of your rider/delivery partner Vijay who just delivered it, first he was taling rudly about my location as",
+        "not every delivery partner but some of them are so rude they don't even talk right to you but other packaging and other delivery partners and all are nice 🙂",
+        "your delivery partner is talking so rudely and telling me that come to ground floor or cancel the order, then I told that I am not cancelling this order then he told me that I will report and block your id. after too much arguments he came to deliver",
+        "Extremely disappointed with the delivery experience today. The delivery partner asked/demanded extra cash/tip on top of the bill amount. Tipping should be optional and at the customer's discretion, not forced. Please look into this conduct and ensure",
+        "​Worst experience with Blinkit. I was accidentally charged twice for a single order—first through the app interface and then again via the delivery partner's payment link/QR code. The amount was debited from my bank account both times. ​To make matte"
+      ]
+    }
+  ],
+  "unclassified_count": 772
+}

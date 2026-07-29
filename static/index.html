@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinkit ReviewLens — Customer Discovery Engine</title>
+    <meta name="description" content="ReviewLens customer feedback intelligence engine for Blinkit quick-commerce product managers.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">⚡</div>
+                <div class="brand-text">
+                    <h2>ReviewLens</h2>
+                    <span class="badge-v1">Blinkit PM Edition</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#overview" class="nav-item active" id="nav-overview">
+                    <span class="icon">📊</span> Executive Summary
+                </a>
+                <a href="#matrix" class="nav-item" id="nav-matrix">
+                    <span class="icon">🎯</span> Prioritization Matrix
+                </a>
+                <a href="#promoted" class="nav-item" id="nav-promoted">
+                    <span class="icon">💡</span> Research Screener
+                </a>
+                <a href="#explorer" class="nav-item" id="nav-explorer">
+                    <span class="icon">🔍</span> Evidence Explorer
+                </a>
+                <a href="#chat" class="nav-item" id="nav-chat-btn">
+                    <span class="icon">💬</span> AI Discovery Chat
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="source-badges">
+                    <div class="source-badge">
+                        <span>Play Store</span>
+                        <strong>1,635</strong>
+                    </div>
+                    <div class="source-badge">
+                        <span>App Store</span>
+                        <strong>466</strong>
+                    </div>
+                    <div class="source-badge">
+                        <span>Reddit</span>
+                        <strong>208</strong>
+                    </div>
+                </div>
+                <div style="margin-top: 16px;">
+                    <button id="open-fetch-modal-btn" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        🚀 Fetch Live Reviews
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header Section -->
+            <header class="top-header" id="overview">
+                <div class="header-title">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <h1>Blinkit Customer Insights</h1>
+                        <span class="quad-badge badge-green" style="font-size: 12px;">Director-Ready</span>
+                    </div>
+                    <p class="header-subtitle">Evidence-backed research hypotheses derived from 2,200+ live customer reviews across Play Store, App Store & Reddit.</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-primary" id="header-chat-btn">💬 Ask AI Assistant</button>
+                    <button class="btn btn-primary" id="header-fetch-btn">🚀 Live Review Fetch</button>
+                    <button class="btn btn-secondary" id="export-csv-btn">📥 Export CSV Report</button>
+                </div>
+            </header>
+
+            <!-- Metrics Overview Cards -->
+            <section class="metrics-overview">
+                <div class="metric-card">
+                    <div class="metric-icon total-icon">💬</div>
+                    <div class="metric-info">
+                        <span class="metric-label">Corpus Size</span>
+                        <h3 class="metric-value" id="metric-total-count">1,951</h3>
+                        <span class="metric-sub">Clean multi-source reviews</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon promoted-icon">🎯</div>
+                    <div class="metric-info">
+                        <span class="metric-label">Research Hypotheses</span>
+                        <h3 class="metric-value" id="metric-promoted-count">1</h3>
+                        <span class="metric-sub">In-scope for trial research</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon monitor-icon">📊</div>
+                    <div class="metric-info">
+                        <span class="metric-label">Monitored Signals</span>
+                        <h3 class="metric-value" id="metric-monitor-count">0</h3>
+                        <span class="metric-sub">Secondary hypotheses</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon niche-icon">🛑</div>
+                    <div class="metric-info">
+                        <span class="metric-label">Out of Scope</span>
+                        <h3 class="metric-value" id="metric-niche-count">2</h3>
+                        <span class="metric-sub">Routed to product teams</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2x2 Prioritization Matrix -->
+            <section class="section-container" id="matrix">
+                <div class="section-header">
+                    <h2>2×2 Prioritization Matrix</h2>
+                    <p class="section-desc">Themes scored by Prevalence (mention volume & source breadth) vs Signal Strength (specificity & coherence).</p>
+                </div>
+
+                <div class="matrix-grid">
+                    <!-- Q1: Top Right (Promote) -->
+                    <div class="quadrant quad-promote">
+                        <div class="quad-header">
+                            <span class="quad-badge badge-green">Promote to Interview Questions</span>
+                            <span class="quad-desc">High Prevalence & High Signal Strength</span>
+                        </div>
+                        <div class="quad-content" id="quad-promote-list">
+                            <!-- Cards inserted via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Q2: Top Left (Monitor) -->
+                    <div class="quadrant quad-monitor">
+                        <div class="quad-header">
+                            <span class="quad-badge badge-yellow">Monitor (Loud but Vague)</span>
+                            <span class="quad-desc">High Prevalence & Low Signal Strength</span>
+                        </div>
+                        <div class="quad-content" id="quad-monitor-list">
+                            <!-- Cards inserted via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Q3: Bottom Right (Niche) -->
+                    <div class="quadrant quad-niche">
+                        <div class="quad-header">
+                            <span class="quad-badge badge-blue">Niche but Credible</span>
+                            <span class="quad-desc">Low Prevalence & High Signal Strength</span>
+                        </div>
+                        <div class="quad-content" id="quad-niche-list">
+                            <!-- Cards inserted via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Q4: Bottom Left (Drop/Out of Scope) -->
+                    <div class="quadrant quad-drop">
+                        <div class="quad-header">
+                            <span class="quad-badge badge-red">Out of Scope / Drop</span>
+                            <span class="quad-desc">Operational or low relevance to trial</span>
+                        </div>
+                        <div class="quad-content" id="quad-drop-list">
+                            <!-- Cards inserted via JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Promoted Research Screener Section -->
+            <section class="section-container" id="promoted">
+                <div class="section-header">
+                    <h2>💡 Promoted Research Screener Questions</h2>
+                    <p class="section-desc">Shortlisted evidence-backed hypotheses and 30-minute non-leading interview questions.</p>
+                </div>
+
+                <div class="promoted-cards-container" id="promoted-hypotheses-container">
+                    <!-- Promoted cards rendered by JS -->
+                </div>
+            </section>
+
+            <!-- Theme Explorer & Search -->
+            <section class="section-container" id="explorer">
+                <div class="section-header">
+                    <h2>🔍 Theme & Evidence Explorer</h2>
+                    <p class="section-desc">10-step reasoning breakdown per theme with primary product areas and quote evidence.</p>
+                    <div class="controls-bar">
+                        <div class="search-box">
+                            <span class="search-icon">🔎</span>
+                            <input type="text" id="theme-search-input" placeholder="Search themes, product areas, or quotes...">
+                        </div>
+                        <div class="filter-pills" id="filter-pills-container">
+                            <button class="pill-btn active" data-filter="all">All</button>
+                            <button class="pill-btn" data-filter="promote">Promoted</button>
+                            <button class="pill-btn" data-filter="monitor">Monitor</button>
+                            <button class="pill-btn" data-filter="niche">Niche</button>
+                            <button class="pill-btn" data-filter="out_of_scope">Out of Scope</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="explorer-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Theme Title</th>
+                                <th>Primary Area</th>
+                                <th>Journey Stage</th>
+                                <th>Relevance</th>
+                                <th>Priority / Status</th>
+                                <th>Prevalence</th>
+                                <th>Signal</th>
+                                <th>Mentions</th>
+                                <th>Sources</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody id="explorer-table-body">
+                            <!-- Table rows rendered by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Floating AI Chat Drawer -->
+    <div class="chat-drawer" id="chat-drawer">
+        <div class="chat-header">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span class="chat-icon">💬</span>
+                <div>
+                    <h3 style="font-family: 'Outfit', sans-serif; font-size: 16px; margin: 0;">Grounded ReviewLens AI Assistant</h3>
+                    <span style="font-size: 11px; color: var(--color-on-surface-variant);">Powered by Groq LLaMA 3.3 70B • RAG Grounded</span>
+                </div>
+            </div>
+            <button class="modal-close" id="chat-drawer-close-btn">&times;</button>
+        </div>
+
+        <div class="chat-quick-prompts">
+            <span style="font-size: 11px; font-weight: 600; color: var(--color-on-surface-variant); display: block; margin-bottom: 6px;">Suggested Questions:</span>
+            <div class="prompt-pills">
+                <button class="chat-pill-btn" data-prompt="What are the top reasons users avoid non-grocery categories?">💡 Why avoid non-groceries?</button>
+                <button class="chat-pill-btn" data-prompt="What do customer reviews say about refund flexibility and return policies?">💡 Refund & return complaints</button>
+                <button class="chat-pill-btn" data-prompt="Suggest 30-min non-leading user interview questions for category trial.">💡 Interview questions</button>
+                <button class="chat-pill-btn" data-prompt="What operational issues were routed as out of scope?">💡 Out of scope issues</button>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chat-messages-container">
+            <div class="chat-msg ai-msg">
+                <div class="msg-bubble">
+                    👋 Hello! I am your <strong>Grounded AI Discovery Assistant</strong>. Ask me anything about customer feedback, behavioral mechanisms, or research hypotheses. All answers are strictly grounded in our clean 1,950+ review corpus across Play Store, App Store & Reddit!
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-bar">
+            <input type="text" id="chat-input" placeholder="Ask about review findings, refund risk, delivery complaints..." autocomplete="off">
+            <button id="chat-send-btn" class="btn btn-primary">Send</button>
+        </div>
+    </div>
+
+    <!-- Floating Chat Trigger FAB -->
+    <button class="chat-fab" id="chat-fab-btn">
+        💬 Ask AI
+    </button>
+
+    <!-- Modal for Live Fetch & Engine Run -->
+    <div class="modal-overlay" id="fetch-modal">
+        <div class="modal-container">
+            <button class="modal-close" id="fetch-modal-close-btn">&times;</button>
+            <h2 style="font-family: 'Outfit', sans-serif; font-size: 22px; margin-bottom: 8px;">🚀 Live Review Fetch & Insights Generator</h2>
+            <p style="color: var(--color-on-surface-variant); font-size: 13px; margin-bottom: 20px;">Fetch live reviews from public platforms and run the 10-step discovery engine directly from UI.</p>
+
+            <form id="live-fetch-form" style="display: flex; flex-direction: column; gap: 16px;">
+                <div>
+                    <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 8px;">Target Sources:</label>
+                    <div style="display: flex; gap: 16px;">
+                        <label style="font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                            <input type="checkbox" name="sources" value="playstore" checked> Google Play Store
+                        </label>
+                        <label style="font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                            <input type="checkbox" name="sources" value="appstore" checked> Apple App Store
+                        </label>
+                        <label style="font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                            <input type="checkbox" name="sources" value="reddit" checked> Reddit Archive (PullPush)
+                        </label>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div>
+                        <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 6px;">Play Store Review Target:</label>
+                        <input type="number" id="input-ps-count" value="500" min="50" max="1000" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--color-outline); font-size: 13px;">
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 6px;">App Store Review Target:</label>
+                        <input type="number" id="input-as-count" value="500" min="50" max="500" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--color-outline); font-size: 13px;">
+                    </div>
+                </div>
+
+                <div>
+                    <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 6px;">Reddit Search Query (Comma separated):</label>
+                    <input type="text" id="input-reddit-terms" value="blinkit, quick commerce, 10 minute delivery" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--color-outline); font-size: 13px;">
+                </div>
+
+                <div id="fetch-status-box" style="display: none; background: var(--color-surface-low); padding: 12px; border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="spinner spinning" id="fetch-spinner" style="display: inline-block;"></span>
+                        <span id="fetch-status-text" style="font-size: 13px; font-weight: 600; color: var(--color-primary);">Engine running...</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 12px;">
+                    <button type="button" class="btn btn-secondary" id="fetch-cancel-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="fetch-submit-btn">🚀 Fetch & Generate Insights</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Detailed Theme View -->
+    <div class="modal-overlay" id="theme-modal">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close-btn">&times;</button>
+            <div id="modal-content-area">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>
