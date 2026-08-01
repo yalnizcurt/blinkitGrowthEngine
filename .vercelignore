@@ -1,0 +1,15 @@
+# Ignore backend / python files for Vercel deployment
+*.py
+requirements.txt
+Dockerfile
+Procfile
+railway.json
+collectors/
+preprocessing/
+analysis/
+data/
+output/
+plan.md
+problem_statement.md
+DEPLOYMENT.md
+__pycache__/

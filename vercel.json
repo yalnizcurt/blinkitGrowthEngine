@@ -8,12 +8,8 @@
       "destination": "https://blinkitgrowthengine-production.up.railway.app/api/$1"
     },
     {
-      "source": "/static/(.*)",
-      "destination": "/static/$1"
-    },
-    {
       "source": "/(.*)",
-      "destination": "/static/index.html"
+      "destination": "/static/$1"
     }
   ]
 }
