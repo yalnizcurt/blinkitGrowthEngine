@@ -1,15 +1,24 @@
-# Ignore backend / python files for Vercel deployment
-*.py
-requirements.txt
+# Ignore development and Docker configuration files
 Dockerfile
 Procfile
 railway.json
-collectors/
-preprocessing/
-analysis/
-data/
-output/
+requirements-docker.txt
 plan.md
 problem_statement.md
 DEPLOYMENT.md
+.git
+.github
+
+# Ignore python directories that are not needed by the serverless api
+collectors/
+preprocessing/
+analysis/
+output/
 __pycache__/
+data/raw/
+data/cleaned/
+
+# Ignore root-level Python files
+main.py
+server.py
+config.py

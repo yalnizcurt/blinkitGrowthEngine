@@ -1,12 +1,1 @@
-google-play-scraper>=1.2.4
-app-store-scraper
-pandas
-numpy
-sentence-transformers
-bertopic
-scikit-learn
-openai
-pydantic
-tqdm
-requests
-beautifulsoup4
+openai>=1.0.0
