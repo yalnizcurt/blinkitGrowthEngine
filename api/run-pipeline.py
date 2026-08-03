@@ -1,8 +1,10 @@
-from http.server import BaseHTTPRequestHandler
+import time
 import json
+from http.server import BaseHTTPRequestHandler
 from pathlib import Path
 
 RATE_LIMIT_FILE = Path("/tmp/rate_limits.json")
+STATUS_FILE = Path("/tmp/pipeline_status.json")
 
 class handler(BaseHTTPRequestHandler):
     def do_OPTIONS(self):
@@ -34,12 +36,13 @@ class handler(BaseHTTPRequestHandler):
             self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
             response = {
+                "status": "error",
                 "message": "Rate limit exceeded. To prevent API abuse, you are permitted to trigger the discovery flow at most 4 times per IP address on this demo instance."
             }
             self.wfile.write(json.dumps(response).encode("utf-8"))
             return
 
-        # Increment and save
+        # Increment and save rate limits
         rate_limits[client_ip] = count + 1
         try:
             with open(RATE_LIMIT_FILE, "w", encoding="utf-8") as f:
@@ -47,12 +50,25 @@ class handler(BaseHTTPRequestHandler):
         except Exception:
             pass
 
-        self.send_response(403)
+        # Write running status to status file
+        status_data = {
+            "status": "running",
+            "start_time": time.time(),
+            "client_ip": client_ip
+        }
+        try:
+            with open(STATUS_FILE, "w", encoding="utf-8") as f:
+                f.write(json.dumps(status_data))
+        except Exception:
+            pass
+
+        self.send_response(200)
         self.send_header("Content-Type", "application/json")
         self.send_header("Access-Control-Allow-Origin", "*")
         self.end_headers()
 
         response = {
-            "message": f"Rate limit check passed ({count + 1}/4 fetches used). However, live scraping & NLP pipeline execution is disabled on the public demo instance to prevent API abuse. To fetch fresh reviews and run the 10-step discovery flow, run ReviewLens locally with a dedicated Python server."
+            "status": "started",
+            "message": f"Pipeline simulation initiated successfully ({count + 1}/4 fetches used)."
         }
         self.wfile.write(json.dumps(response).encode("utf-8"))
