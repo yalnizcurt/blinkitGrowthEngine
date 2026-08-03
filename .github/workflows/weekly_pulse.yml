@@ -1,0 +1,35 @@
+name: Weekly Customer Discovery Pulse
+
+on:
+  schedule:
+    - cron: '0 8 * * 1' # Runs every Monday at 08:00 UTC
+  workflow_dispatch:      # Allows manual triggers
+
+jobs:
+  run-pulse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run Weekly Discovery Pulse
+        run: |
+          python scripts/run_weekly_pulse.py
+
+      - name: Commit and Push Weekly Pulse Artifacts
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add data/weekly/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(weekly-pulse): auto-generate weekly customer discovery note and PII gates" && git push)

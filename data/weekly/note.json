@@ -1,0 +1,54 @@
+{
+  "title": "Blinkit \u2014 Weekly Customer Discovery Pulse (2026-08-03)",
+  "word_count": 108,
+  "max_words": 250,
+  "themes": [
+    {
+      "id": "theme_7",
+      "headline": "Low Trust in High-Value Purchases (Mentions: 224) \u2014 prevalence: 5.0/5.0 | signal: 4.5/5.0"
+    },
+    {
+      "id": "theme_3",
+      "headline": "Inconsistent Delivery Timeliness (Mentions: 275) \u2014 prevalence: 5.0/5.0 | signal: 3.5/5.0"
+    },
+    {
+      "id": "theme_6",
+      "headline": "Excessive Fees and Surge Charges (Mentions: 129) \u2014 prevalence: 5.0/5.0 | signal: 3.5/5.0"
+    }
+  ],
+  "quotes": [
+    {
+      "theme_id": "theme_7",
+      "paraphrased": "\"Customer says: I ordered charger with cable but after receiving the product the cable quality was very bad\"",
+      "source_rating": 1
+    },
+    {
+      "theme_id": "theme_3",
+      "paraphrased": "\"Customer says: Very bad \ud83d\ude1e delivery partner\"",
+      "source_rating": 1
+    },
+    {
+      "theme_id": "theme_6",
+      "paraphrased": "\"Customer says: Only keep away the surge costs!\"",
+      "source_rating": 1
+    }
+  ],
+  "actions": [
+    {
+      "theme_id": "theme_7",
+      "text": "Audit feedback and optimize experience in quality category."
+    },
+    {
+      "theme_id": "theme_3",
+      "text": "Audit feedback and optimize experience in delivery category."
+    },
+    {
+      "theme_id": "theme_6",
+      "text": "Audit feedback and optimize experience in payment issues category."
+    }
+  ],
+  "metadata": {
+    "generated_at": "2026-08-03T13:28:55Z",
+    "total_feedback_analyzed": 1602
+  }
+}

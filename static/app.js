@@ -83,6 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // Render Table
             renderExplorerTable(rawResultsData);
 
+            // Render Weekly Pulse Section (Phases 3/4/5/6 Align)
+            renderWeeklyPulse();
+
         } catch (err) {
             console.error("Error fetching engine results:", err);
         }
@@ -647,6 +650,97 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    async function renderWeeklyPulse() {
+        try {
+            const statusResp = await fetch(API_BASE + "/api/status");
+            const statusData = await statusResp.json();
+            
+            const piiPassed = statusData.pii_passed !== false;
+            const piiBadge = document.getElementById("pulse-pii-badge");
+            if (piiBadge) {
+                if (piiPassed) {
+                    piiBadge.textContent = "PII Cleared ✓";
+                    piiBadge.className = "quad-badge badge-green";
+                } else {
+                    piiBadge.textContent = "PII Blocked";
+                    piiBadge.className = "quad-badge badge-red";
+                }
+            }
+
+            const pulseResp = await fetch(API_BASE + "/api/pulse");
+            const pulseData = await pulseResp.json();
+
+            const wordCountBadge = document.getElementById("pulse-word-count");
+            if (wordCountBadge && pulseData.word_count) {
+                wordCountBadge.textContent = `${pulseData.word_count} / ${pulseData.max_words} words`;
+                if (pulseData.word_count > pulseData.max_words) {
+                    wordCountBadge.style.color = "var(--color-error)";
+                } else {
+                    wordCountBadge.style.color = "var(--color-primary)";
+                }
+            }
+
+            const docLink = document.getElementById("pulse-doc-link");
+            const draftLink = document.getElementById("pulse-draft-link");
+            const pubState = statusData.publish_state || {};
+            if (docLink) docLink.href = pubState.doc_url || "#";
+            if (draftLink) draftLink.href = pubState.draft_url || "https://mail.google.com/mail/u/0/#drafts";
+
+            // Render content
+            const noteContainer = document.getElementById("pulse-note-content");
+            if (noteContainer && pulseData.themes) {
+                let html = `
+                    <h3 style="font-family: 'Outfit', sans-serif; font-size: 20px; color: var(--color-on-surface); margin-bottom: 20px; border-bottom: 1px solid var(--color-border); padding-bottom: 10px;">${pulseData.title || "Weekly Pulse"}</h3>
+                    
+                    <h4 style="font-size: 14px; text-transform: uppercase; color: var(--color-on-surface-variant); margin-bottom: 12px; letter-spacing: 0.05em; margin-top: 10px;">Top In-Scope Customer Opportunities</h4>
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+                `;
+
+                pulseData.themes.forEach(t => {
+                    html += `
+                        <div style="background: rgba(70,72,212,0.04); border-left: 4px solid var(--color-primary); padding: 12px 16px; border-radius: 4px;">
+                            <span style="font-weight: 600; color: var(--color-on-surface);">${t.headline}</span>
+                        </div>
+                    `;
+                });
+
+                html += `
+                    </div>
+                    <h4 style="font-size: 14px; text-transform: uppercase; color: var(--color-on-surface-variant); margin-bottom: 12px; letter-spacing: 0.05em;">Representative Customer Evidence</h4>
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+                `;
+
+                pulseData.quotes.forEach(q => {
+                    html += `
+                        <div style="background: rgba(245,158,11,0.04); border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 4px; font-style: italic; color: var(--color-on-surface-variant);">
+                            ${q.paraphrased}
+                        </div>
+                    `;
+                });
+
+                html += `
+                    </div>
+                    <h4 style="font-size: 14px; text-transform: uppercase; color: var(--color-on-surface-variant); margin-bottom: 12px; letter-spacing: 0.05em;">Proposed Action Items</h4>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                `;
+
+                pulseData.actions.forEach(a => {
+                    html += `
+                        <div style="display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--color-on-surface);">
+                            <span style="display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: rgba(46,125,50,0.1); color: #2e7d32; font-weight: 700; font-size: 11px;">✓</span>
+                            <span>${a.text}</span>
+                        </div>
+                    `;
+                });
+
+                html += `</div>`;
+                noteContainer.innerHTML = html;
+            }
+        } catch (err) {
+            console.error("Failed to render weekly pulse:", err);
+        }
+    }
+
     // Sidebar Navigation Active Tab & Scroll Handler
     const navItems = document.querySelectorAll(".nav-menu .nav-item");
     let isManualClicking = false;
@@ -683,7 +777,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateActiveTabOnScroll() {
         if (isManualClicking) return;
 
-        const sectionIds = ["overview", "matrix", "promoted", "explorer"];
+        const sectionIds = ["overview", "matrix", "promoted", "pulse", "explorer"];
         const scrollBottom = window.scrollY + window.innerHeight;
         const totalHeight = document.documentElement.scrollHeight;
 
