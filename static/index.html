@@ -33,7 +33,7 @@
                     <span class="icon">🎯</span> Prioritization Matrix
                 </a>
                 <a href="#promoted" class="nav-item" id="nav-promoted">
-                    <span class="icon">💡</span> Research Screener
+                    <span class="icon">💡</span> Research Hypotheses
                 </a>
                 <a href="#explorer" class="nav-item" id="nav-explorer">
                     <span class="icon">🔍</span> Evidence Explorer
@@ -75,7 +75,22 @@
                         <h1>Blinkit Customer Insights</h1>
                         <span class="quad-badge badge-green" style="font-size: 12px;">Director-Ready</span>
                     </div>
-                    <p class="header-subtitle">Evidence-backed research hypotheses derived from 2,200+ live customer reviews across Play Store, App Store & Reddit.</p>
+                    <p class="header-subtitle">AI-powered review analysis across 2,309 customer reviews (1,602 deduplicated). Surfaces research hypotheses and reusable recommendation policies. Behavioural insight is established through primary user research.</p>
+                    <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 10px; font-size: 11.5px; font-weight: 600; color: var(--color-on-surface-variant);">
+                        <span style="background: rgba(70,72,212,0.09); color: var(--color-primary); border-radius: 6px; padding: 3px 9px;">📱 Reviews</span>
+                        <span style="opacity: 0.4;">→</span>
+                        <span style="background: rgba(70,72,212,0.09); color: var(--color-primary); border-radius: 6px; padding: 3px 9px;">🤖 AI Analysis</span>
+                        <span style="opacity: 0.4;">→</span>
+                        <span style="background: rgba(70,72,212,0.09); color: var(--color-primary); border-radius: 6px; padding: 3px 9px;">🎯 Prioritised Opportunities</span>
+                        <span style="opacity: 0.4;">→</span>
+                        <span style="background: rgba(46,125,50,0.1); color: #2e7d32; border-radius: 6px; padding: 3px 9px;">💡 Research Hypothesis</span>
+                        <span style="opacity: 0.4;">→</span>
+                        <span style="background: rgba(245,158,11,0.1); color: #b45309; border-radius: 6px; padding: 3px 9px;">🎙️ Primary Research</span>
+                        <span style="opacity: 0.4;">→</span>
+                        <span style="background: rgba(70,72,212,0.12); color: var(--color-primary); border-radius: 6px; padding: 3px 9px; border: 1px solid rgba(70,72,212,0.25);">🛡️ Recommendation Policies</span>
+                        <span style="opacity: 0.4;">→</span>
+                        <span style="background: rgba(46,125,50,0.15); color: #2e7d32; border-radius: 6px; padding: 3px 9px; border: 1px solid rgba(46,125,50,0.3); font-weight: 700;">📦 Reusable Policy Artifact</span>
+                    </div>
                 </div>
                 <div class="header-actions">
                     <button class="btn btn-primary" id="header-chat-btn">💬 Ask AI Assistant</button>
@@ -90,8 +105,8 @@
                     <div class="metric-icon total-icon">💬</div>
                     <div class="metric-info">
                         <span class="metric-label">Corpus Size</span>
-                        <h3 class="metric-value" id="metric-total-count">1,951</h3>
-                        <span class="metric-sub">Clean multi-source reviews</span>
+                        <h3 class="metric-value" id="metric-total-count">1,602</h3>
+                        <span class="metric-sub">Deduplicated & analyzed units</span>
                     </div>
                 </div>
 
@@ -134,7 +149,7 @@
                     <!-- Q1: Top Right (Promote) -->
                     <div class="quadrant quad-promote">
                         <div class="quad-header">
-                            <span class="quad-badge badge-green">Promote to Interview Questions</span>
+                            <span class="quad-badge badge-green">Recommended for Primary Research</span>
                             <span class="quad-desc">High Prevalence & High Signal Strength</span>
                         </div>
                         <div class="quad-content" id="quad-promote-list">
@@ -177,11 +192,11 @@
                 </div>
             </section>
 
-            <!-- Promoted Research Screener Section -->
+            <!-- Recommended Research Hypotheses Section -->
             <section class="section-container" id="promoted">
                 <div class="section-header">
-                    <h2>💡 Promoted Research Screener Questions</h2>
-                    <p class="section-desc">Shortlisted evidence-backed hypotheses and 30-minute non-leading interview questions.</p>
+                    <h2>💡 Recommended Research Hypotheses</h2>
+                    <p class="section-desc">AI-generated hypotheses backed by multi-source review evidence. These require validation through primary user research before informing product direction.</p>
                 </div>
 
                 <div class="promoted-cards-container" id="promoted-hypotheses-container">
@@ -193,7 +208,7 @@
             <section class="section-container" id="explorer">
                 <div class="section-header">
                     <h2>🔍 Theme & Evidence Explorer</h2>
-                    <p class="section-desc">10-step reasoning breakdown per theme with primary product areas and quote evidence.</p>
+                    <p class="section-desc">Full evidence breakdown per theme — product areas, review sources, and verbatim customer quotes.</p>
                     <div class="controls-bar">
                         <div class="search-box">
                             <span class="search-icon">🔎</span>
@@ -201,7 +216,7 @@
                         </div>
                         <div class="filter-pills" id="filter-pills-container">
                             <button class="pill-btn active" data-filter="all">All</button>
-                            <button class="pill-btn" data-filter="promote">Promoted</button>
+                            <button class="pill-btn" data-filter="promote">Recommended for Research</button>
                             <button class="pill-btn" data-filter="monitor">Monitor</button>
                             <button class="pill-btn" data-filter="niche">Niche</button>
                             <button class="pill-btn" data-filter="out_of_scope">Out of Scope</button>
@@ -253,14 +268,14 @@
                 <button class="chat-pill-btn" data-prompt="What are the top reasons users avoid non-grocery categories?">💡 Why avoid non-groceries?</button>
                 <button class="chat-pill-btn" data-prompt="What do customer reviews say about refund flexibility and return policies?">💡 Refund & return complaints</button>
                 <button class="chat-pill-btn" data-prompt="Suggest 30-min non-leading user interview questions for category trial.">💡 Interview questions</button>
-                <button class="chat-pill-btn" data-prompt="What operational issues were routed as out of scope?">💡 Out of scope issues</button>
+                <button class="chat-pill-btn" data-prompt="What recommendation guardrails should apply to electronics and high-value product recommendations?">💡 Recommendation guardrails</button>
             </div>
         </div>
 
         <div class="chat-messages" id="chat-messages-container">
             <div class="chat-msg ai-msg">
                 <div class="msg-bubble">
-                    👋 Hello! I am your <strong>Grounded AI Discovery Assistant</strong>. Ask me anything about customer feedback, behavioral mechanisms, or research hypotheses. All answers are strictly grounded in our clean 1,950+ review corpus across Play Store, App Store & Reddit!
+                    👋 Hello! I am your <strong>Grounded AI Discovery Assistant</strong>. Ask me anything about customer feedback, review evidence, or research hypotheses. All answers are strictly grounded in our clean 1,950+ review corpus across Play Store, App Store & Reddit.
                 </div>
             </div>
         </div>

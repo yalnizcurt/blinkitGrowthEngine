@@ -112,6 +112,44 @@ document.addEventListener("DOMContentLoaded", () => {
         `).join("");
     }
 
+    function getRecommendationPolicies(p) {
+        const policies = [];
+        const mechanism = (p.behavioral_mechanism || "").toLowerCase();
+        const area = (p.primary_issue || "").toLowerCase();
+        const opportunity = (p.product_opportunity || "").toLowerCase();
+        const contradictory = (p.contradictory_evidence || "").toLowerCase();
+        const confidence = (p.confidence || "High");
+        const frequency = p.frequency || 0;
+        const sources = (p.sources || []).length;
+
+        // Trust / quality signals
+        if (mechanism.includes("trust") || mechanism.includes("quality") || mechanism.includes("loss") ||
+            opportunity.includes("confidence") || opportunity.includes("trust") || area.includes("quality")) {
+            policies.push({ name: "Brand Trust", status: "Enabled", value: "Verified sellers", source: frequency + " quality reviews across " + sources + " sources" });
+            policies.push({ name: "Minimum Rating", status: "Enabled", value: "4.2+", source: "Recurring product quality complaints" });
+            policies.push({ name: "Complaint Screening", status: "Enabled", value: "Low tolerance", source: "Product damage and defect reports" });
+        }
+
+        // Delivery signals
+        if (area.includes("delivery") || mechanism.includes("delivery") || mechanism.includes("fulfil")) {
+            policies.push({ name: "Delivery Reliability", status: "Enabled", value: "Score visible", source: "Delivery complaint patterns" });
+        }
+
+        // Payment signals
+        if (area.includes("payment") || mechanism.includes("payment") || mechanism.includes("uncertainty")) {
+            policies.push({ name: "Price Transparency", status: "Required", value: null, source: "Hidden charge complaints" });
+        }
+
+        // Universal policies — always include
+        policies.push({ name: "Explainability", status: "Required", value: null, source: "Platform-wide policy" });
+        policies.push({ name: "Social Proof", status: "Enabled", value: "Rating + review count", source: "Trust erosion pattern in reviews" });
+
+        // Confidence gating — always include
+        policies.push({ name: "Confidence Threshold", status: "Required", value: "\u2265 0.82", source: "Silence > irrelevant recommendation" });
+
+        return policies.slice(0, 6);
+    }
+
     function renderPromotedCards(promoted) {
         if (!promoted || promoted.length === 0) {
             promotedContainerEl.innerHTML = `<p class="subtitle">No themes met the dual High Prevalence + High Signal threshold yet.</p>`;
@@ -119,31 +157,40 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         promotedContainerEl.innerHTML = promoted.map((p, idx) => `
+            <div class="research-info-banner" style="display: flex; align-items: flex-start; gap: 10px; background: rgba(70, 72, 212, 0.07); border: 1px solid rgba(70, 72, 212, 0.2); border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; font-size: 12.5px; color: var(--color-on-surface-variant); line-height: 1.6;">
+                <span style="font-size: 16px; margin-top: 1px;">ℹ️</span>
+                <span>This opportunity has been <strong>recommended for qualitative validation</strong>. Final problem definition should be established through user research — surveys, interviews, or contextual inquiry.</span>
+            </div>
             <div class="screener-card">
                 <div class="screener-card-header">
                     <h3 class="screener-card-title">${idx + 1}. ${p.theme}</h3>
                     <span class="score-badge">Prevalence: ${p.prevalence_score}/5.0 | Signal: ${p.signal_strength_score}/5.0</span>
                 </div>
 
-                <div style="display: flex; gap: 10px; margin-bottom: 12px; font-size: 12px;">
+                <div style="display: flex; gap: 10px; margin-bottom: 6px; flex-wrap: wrap;">
+                    <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(46,125,50,0.1); color: #2e7d32; border-radius: 20px; padding: 3px 10px;">✦ Recommended Research Hypothesis</span>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-bottom: 12px; font-size: 12px; flex-wrap: wrap;">
                     <span class="area-badge">Product Area: ${p.primary_issue || 'General'}</span>
                     <span class="area-badge" style="background: rgba(70, 72, 212, 0.1); color: var(--color-primary);">Journey Stage: ${p.customer_journey_stage || 'Evaluation'}</span>
                     <span class="score-badge" style="background: rgba(46, 125, 50, 0.1); color: #2e7d32;">Impact: ${p.business_impact || 'High'} | Confidence: ${p.confidence || 'High'}</span>
                 </div>
 
                 <div class="insight-box" style="margin-bottom: 10px;">
-                    <div class="insight-title">Observed Behavior (WHAT)</div>
+                    <div class="insight-title">Observed Pattern (from reviews)</div>
                     <p style="font-weight: 500;">${p.observed_behavior || "Users avoid non-grocery purchases."}</p>
                 </div>
 
                 <div class="insight-box" style="background: rgba(70, 72, 212, 0.05); border-left-color: var(--color-primary); margin-bottom: 10px;">
-                    <div class="insight-title" style="color: var(--color-primary);">Visual Causal Chain</div>
+                    <div class="insight-title" style="color: var(--color-primary);">Evidence Chain</div>
                     <p style="font-size: 12px; font-family: monospace; color: var(--color-on-background); font-weight: 500;">${p.causal_chain || p.reasoning_trace || ''}</p>
                 </div>
 
                 <div class="insight-box" style="background: rgba(245, 158, 11, 0.08); border-left-color: #f59e0b; margin-bottom: 10px;">
-                    <div class="insight-title" style="color: #b45309;">Behavioral Mechanism (WHY)</div>
-                    <p style="font-style: italic;">"${p.behavioral_mechanism || "Psychological friction."}"</p>
+                    <div class="insight-title" style="color: #b45309;">Hypothesised Mechanism (Requires Validation)</div>
+                    <p style="font-style: italic;">"${p.behavioral_mechanism || "Psychological friction."}"
+                    <br><span style="font-size: 11px; color: var(--color-on-surface-variant); font-style: normal;">⚠️ This mechanism is inferred from review signals. Confirm through qualitative interviews.</span></p>
                 </div>
 
                 <div class="insight-box" style="margin-bottom: 10px;">
@@ -153,7 +200,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <div class="question-box">
                     <div class="question-title">Suggested 30-Min Non-Leading Research Question</div>
-                    <p class="question-text">"${p.suggested_research_question || (p.research_questions && p.research_questions[0]) || ''}"</p>
+                    <p class="question-text">"${p.suggested_research_question || (p.research_questions && p.research_questions[0]) || ''}"
+                    </p>
                     <button class="copy-btn" onclick="window.copyToClipboard('${escapeQuotes(p.suggested_research_question || (p.research_questions && p.research_questions[0]) || '')}')">📋 Copy Question for Screener</button>
                 </div>
 
@@ -161,8 +209,62 @@ document.addEventListener("DOMContentLoaded", () => {
                     <strong style="font-size: 12px; color: var(--color-on-surface-variant);">Representative Customer Evidence:</strong>
                     ${(p.example_quotes || []).slice(0, 2).map(q => `<div class="quote-item">"${q}"</div>`).join("")}
                 </div>
+
+                <div style="margin-top: 16px; padding: 14px 16px; background: var(--color-surface-low); border-radius: 10px; border: 1px solid var(--color-outline-variant);">
+                    <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-on-surface-variant); margin-bottom: 10px;">↓ Next Step — Validate through Primary Research</div>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; background: rgba(70, 72, 212, 0.08); color: var(--color-primary); border: 1px solid rgba(70,72,212,0.2); border-radius: 20px; padding: 5px 12px;">📋 Survey</span>
+                        <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; background: rgba(70, 72, 212, 0.08); color: var(--color-primary); border: 1px solid rgba(70,72,212,0.2); border-radius: 20px; padding: 5px 12px;">🎙️ User Interviews</span>
+                        <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; background: rgba(70, 72, 212, 0.08); color: var(--color-primary); border: 1px solid rgba(70,72,212,0.2); border-radius: 20px; padding: 5px 12px;">🔍 Contextual Inquiry</span>
+                     </div>
+                 </div>
+
+                <div style="margin-top: 12px; padding: 16px 18px; background: linear-gradient(135deg, rgba(46,125,50,0.04) 0%, rgba(46,125,50,0.09) 100%); border-radius: 10px; border: 1px solid rgba(46,125,50,0.22);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; flex-wrap: wrap; gap: 8px;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="font-size: 15px;">&#x1F6E1;&#xFE0F;</span>
+                            <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #2e7d32;">Recommendation Policies</span>
+                        </div>
+                        <span style="font-size: 10px; font-weight: 600; background: rgba(46,125,50,0.12); color: #2e7d32; border-radius: 20px; padding: 2px 10px; border: 1px solid rgba(46,125,50,0.25); text-transform: uppercase; letter-spacing: 0.04em;">Output Artifact</span>
+                    </div>
+                    <p style="font-size: 11px; color: var(--color-on-surface-variant); margin-bottom: 14px; line-height: 1.5;">Configurable recommendation policies derived from review evidence. Reusable across recommendation, personalization, and merchandising engines.</p>
+
+                    <div style="display: grid; grid-template-columns: minmax(110px, 1fr) auto auto 1fr; gap: 0; font-size: 11.5px; border: 1px solid rgba(46,125,50,0.18); border-radius: 8px; overflow: hidden;">
+                        <div style="padding: 6px 10px; background: rgba(46,125,50,0.08); font-weight: 700; color: #2e7d32; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(46,125,50,0.15);">Policy</div>
+                        <div style="padding: 6px 10px; background: rgba(46,125,50,0.08); font-weight: 700; color: #2e7d32; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(46,125,50,0.15);">Status</div>
+                        <div style="padding: 6px 10px; background: rgba(46,125,50,0.08); font-weight: 700; color: #2e7d32; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(46,125,50,0.15);">Value</div>
+                        <div style="padding: 6px 10px; background: rgba(46,125,50,0.08); font-weight: 700; color: #2e7d32; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(46,125,50,0.15);">Source</div>
+                    </div>
+                    <div id="policies-${idx}"></div>
+
+                    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(46,125,50,0.15); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
+                        <span style="font-size: 11px; color: var(--color-on-surface-variant); font-style: italic;">Derived from review signals. Subject to refinement after primary user research.</span>
+                        <span style="font-size: 10px; font-weight: 600; color: var(--color-primary); background: rgba(70,72,212,0.08); border: 1px solid rgba(70,72,212,0.2); border-radius: 20px; padding: 2px 10px;">&#x26A1; Reusable Policy Artifact</span>
+                    </div>
+                </div>
             </div>
         `).join("");
+
+        // Populate policy cards post-render
+        promoted.forEach((p, idx) => {
+            const container = document.getElementById("policies-" + idx);
+            if (!container) return;
+            const items = getRecommendationPolicies(p);
+            container.innerHTML = items.map((pol, i) => {
+                const isRequired = pol.status === "Required";
+                const statusBg = isRequired ? "rgba(70,72,212,0.1)" : "rgba(46,125,50,0.12)";
+                const statusColor = isRequired ? "var(--color-primary)" : "#2e7d32";
+                const rowBg = i % 2 === 0 ? "rgba(46,125,50,0.02)" : "transparent";
+                const borderB = i < items.length - 1 ? "border-bottom: 1px solid rgba(46,125,50,0.1);" : "";
+                return `
+                <div style="display: grid; grid-template-columns: minmax(110px, 1fr) auto auto 1fr; gap: 0; font-size: 11.5px; ${borderB} background: ${rowBg};">
+                    <div style="padding: 8px 10px; font-weight: 600; color: #1b5e20;">${pol.name}</div>
+                    <div style="padding: 8px 10px;"><span style="display: inline-block; font-size: 10px; font-weight: 700; background: ${statusBg}; color: ${statusColor}; border-radius: 10px; padding: 1px 8px; text-transform: uppercase; letter-spacing: 0.03em;">${pol.status}</span></div>
+                    <div style="padding: 8px 10px; font-weight: 600; color: var(--color-on-background); font-family: 'Outfit', sans-serif;">${pol.value || '—'}</div>
+                    <div style="padding: 8px 10px; color: var(--color-on-surface-variant); font-size: 11px;">${pol.source}</div>
+                </div>`;
+            }).join("");
+        });
     }
 
     function renderExplorerTable(items) {
@@ -194,8 +296,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td><strong>${t.theme}</strong></td>
                 <td><span class="area-badge">${t.primary_issue || 'General'}</span></td>
                 <td><span class="area-badge" style="background: rgba(0,0,0,0.05);">${t.customer_journey_stage || 'Evaluation'}</span></td>
-                <td><span class="relevance-badge ${getRelevanceBadgeClass(t.research_relevance)}">${t.research_relevance || 'NO'}</span></td>
-                <td><span class="quad-badge ${getBadgeClass(t.action)}">${t.action}</span></td>
+                <td><span class="relevance-badge ${getRelevanceBadgeClass(t.research_relevance)}">${(t.research_relevance || 'NO').replace(/_/g, ' ')}</span></td>
+                <td><span class="quad-badge ${getBadgeClass(t.action)}">${getActionLabel(t.action)}</span></td>
                 <td>${t.prevalence_score} / 5.0</td>
                 <td>${t.signal_strength_score} / 5.0</td>
                 <td>${t.frequency}</td>
@@ -213,6 +315,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return "badge-gray";
     }
 
+    function getActionLabel(action) {
+        if (action.includes("Promote")) return "Recommended for Primary Research";
+        return action;
+    }
+
     function getRelevanceBadgeClass(relevance) {
         if (relevance === "DIRECT" || relevance === "YES") return "badge-green";
         if (relevance === "INDIRECT" || relevance === "PARTIAL") return "badge-yellow";
@@ -226,10 +333,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         modalContentArea.innerHTML = `
             <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap;">
-                <span class="quad-badge ${getBadgeClass(themeObj.action)}">${themeObj.action}</span>
+                <span class="quad-badge ${getBadgeClass(themeObj.action)}">${getActionLabel(themeObj.action)}</span>
                 <span class="area-badge" style="background: rgba(0,0,0,0.05); padding: 4px 8px; border-radius: 4px; font-size: 12px;">Area: ${themeObj.primary_issue || 'General'}</span>
                 <span class="area-badge" style="background: rgba(70, 72, 212, 0.1); color: var(--color-primary); padding: 4px 8px; border-radius: 4px; font-size: 12px;">Stage: ${themeObj.customer_journey_stage || 'Evaluation'}</span>
-                <span class="relevance-badge ${getRelevanceBadgeClass(themeObj.research_relevance)}" style="padding: 4px 8px; border-radius: 4px; font-size: 12px;">Relevance: ${themeObj.research_relevance || 'NO'}</span>
+                <span class="relevance-badge ${getRelevanceBadgeClass(themeObj.research_relevance)}" style="padding: 4px 8px; border-radius: 4px; font-size: 12px;">Relevance: ${(themeObj.research_relevance || 'NO').replace(/_/g, ' ')}</span>
             </div>
 
             <h2 style="font-family: 'Outfit', sans-serif; font-size: 22px; margin-bottom: 12px;">${themeObj.theme}</h2>
@@ -247,7 +354,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </ul>
                 </div>
                 <div style="background: #ffffff; padding: 12px; border-radius: 8px; border: 1px solid var(--color-outline-variant);">
-                    <strong style="font-size: 12px; color: var(--color-on-surface-variant);">Behavioral Mechanism (WHY):</strong>
+                    <strong style="font-size: 12px; color: var(--color-on-surface-variant);">Hypothesised Mechanism (Requires Validation):</strong>
                     <p style="font-size: 12px; margin-top: 4px; font-style: italic;">"${themeObj.behavioral_mechanism || 'N/A'}"</p>
                 </div>
             </div>

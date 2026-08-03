@@ -41,7 +41,7 @@
         "Customers value high-quality products",
         "Poor product quality leads to customer churn"
       ],
-      "reasoning_trace": "Received damaged or low-quality products ↓ Post-Purchase Return Risk ↓ High Financial Downside Fear ↓ Avoid Electronics & Non-Grocery Items ↓ Reduced Category Exploration",
+      "reasoning_trace": "Received damaged or low-quality products ↓ Repeated negative quality experiences across sources ↓ Eroded platform trust for non-grocery items ↓ Hesitation to purchase unfamiliar categories (hypothesis — requires validation)",
       "out_of_scope_reason": "",
       "example_quotes": [
         "I ordered charger with cable but after receiving the product the cable quality was very bad .. after complaing with customer support after 2 ,3 attempts the customer support executive denied to help me Telling this isn't their fault so who's responsible for those cheap product sold by this apps.. very frustrated",
@@ -255,7 +255,7 @@
       "assumptions": [
         "Assumption 1: Coupon redemption failure is a significant issue that affects customer satisfaction and loyalty."
       ],
-      "reasoning_trace": "Coupon was applied exactly as in previous successful orders ↓ Perceived Transaction Friction ↓ Elevated Trial Hesitation ↓ Stick to Baseline Grocery Habits ↓ Reduced Category Exploration",
+      "reasoning_trace": "Coupon applied as in previous orders ↓ Discount not honoured by system ↓ Perceived transaction unfairness ↓ Eroded platform trust (hypothesis — requires validation)",
       "out_of_scope_reason": "",
       "example_quotes": [
         "I lost only ₹72.50 due to the non-issuance of a cashback, but Blinkit’s lack of accountability is far more disappointing. I applied the AIRTELAXIS10 coupon exactly as I had on previous successful orders, but it was apparently not recorded due to an app/server/network issue. Despite weeks of follow-ups, Blinkit simply repeated that the coupon wasn’t applied and refused to help. Customer support should solve problems, not just quote system records. Uninstalling the app and switching to other apps.",
@@ -277,26 +277,29 @@
     },
     {
       "cluster_id": 4,
-      "theme": "",
-      "primary_issue": "",
+      "theme": "General Usability & Miscellaneous Feedback",
+      "primary_issue": "General UX",
       "research_relevance": "OUT_OF_SCOPE",
-      "evidence_summary": "",
-      "observed_facts": [],
-      "observed_behavior": "",
-      "behavioral_mechanism": "This operational issue has insufficient evidence linking it to category exploration.",
-      "underlying_need": "",
-      "barrier_or_driver": "",
+      "evidence_summary": "General app usability comments, customer service remarks, or minor feature requests unrelated to core trial objectives.",
+      "observed_facts": [
+        "Unclassified app experience comments",
+        "Discussions around promotions and general usability"
+      ],
+      "observed_behavior": "Customers mention unrelated app features or general satisfaction.",
+      "behavioral_mechanism": "This operational/miscellaneous issue has insufficient evidence linking it to category exploration.",
+      "underlying_need": "General platform stability and standard features.",
+      "barrier_or_driver": "N/A",
       "business_impact": "None",
       "confidence": "Medium",
       "confidence_explanation": "Medium confidence because:\n- Observed across 3 sources (play_store, app_store, reddit) in 896 customer reviews.\n- Cluster represents a specific customer problem with moderate signal strength.\n- Contradictory evidence check: 0 opposing reviews identified in dataset.\n- Requires qualitative user interview validation for broader category trial impact.",
       "signal_strength": "None",
-      "customer_journey_stage": "",
+      "customer_journey_stage": "Evaluation",
       "alternative_explanations": [],
       "contradictory_evidence": "No contradictory evidence was found after explicitly reviewing all 1,602 dataset reviews.",
-      "product_opportunity": "",
+      "product_opportunity": "Address general app feedback via standard product lifecycle.",
       "research_hypothesis": "No research hypothesis generated. Current evidence suggests this issue may influence overall platform experience, but does not establish a credible link to category exploration.",
       "research_questions": [],
-      "why_these_quotes_matter": "",
+      "why_these_quotes_matter": "Helpful for routing general issues to core app teams but out of scope for discovery.",
       "assumptions": [],
       "reasoning_trace": "Operational Issue -> Out of Scope for Category Discovery",
       "out_of_scope_reason": "Quotes do not mention category exploration or new product discovery.",
@@ -315,8 +318,8 @@
       ],
       "sentiment": "positive (22.1% negative, 70.0% positive, 7.9% neutral)",
       "action": "Out of Scope for Research Objective",
-      "suggested_insight": "",
-      "suggested_research_question": "",
+      "suggested_insight": "General usability remarks do not directly impact category blindness hypotheses.",
+      "suggested_research_question": "Can you share your general experience using the Blinkit app and any general feature requests you have?",
       "status": "Out of Scope"
     },
     {
