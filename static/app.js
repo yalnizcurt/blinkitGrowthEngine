@@ -208,10 +208,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     <button class="copy-btn" onclick="window.copyToClipboard('${escapeQuotes(p.suggested_research_question || (p.research_questions && p.research_questions[0]) || '')}')">📋 Copy Question for Screener</button>
                 </div>
 
-                <div class="quotes-list">
-                    <strong style="font-size: 12px; color: var(--color-on-surface-variant);">Representative Customer Evidence:</strong>
-                    ${(p.example_quotes || []).slice(0, 2).map(q => `<div class="quote-item">"${q}"</div>`).join("")}
-                </div>
 
                 <div style="margin-top: 16px; padding: 14px 16px; background: var(--color-surface-low); border-radius: 10px; border: 1px solid var(--color-outline-variant);">
                     <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-on-surface-variant); margin-bottom: 10px;">↓ Next Step — Validate through Primary Research</div>
