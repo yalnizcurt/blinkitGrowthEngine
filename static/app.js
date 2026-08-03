@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                     <p style="font-size: 11px; color: var(--color-on-surface-variant); margin-bottom: 14px; line-height: 1.5;">Configurable recommendation policies derived from review evidence. Reusable across recommendation, personalization, and merchandising engines.</p>
 
-                    <div style="display: grid; grid-template-columns: minmax(110px, 1fr) auto auto 1fr; gap: 0; font-size: 11.5px; border: 1px solid rgba(46,125,50,0.18); border-radius: 8px; overflow: hidden;">
+                    <div style="display: grid; grid-template-columns: 200px 100px 200px 1fr; gap: 0; font-size: 11.5px; border: 1px solid rgba(46,125,50,0.18); border-radius: 8px; overflow: hidden;">
                         <div style="padding: 6px 10px; background: rgba(46,125,50,0.08); font-weight: 700; color: #2e7d32; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(46,125,50,0.15);">Policy</div>
                         <div style="padding: 6px 10px; background: rgba(46,125,50,0.08); font-weight: 700; color: #2e7d32; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(46,125,50,0.15);">Status</div>
                         <div style="padding: 6px 10px; background: rgba(46,125,50,0.08); font-weight: 700; color: #2e7d32; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(46,125,50,0.15);">Value</div>
@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const rowBg = i % 2 === 0 ? "rgba(46,125,50,0.02)" : "transparent";
                 const borderB = i < items.length - 1 ? "border-bottom: 1px solid rgba(46,125,50,0.1);" : "";
                 return `
-                <div style="display: grid; grid-template-columns: minmax(110px, 1fr) auto auto 1fr; gap: 0; font-size: 11.5px; ${borderB} background: ${rowBg};">
+                <div style="display: grid; grid-template-columns: 200px 100px 200px 1fr; gap: 0; font-size: 11.5px; ${borderB} background: ${rowBg};">
                     <div style="padding: 8px 10px; font-weight: 600; color: #1b5e20;">${pol.name}</div>
                     <div style="padding: 8px 10px;"><span style="display: inline-block; font-size: 10px; font-weight: 700; background: ${statusBg}; color: ${statusColor}; border-radius: 10px; padding: 1px 8px; text-transform: uppercase; letter-spacing: 0.03em;">${pol.status}</span></div>
                     <div style="padding: 8px 10px; font-weight: 600; color: var(--color-on-background); font-family: 'Outfit', sans-serif;">${pol.value || '—'}</div>
