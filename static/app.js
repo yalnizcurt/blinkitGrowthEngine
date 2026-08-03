@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const monitorCountEl = document.getElementById("metric-monitor-count");
     const nicheCountEl = document.getElementById("metric-niche-count");
 
-    const quadPromoteEl = document.getElementById("quad-promote-list");
-    const quadMonitorEl = document.getElementById("quad-monitor-list");
-    const quadNicheEl = document.getElementById("quad-niche-list");
-    const quadDropEl = document.getElementById("quad-drop-list");
+    const quadPromoteEl = document.getElementById("board-promote-list");
+    const quadMonitorEl = document.getElementById("board-monitor-list");
+    const quadNicheEl = document.getElementById("board-niche-list");
+    const quadDropEl = document.getElementById("board-drop-list");
 
     const promotedContainerEl = document.getElementById("promoted-hypotheses-container");
     const explorerTableBody = document.getElementById("explorer-table-body");
@@ -92,27 +92,77 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderMatrixQuadrants(promoted, monitor, niche, drop) {
-        renderQuadList(quadPromoteEl, promoted);
-        renderQuadList(quadMonitorEl, monitor);
-        renderQuadList(quadNicheEl, niche);
-        renderQuadList(quadDropEl, drop);
+        renderQuadList(quadPromoteEl, promoted, "promote");
+        renderQuadList(quadMonitorEl, monitor, "monitor");
+        renderQuadList(quadNicheEl, niche, "niche");
+        renderQuadList(quadDropEl, drop, "drop");
     }
 
-    function renderQuadList(container, items) {
+    function renderQuadList(container, items, type) {
         if (!items || items.length === 0) {
-            container.innerHTML = `<p class="quad-desc">No themes in this quadrant.</p>`;
+            container.innerHTML = `
+                <div style="padding: 16px 20px; text-align: center; color: var(--color-on-surface-variant); font-size: 13px; font-style: italic;">
+                    No opportunities currently satisfy this criterion.
+                </div>
+            `;
             return;
         }
 
-        container.innerHTML = items.map(t => `
-            <div class="quad-card" onclick="window.openThemeModal('${escapeQuotes(t.theme)}')">
-                <h4>${t.theme}</h4>
-                <div class="quad-card-meta">
-                    <span>Mentions: ${t.frequency}</span>
-                    <span>Prev: ${t.prevalence_score} | Sig: ${t.signal_strength_score}</span>
+        let badgeClass = "badge-gray";
+        let badgeText = "MONITOR";
+        let color = "var(--color-primary)";
+
+        if (type === "promote") {
+            badgeClass = "badge-green";
+            badgeText = "RECOMMENDED";
+            color = "#2e7d32";
+        } else if (type === "monitor") {
+            badgeClass = "badge-yellow";
+            badgeText = "MONITOR";
+            color = "#f59e0b";
+        } else if (type === "niche") {
+            badgeClass = "badge-blue";
+            badgeText = "NICHE";
+            color = "#4648d4";
+        } else if (type === "drop") {
+            badgeClass = "badge-red";
+            badgeText = "OUT OF SCOPE";
+            color = "#d32f2f";
+        }
+
+        container.innerHTML = items.map(t => {
+            const prevScore = t.prevalence_score || 0;
+            const sigScore = t.signal_strength_score || 0;
+            const prevPercent = (prevScore / 5.0) * 100;
+            const sigPercent = (sigScore / 5.0) * 100;
+
+            return `
+                <div class="board-row" onclick="window.openThemeModal('${escapeQuotes(t.theme)}')" style="display: grid; grid-template-columns: 2fr 100px 160px 160px 140px; gap: 12px; padding: 12px 20px; align-items: center; border-bottom: 1px solid var(--color-border); cursor: pointer; transition: background 0.15s ease; box-sizing: border-box;">
+                    <div style="font-weight: 600; color: var(--color-on-background); font-size: 13.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${t.theme}</div>
+                    <div style="text-align: center; font-weight: 600; color: var(--color-on-surface-variant); font-size: 13px;">${t.frequency}</div>
+                    
+                    <!-- Prevalence Progress Bar -->
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 80px; height: 6px; background: rgba(0,0,0,0.06); border-radius: 3px; overflow: hidden; flex-shrink: 0;">
+                            <div style="width: ${prevPercent}%; height: 100%; background: ${color}; border-radius: 3px;"></div>
+                        </div>
+                        <span style="font-weight: 600; font-family: monospace; font-size: 12px; color: var(--color-on-surface-variant);">${prevScore.toFixed(1)}</span>
+                    </div>
+
+                    <!-- Signal Strength Progress Bar -->
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 80px; height: 6px; background: rgba(0,0,0,0.06); border-radius: 3px; overflow: hidden; flex-shrink: 0;">
+                            <div style="width: ${sigPercent}%; height: 100%; background: ${color}; border-radius: 3px;"></div>
+                        </div>
+                        <span style="font-weight: 600; font-family: monospace; font-size: 12px; color: var(--color-on-surface-variant);">${sigScore.toFixed(1)}</span>
+                    </div>
+
+                    <div style="text-align: right;">
+                        <span class="quad-badge ${badgeClass}" style="text-transform: uppercase; letter-spacing: 0.04em; font-size: 10px; padding: 2px 8px;">${badgeText}</span>
+                    </div>
                 </div>
-            </div>
-        `).join("");
+            `;
+        }).join("");
     }
 
     function getRecommendationPolicies(p) {

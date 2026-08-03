@@ -141,55 +141,64 @@
                 </div>
             </section>
 
-            <!-- 2x2 Prioritization Matrix -->
+            <!-- Prioritization Board -->
             <section class="section-container" id="matrix">
                 <div class="section-header">
-                    <h2>2×2 Prioritization Matrix</h2>
-                    <p class="section-desc">Themes scored by Prevalence (mention volume & source breadth) vs Signal Strength (specificity & coherence).</p>
+                    <h2>🎯 Prioritization Board</h2>
+                    <p class="section-desc">Themes categorized by Prevalence (mention volume & source breadth) vs Signal Strength (specificity & coherence).</p>
                 </div>
 
-                <div class="matrix-grid">
-                    <!-- Q1: Top Right (Promote) -->
-                    <div class="quadrant quad-promote">
-                        <div class="quad-header">
+                <div class="prioritization-board" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-sm);">
+                    <!-- Board Column Headers -->
+                    <div style="display: grid; grid-template-columns: 2fr 100px 160px 160px 140px; gap: 12px; padding: 12px 20px; background: var(--color-surface-low); border-bottom: 1px solid var(--color-border); font-size: 11.5px; font-weight: 700; text-transform: uppercase; color: var(--color-on-surface-variant); letter-spacing: 0.05em;">
+                        <div>Theme</div>
+                        <div style="text-align: center;">Mentions</div>
+                        <div>Prevalence</div>
+                        <div>Signal Strength</div>
+                        <div style="text-align: right; padding-right: 10px;">Status</div>
+                    </div>
+
+                    <!-- Category: Recommended for Primary Research -->
+                    <div class="board-category">
+                        <div class="board-category-header" style="display: flex; align-items: center; gap: 8px; padding: 14px 20px; background: rgba(46,125,50,0.04); border-bottom: 1px solid var(--color-border);">
                             <span class="quad-badge badge-green">Recommended for Primary Research</span>
-                            <span class="quad-desc">High Prevalence & High Signal Strength</span>
+                            <span style="font-size: 12px; color: var(--color-on-surface-variant); font-weight: 500;">— High Prevalence • High Signal Strength</span>
                         </div>
-                        <div class="quad-content" id="quad-promote-list">
-                            <!-- Cards inserted via JS -->
+                        <div id="board-promote-list" class="board-rows-container">
+                            <!-- Rows rendered by JS -->
                         </div>
                     </div>
 
-                    <!-- Q2: Top Left (Monitor) -->
-                    <div class="quadrant quad-monitor">
-                        <div class="quad-header">
+                    <!-- Category: Monitor (Loud but Vague) -->
+                    <div class="board-category">
+                        <div class="board-category-header" style="display: flex; align-items: center; gap: 8px; padding: 14px 20px; background: rgba(245,158,11,0.04); border-bottom: 1px solid var(--color-border); border-top: 1px solid var(--color-border);">
                             <span class="quad-badge badge-yellow">Monitor (Loud but Vague)</span>
-                            <span class="quad-desc">High Prevalence & Low Signal Strength</span>
+                            <span style="font-size: 12px; color: var(--color-on-surface-variant); font-weight: 500;">— High Prevalence • Low Signal Strength</span>
                         </div>
-                        <div class="quad-content" id="quad-monitor-list">
-                            <!-- Cards inserted via JS -->
+                        <div id="board-monitor-list" class="board-rows-container">
+                            <!-- Rows rendered by JS -->
                         </div>
                     </div>
 
-                    <!-- Q3: Bottom Right (Niche) -->
-                    <div class="quadrant quad-niche">
-                        <div class="quad-header">
+                    <!-- Category: Niche but Credible -->
+                    <div class="board-category">
+                        <div class="board-category-header" style="display: flex; align-items: center; gap: 8px; padding: 14px 20px; background: rgba(70,72,212,0.04); border-bottom: 1px solid var(--color-border); border-top: 1px solid var(--color-border);">
                             <span class="quad-badge badge-blue">Niche but Credible</span>
-                            <span class="quad-desc">Low Prevalence & High Signal Strength</span>
+                            <span style="font-size: 12px; color: var(--color-on-surface-variant); font-weight: 500;">— Low Prevalence • High Signal Strength</span>
                         </div>
-                        <div class="quad-content" id="quad-niche-list">
-                            <!-- Cards inserted via JS -->
+                        <div id="board-niche-list" class="board-rows-container">
+                            <!-- Rows rendered by JS -->
                         </div>
                     </div>
 
-                    <!-- Q4: Bottom Left (Drop/Out of Scope) -->
-                    <div class="quadrant quad-drop">
-                        <div class="quad-header">
+                    <!-- Category: Out of Scope / Drop -->
+                    <div class="board-category">
+                        <div class="board-category-header" style="display: flex; align-items: center; gap: 8px; padding: 14px 20px; background: rgba(211,47,47,0.04); border-bottom: 1px solid var(--color-border); border-top: 1px solid var(--color-border);">
                             <span class="quad-badge badge-red">Out of Scope / Drop</span>
-                            <span class="quad-desc">Operational or low relevance to trial</span>
+                            <span style="font-size: 12px; color: var(--color-on-surface-variant); font-weight: 500;">— Operational or low relevance to trial</span>
                         </div>
-                        <div class="quad-content" id="quad-drop-list">
-                            <!-- Cards inserted via JS -->
+                        <div id="board-drop-list" class="board-rows-container">
+                            <!-- Rows rendered by JS -->
                         </div>
                     </div>
                 </div>
