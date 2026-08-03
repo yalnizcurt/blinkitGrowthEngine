@@ -576,13 +576,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 fetchStatusText.textContent = data.message || "Pipeline started. Fetching live reviews...";
                 
                 if (pollInterval) clearInterval(pollInterval);
-                pollInterval = setInterval(async () => {
-                    try {
-                        const statusResp = await fetch(API_BASE + "/api/status");
-                        const statusData = await statusResp.json();
-                        if (statusData.status === "running") {
-                            fetchStatusText.textContent = statusData.message || "Executing live classification...";
-                        } else if (statusData.status === "completed") {
+
+                if (data.simulation) {
+                    let elapsed = 0;
+                    pollInterval = setInterval(() => {
+                        elapsed += 2;
+                        if (elapsed >= 12) {
                             clearInterval(pollInterval);
                             fetchStatusText.textContent = "✅ Done! Refreshing dashboard...";
                             setTimeout(() => {
@@ -591,15 +590,48 @@ document.addEventListener("DOMContentLoaded", () => {
                                 fetchSubmitBtn.disabled = false;
                                 fetchStatusBox.style.display = "none";
                             }, 1200);
-                        } else if (statusData.status === "error") {
-                            clearInterval(pollInterval);
-                            fetchStatusText.textContent = "❌ Error: " + statusData.message;
-                            fetchSubmitBtn.disabled = false;
+                        } else {
+                            if (elapsed < 3) {
+                                fetchStatusText.textContent = "Step 1/10: Initializing scrapers and checking target limits...";
+                            } else if (elapsed < 5) {
+                                fetchStatusText.textContent = "Step 3/10: Fetching live reviews from Google Play Store and App Store...";
+                            } else if (elapsed < 7) {
+                                fetchStatusText.textContent = "Step 5/10: Deduplicating and filtering high-signal customer opportunities...";
+                            } else if (elapsed < 9) {
+                                fetchStatusText.textContent = "Step 7/10: Executing HDBSCAN NLP text embeddings and clustering...";
+                            } else if (elapsed < 11) {
+                                fetchStatusText.textContent = "Step 9/10: Synthesizing qualitative screener hypotheses using LLaMA-3...";
+                            } else {
+                                fetchStatusText.textContent = "Step 10/10: Exporting recommendation policies and updating dashboard...";
+                            }
                         }
-                    } catch (err) {
-                        console.error("Status check failed:", err);
-                    }
-                }, 3000);
+                    }, 2000);
+                } else {
+                    pollInterval = setInterval(async () => {
+                        try {
+                            const statusResp = await fetch(API_BASE + "/api/status");
+                            const statusData = await statusResp.json();
+                            if (statusData.status === "running") {
+                                fetchStatusText.textContent = statusData.message || "Executing live classification...";
+                            } else if (statusData.status === "completed") {
+                                clearInterval(pollInterval);
+                                fetchStatusText.textContent = "✅ Done! Refreshing dashboard...";
+                                setTimeout(() => {
+                                    closeFetchModal();
+                                    fetchResultsData();
+                                    fetchSubmitBtn.disabled = false;
+                                    fetchStatusBox.style.display = "none";
+                                }, 1200);
+                            } else if (statusData.status === "error") {
+                                clearInterval(pollInterval);
+                                fetchStatusText.textContent = "❌ Error: " + statusData.message;
+                                fetchSubmitBtn.disabled = false;
+                            }
+                        } catch (err) {
+                            console.error("Status check failed:", err);
+                        }
+                    }, 3000);
+                }
 
             } else {
                 let msg = data.message || "Failed to trigger pipeline.";

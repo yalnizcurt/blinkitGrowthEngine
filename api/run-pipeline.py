@@ -1,10 +1,8 @@
-import time
-import json
 from http.server import BaseHTTPRequestHandler
+import json
 from pathlib import Path
 
 RATE_LIMIT_FILE = Path("/tmp/rate_limits.json")
-STATUS_FILE = Path("/tmp/pipeline_status.json")
 
 class handler(BaseHTTPRequestHandler):
     def do_OPTIONS(self):
@@ -50,18 +48,6 @@ class handler(BaseHTTPRequestHandler):
         except Exception:
             pass
 
-        # Write running status to status file
-        status_data = {
-            "status": "running",
-            "start_time": time.time(),
-            "client_ip": client_ip
-        }
-        try:
-            with open(STATUS_FILE, "w", encoding="utf-8") as f:
-                f.write(json.dumps(status_data))
-        except Exception:
-            pass
-
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
         self.send_header("Access-Control-Allow-Origin", "*")
@@ -69,6 +55,7 @@ class handler(BaseHTTPRequestHandler):
 
         response = {
             "status": "started",
+            "simulation": True,
             "message": f"Pipeline simulation initiated successfully ({count + 1}/4 fetches used)."
         }
         self.wfile.write(json.dumps(response).encode("utf-8"))
