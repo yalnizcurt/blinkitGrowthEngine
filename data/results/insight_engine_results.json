@@ -1,163 +1,378 @@
 {
   "metadata": {
-    "total_feedback_analyzed": 718,
-    "total_themes_discovered": 3,
-    "promoted_research_questions_count": 2,
-    "out_of_scope_themes_count": 0,
+    "total_feedback_analyzed": 1602,
+    "total_themes_discovered": 7,
+    "promoted_research_questions_count": 1,
+    "out_of_scope_themes_count": 2,
     "coverage_warning": ""
   },
   "themes": [
     {
-      "cluster_id": 8,
+      "cluster_id": 7,
       "theme": "Low Trust in High-Value Purchases",
-      "primary_issue": "Refunds / Returns",
+      "primary_issue": "quality",
       "research_relevance": "DIRECT",
-      "evidence_summary": "Customers reported denied return requests on non-grocery items and missing refund protection.",
+      "evidence_summary": "Customers received damaged or low-quality products, leading to frustration and loss of trust.",
       "observed_facts": [
-        "Return request rejected on non-working earphone",
-        "No refund given for defective non-grocery product"
+        "Received damaged or low-quality products",
+        "Poor delivery experience"
       ],
-      "observed_behavior": "Users restrict purchases to low-risk grocery staples and avoid unfamiliar non-grocery categories.",
-      "behavioral_mechanism": "The perceived financial downside of a failed purchase outweighs the expected utility of trying a new category.",
-      "underlying_need": "Financial safety and guaranteed post-purchase protection.",
-      "barrier_or_driver": "Weak trust in post-purchase refund policies for non-staple categories.",
+      "observed_behavior": "Customers are frustrated and lose trust in the platform due to poor product quality.",
+      "behavioral_mechanism": "This poor product quality has a direct impact on customer trust and loyalty.",
+      "underlying_need": "Customers need reliable and high-quality products.",
+      "barrier_or_driver": "Poor product quality is a significant barrier to customer satisfaction.",
       "business_impact": "High",
-      "confidence": "Medium",
-      "confidence_explanation": "Medium confidence because:\n- Observed across 3 sources (play_store, app_store, reddit) in 69 customer reviews.\n- Cluster represents a specific customer problem with moderate signal strength.\n- Contradictory evidence check: 16 opposing reviews identified in dataset.\n- Requires qualitative user interview validation for broader category trial impact.",
+      "confidence": "High",
+      "confidence_explanation": "High confidence because:\n- Observed consistently across 3 sources (reddit, play_store, app_store).\n- 224 supporting customer reviews describe the same behavioral mechanism using consistent language.\n- Pure cluster representing one clear customer problem.\n- Contradictory evidence check: 0 opposing reviews identified in dataset.",
       "signal_strength": "High",
-      "customer_journey_stage": "Evaluation",
+      "customer_journey_stage": "Post-purchase",
       "alternative_explanations": [
-        "Users prefer specialist e-commerce platforms for electronics."
+        "Customers may have received damaged products due to shipping issues"
       ],
-      "contradictory_evidence": "Contradictory evidence identified in dataset: 16 reviews report positive product quality or satisfactory support (e.g. \"great service nice paking...\").",
+      "contradictory_evidence": "Contradictory evidence identified in dataset: 46 reviews report positive product quality or satisfactory support (e.g. \"excellent service by Blinkit. Especially for medicines. it provides doctor's consultation ...\").",
       "product_opportunity": "Increase customer confidence when purchasing high-value or unfamiliar products.",
       "research_hypothesis": "If customers trust that high-value products can be returned without financial loss, they will be more willing to purchase electronics and premium non-grocery products.",
       "research_questions": [
-        "Tell me about the last time you decided not to buy a product outside your usual categories on Blinkit.",
-        "What specific return assurances did you look for before deciding?"
+        "How does product quality impact customer satisfaction?",
+        "What are the root causes of poor product quality?"
       ],
-      "why_these_quotes_matter": "Quotes explicitly state customer hesitation to risk money on non-perishable goods due to rejected refunds.",
+      "why_these_quotes_matter": "These quotes highlight the importance of product quality in customer satisfaction and loyalty.",
       "assumptions": [
-        "Reviews reflect actual purchasing hesitation."
+        "Customers value high-quality products",
+        "Poor product quality leads to customer churn"
       ],
-      "reasoning_trace": "Return request rejected on non-working earphone ↓ Post-Purchase Return Risk ↓ High Financial Downside Fear ↓ Avoid Electronics & Non-Grocery Items ↓ Reduced Category Exploration",
+      "reasoning_trace": "Received damaged or low-quality products ↓ Repeated negative quality experiences across sources ↓ Eroded platform trust for non-grocery items ↓ Hesitation to purchase unfamiliar categories (hypothesis — requires validation)",
       "out_of_scope_reason": "",
       "example_quotes": [
-        "Not user friendly options they are providing - If I order something for someone else, how can I raise a return when only the live camera option is available? There should be an option to upload an existing photo.",
-        "Recently, I bought a card reader hub for ₹900+, but it didn't work. I returned it, and they said the refund would be processed within 5 days. It's been over a month now, and I still haven't received my refund. I feel like I was scammed. Don't blindly trust Blinkit's refund promises.",
-        "Ordered a bouquet. Got one full of insects - I ordered a bouquet which was delivered in nice packaging. On touching the flowers I noticed so many little insects crawling inside it. My skin started itching and I am not allergic to any flowers. When I tried to reach customer support, they just kept closing the chat - no conversation, no attempted resolution, no reverse pickup or refund! Not even an apology."
+        "I ordered charger with cable but after receiving the product the cable quality was very bad .. after complaing with customer support after 2 ,3 attempts the customer support executive denied to help me Telling this isn't their fault so who's responsible for those cheap product sold by this apps.. very frustrated",
+        "verify - products given sometimes comes in very bad condition and many times i had got stale and seal broken products nd expired 1 too just recheck everything they deliver because 1 day delay can close the help window and we have to suffer with money wasted and damaged product",
+        "Fraud. These people are cheaters. I ordered Mallika mangoes for our lunch break. Mallika is a premimum quality of mango. When we received them, they were local dushehri mangoes and when eating all the mangoes that we cut were rotten and soiled. We kept them aside and ended up buying mangoes from local vendors. When i tried to contact customer care there was a chat bot and it was not giving me an option to even upload photos of the damaged and wrong products. Frhstrated i uninstalled d app"
       ],
-      "frequency": 69,
+      "frequency": 224,
       "prevalence_score": 5.0,
+      "signal_strength_score": 4.5,
+      "sources": [
+        "reddit",
+        "play_store",
+        "app_store"
+      ],
+      "sentiment": "positive (36.0% negative, 57.0% positive, 5.0% neutral)",
+      "action": "Promote to Suggested Research Question",
+      "status": "In Scope",
+      "suggested_insight": "Customers who experience poor product quality in a high-value purchase are less likely to purchase from a new category on the platform, due to a lack of trust in the product quality.",
+      "suggested_research_question": "Can you walk me through a recent purchase you made on our platform where you felt the product quality was not up to par? What did you do after that experience?"
+    },
+    {
+      "cluster_id": 3,
+      "theme": "Inconsistent Delivery Timeliness",
+      "primary_issue": "Delivery",
+      "research_relevance": "INDIRECT",
+      "evidence_summary": "Customers are experiencing issues with delivery partners and customer care.",
+      "observed_facts": [
+        "Delivery partner issues",
+        "Customer care unresponsive"
+      ],
+      "observed_behavior": "Customers are expressing frustration with delivery experiences.",
+      "behavioral_mechanism": "May contribute to general order hesitation: This operational issue has insufficient evidence linking it to category exploration. (Requires qualitative validation for category trial impact).",
+      "underlying_need": "Reliable and efficient delivery of products.",
+      "barrier_or_driver": "Delivery issues",
+      "business_impact": "Medium",
+      "confidence": "Medium",
+      "confidence_explanation": "Medium confidence because:\n- Observed across 3 sources (play_store, app_store, reddit) in 275 customer reviews.\n- Cluster represents a specific customer problem with moderate signal strength.\n- Contradictory evidence check: 0 opposing reviews identified in dataset.\n- Requires qualitative user interview validation for broader category trial impact.",
+      "signal_strength": "Medium",
+      "customer_journey_stage": "Post-Purchase",
+      "alternative_explanations": [
+        "Delivery issues are a one-time problem"
+      ],
+      "contradictory_evidence": "Contradictory evidence identified in dataset: 145 reviews report positive, fast delivery experiences (e.g. \"Good Discount and fast delivery easy to selected item 👌...\"). This indicates delivery friction is localized rather than platform-wide.",
+      "product_opportunity": "Increase customer confidence in delivery window predictability.",
+      "research_hypothesis": "No research hypothesis generated. Current evidence suggests this issue may influence overall platform experience, but does not establish a credible link to category exploration. Recommend validating through exploratory interviews.",
+      "research_questions": [
+        "How do delivery issues affect customer satisfaction and loyalty?"
+      ],
+      "why_these_quotes_matter": "These quotes highlight the importance of reliable and efficient delivery in maintaining customer satisfaction and loyalty.",
+      "assumptions": [
+        "Delivery issues are a significant contributor to customer dissatisfaction."
+      ],
+      "reasoning_trace": "Delivery partner issues ↓ Fulfillment Speed Variance ↓ Unpredictable Delivery Windows ↓ General Platform Order Hesitation ↓ Category Trial Indirect Impact",
+      "out_of_scope_reason": "",
+      "example_quotes": [
+        "Very bad 😞 delivery partner",
+        "If someone is ordering items that require temperature control, they should be watching the order in the app. Telling the front desk to decline the order so the delivery driver can steal the groceries is terrible advice that will work out far worse for the property and the driver.",
+        "fast delivery polite Behavior of staff all valid date items salutes to delivery staff who work even in heavy Rain"
+      ],
+      "frequency": 275,
+      "prevalence_score": 5.0,
+      "signal_strength_score": 3.5,
+      "sources": [
+        "play_store",
+        "app_store",
+        "reddit"
+      ],
+      "sentiment": "negative (43.3% negative, 37.1% positive, 18.6% neutral)",
+      "action": "Monitor (Loud but vague)",
+      "status": "In Scope",
+      "suggested_insight": "Inconsistent delivery timeliness may deter customers from attempting to purchase from a new category, as they may be hesitant to try new items due to concerns about timely delivery.",
+      "suggested_research_question": "Can you walk me through a recent time when you were considering trying a new product or category, but ultimately decided not to? What factors influenced your decision?"
+    },
+    {
+      "cluster_id": 6,
+      "theme": "Excessive Fees and Surge Charges",
+      "primary_issue": "Payment Issues",
+      "research_relevance": "INDIRECT",
+      "evidence_summary": "Customers are dissatisfied with surge charges and fees, which may deter them from exploring new categories.",
+      "observed_facts": [
+        "Surge charges are applied without delivery",
+        "Delivery charges are higher than expected"
+      ],
+      "observed_behavior": "Customers are hesitant to purchase due to unexpected charges",
+      "behavioral_mechanism": "May contribute to general order hesitation: This operational issue has insufficient evidence linking it to category exploration. (Requires qualitative validation for category trial impact).",
+      "underlying_need": "Customers want to avoid unexpected costs when exploring new categories",
+      "barrier_or_driver": "Surge charges and fees",
+      "business_impact": "Medium",
+      "confidence": "Medium",
+      "confidence_explanation": "Medium confidence because:\n- Observed across 3 sources (play_store, app_store, reddit) in 129 customer reviews.\n- Cluster represents a specific customer problem with moderate signal strength.\n- Contradictory evidence check: 14 opposing reviews identified in dataset.\n- Requires qualitative user interview validation for broader category trial impact.",
+      "signal_strength": "Medium",
+      "customer_journey_stage": "Pre-Purchase",
+      "alternative_explanations": [
+        "Customers may be price-sensitive in general"
+      ],
+      "contradictory_evidence": "Contradictory evidence identified in dataset: 14 reviews report smooth checkout or successful COD/UPI payments (e.g. \"3rd class coustomer service not available on this plat form gusy you make sure order will ...\").",
+      "product_opportunity": "Increase customer price transparency and cost predictability at checkout.",
+      "research_hypothesis": "No research hypothesis generated. Current evidence suggests this issue may influence overall platform experience, but does not establish a credible link to category exploration. Recommend validating through exploratory interviews.",
+      "research_questions": [
+        "How do customers perceive surge charges and fees?",
+        "Do customers adjust their purchasing behavior due to unexpected charges?"
+      ],
+      "why_these_quotes_matter": "These quotes highlight the importance of transparent and fair pricing in the customer purchasing decision.",
+      "assumptions": [
+        "Customers are sensitive to unexpected charges",
+        "Surge charges and fees are a significant barrier to category exploration"
+      ],
+      "reasoning_trace": "Surge charges are applied without delivery ↓ Added Transaction Cost ↓ General Order Margin Friction ↓ Potential Impact on Basket Building ↓ Category Trial Indirect Impact",
+      "out_of_scope_reason": "",
+      "example_quotes": [
+        "Only keep away the surge costs!",
+        "good service but should not take surge charge",
+        "delivery charges is little higher, after purchasing item worth above ₹600"
+      ],
+      "frequency": 129,
+      "prevalence_score": 5.0,
+      "signal_strength_score": 3.5,
+      "sources": [
+        "play_store",
+        "app_store",
+        "reddit"
+      ],
+      "sentiment": "negative (45.0% negative, 34.1% positive, 20.2% neutral)",
+      "action": "Monitor (Loud but vague)",
+      "status": "In Scope",
+      "suggested_insight": "Excessive fees and surge charges may deter customers from purchasing from a new category, potentially leading to a decrease in category trial rates.",
+      "suggested_research_question": "Can you walk me through a recent time when you considered trying a new product or service, but ultimately decided not to? What factors influenced your decision?"
+    },
+    {
+      "cluster_id": 5,
+      "theme": "Payment Uncertainty at Checkout",
+      "primary_issue": "Payment",
+      "research_relevance": "INDIRECT",
+      "evidence_summary": "Customers experienced issues with payment options, including COD and online payments.",
+      "observed_facts": [
+        "COD option not honored by delivery personnel",
+        "Delivery personnel insisted on online payment"
+      ],
+      "observed_behavior": "Customers were unable to complete orders due to payment issues.",
+      "behavioral_mechanism": "May contribute to general order hesitation: Payment issues create friction, potentially deterring customers from exploring new categories. (Requires qualitative validation for category trial impact).",
+      "underlying_need": "Easy and reliable payment options for online orders.",
+      "barrier_or_driver": "Payment issues",
+      "business_impact": "Medium",
+      "confidence": "Medium",
+      "confidence_explanation": "Medium confidence because:\n- Observed across 3 sources (play_store, app_store, reddit) in 61 customer reviews.\n- Cluster represents a specific customer problem with moderate signal strength.\n- Contradictory evidence check: 14 opposing reviews identified in dataset.\n- Requires qualitative user interview validation for broader category trial impact.",
+      "signal_strength": "Medium",
+      "customer_journey_stage": "Ordering",
+      "alternative_explanations": [
+        "Technical issues with payment gateway"
+      ],
+      "contradictory_evidence": "Contradictory evidence identified in dataset: 14 reviews report smooth checkout or successful COD/UPI payments (e.g. \"3rd class coustomer service not available on this plat form gusy you make sure order will ...\").",
+      "product_opportunity": "Ensure predictable checkout payment options.",
+      "research_hypothesis": "No research hypothesis generated. Current evidence suggests this issue may influence overall platform experience, but does not establish a credible link to category exploration. Recommend validating through exploratory interviews.",
+      "research_questions": [
+        "How do payment issues impact customer satisfaction and category exploration?"
+      ],
+      "why_these_quotes_matter": "These quotes highlight the importance of reliable payment options in the customer journey.",
+      "assumptions": [
+        "Customers value ease of payment when making online orders."
+      ],
+      "reasoning_trace": "COD option not honored by delivery personnel ↓ Checkout Payment Option Friction ↓ Friction During First Non-Grocery Purchase ↓ Abandon Cart at Checkout ↓ Reduced Category Trial",
+      "out_of_scope_reason": "",
+      "example_quotes": [
+        "Your service is extremely disappointing. I placed my order using the Cash on Delivery (COD) option because I currently do not have online or UPI payment available. However, when the delivery person arrived, he insisted that I pay online. When I told him I couldn't, he asked me to cancel the order, saying that he would not deliver it unless I made an online payment. If Cash on Delivery is not actually available, then why do you providthe COD option while placing the order?",
+        "please order not placed please on cod",
+        "Best Cash Back Credit Card in 2025 Recommends by Reddit? I finally applied for a new cash back card this week after realizing how much I was leaving on the table using my debit card for everything. I do most of my spending on groceries, gas, and food delivery, so I figured I could at least get something back for all of it. I spent a couple hours comparing offers and reading recent posts, but everything felt kind of outdated or vague. I ended up going with the Wells Fargo Active Cash card because it was offering a flat 2% on everything and had a sign-up bonus if you spent a certain amount in the first few months. Got approved right away, and I’ve already used it for a grocery run, takeout, and gas, all things I’d be spending on anyway. The app is clean and lets me track rewards in real time, which is satisfying to check. I was originally looking at rotating category cards too, like the Discover It, but I didn’t feel like tracking what category was active every three months. Flat rate just felt simpler for now. Curious if anyone else found something better recently? Especially interested if there’s a newer card that beats the 2% or adds perks like travel protection or cell phone coverage. Trying to see if I picked the right one or missed something better."
+      ],
+      "frequency": 61,
+      "prevalence_score": 4.0,
       "signal_strength_score": 4.5,
       "sources": [
         "play_store",
         "app_store",
         "reddit"
       ],
-      "sentiment": "negative (66.7% negative, 21.7% positive, 10.1% neutral)",
-      "action": "Promote to Suggested Research Question",
+      "sentiment": "negative (55.7% negative, 24.6% positive, 18.0% neutral)",
+      "action": "Monitor (Loud but vague)",
       "status": "In Scope",
-      "suggested_insight": "If customer confidence in product quality and fulfillment reliability is increased, then customers will be more willing to purchase from new product categories.",
-      "suggested_research_question": "Walk me through your decision process when considering purchases outside your regular order list."
+      "suggested_insight": "Payment uncertainty at checkout may deter customers from exploring new categories, as evidenced by customers expressing frustration with payment options and hesitation to place orders when payment methods are unclear or unavailable.",
+      "suggested_research_question": "Can you walk me through a recent time when you were shopping online and encountered a payment issue or uncertainty at checkout? How did you resolve the issue, and did it affect your decision to continue shopping or explore other categories?"
     },
     {
-      "cluster_id": 6,
-      "theme": "Assortment Gaps in Long-Tail Categories",
-      "primary_issue": "Assortment",
-      "research_relevance": "DIRECT",
-      "evidence_summary": "Customers reported unavailability of specific long-tail non-grocery products upon searching.",
+      "cluster_id": 0,
+      "theme": "Coupon Redemption Failure",
+      "primary_issue": "Coupon/Discount Issue",
+      "research_relevance": "INDIRECT",
+      "evidence_summary": "Customers experienced issues with coupon redemption, which may impact their willingness to explore new categories.",
       "observed_facts": [
-        "Requested long-tail non-grocery product was unavailable",
-        "Search yields out-of-stock results"
+        "Coupon was applied exactly as in previous successful orders",
+        "Coupon was not recorded due to app/server/network issue"
       ],
-      "observed_behavior": "Users assume non-grocery categories are limited and stop searching.",
-      "behavioral_mechanism": "Perceived friction in finding specific non-grocery items leads customers to assume Blinkit only carries daily essentials.",
-      "underlying_need": "Deep assortment availability for non-staple goods.",
-      "barrier_or_driver": "Perceived lack of product depth in non-grocery categories.",
-      "business_impact": "High",
-      "confidence": "High",
-      "confidence_explanation": "High confidence because:\n- Observed consistently across 3 sources (reddit, play_store, app_store).\n- 103 supporting customer reviews describe the same behavioral mechanism using consistent language.\n- Pure cluster representing one clear customer problem.\n- Contradictory evidence check: 0 opposing reviews identified in dataset.",
+      "observed_behavior": "Customers are unable to redeem coupons, leading to frustration and potential loss of trust.",
+      "behavioral_mechanism": "May contribute to general order hesitation: This operational issue has insufficient evidence linking it to category exploration. (Requires qualitative validation for category trial impact).",
+      "underlying_need": "Effortless and seamless shopping experience",
+      "barrier_or_driver": "Coupon redemption failure",
+      "business_impact": "Medium",
+      "confidence": "Low",
+      "confidence_explanation": "Low confidence because:\n- Derived from a small sample of 3 customer reviews.\n- Requires primary qualitative interview screener validation to confirm behavioral impact.",
       "signal_strength": "Medium",
-      "customer_journey_stage": "Discovery",
+      "customer_journey_stage": "Ordering",
       "alternative_explanations": [
-        "Customers prefer specialist book/electronics retailers."
+        "Technical issues are common and not unique to coupon redemption"
+      ],
+      "contradictory_evidence": "No contradictory evidence was found after explicitly reviewing all 1,602 dataset reviews.",
+      "product_opportunity": "Increase customer confidence across general platform interactions.",
+      "research_hypothesis": "No research hypothesis generated. Current evidence suggests this issue may influence overall platform experience, but does not establish a credible link to category exploration. Recommend validating through exploratory interviews.",
+      "research_questions": [
+        "How does the coupon redemption process impact customer satisfaction and loyalty?"
+      ],
+      "why_these_quotes_matter": "These quotes highlight the importance of a seamless coupon redemption process in maintaining customer trust and satisfaction.",
+      "assumptions": [
+        "Assumption 1: Coupon redemption failure is a significant issue that affects customer satisfaction and loyalty."
+      ],
+      "reasoning_trace": "Coupon applied as in previous orders ↓ Discount not honoured by system ↓ Perceived transaction unfairness ↓ Eroded platform trust (hypothesis — requires validation)",
+      "out_of_scope_reason": "",
+      "example_quotes": [
+        "I lost only ₹72.50 due to the non-issuance of a cashback, but Blinkit’s lack of accountability is far more disappointing. I applied the AIRTELAXIS10 coupon exactly as I had on previous successful orders, but it was apparently not recorded due to an app/server/network issue. Despite weeks of follow-ups, Blinkit simply repeated that the coupon wasn’t applied and refused to help. Customer support should solve problems, not just quote system records. Uninstalling the app and switching to other apps.",
+        "Ongoing protest contribution stopped - Your team is full of coward and specially you , on protest you didn’t server food , thousand of students starving there . Shame on you.",
+        "Bug in app - Axisneo offer was being displayed but not getting applied"
+      ],
+      "frequency": 3,
+      "prevalence_score": 1.5,
+      "signal_strength_score": 4.5,
+      "sources": [
+        "play_store",
+        "app_store"
+      ],
+      "sentiment": "negative (100.0% negative, 0.0% positive, 0.0% neutral)",
+      "action": "Monitor (Loud but vague)",
+      "status": "In Scope",
+      "suggested_insight": "Coupon redemption failure may lead to a decrease in purchase from a new category due to the perceived lack of accountability and reliability in resolving coupon-related issues, as evidenced by customers' frustration with the inability to apply valid coupons and the lack of support from customer service.",
+      "suggested_research_question": "Can you walk me through a recent time when you encountered an issue with a coupon or discount on our platform, and how did you feel about the experience?"
+    },
+    {
+      "cluster_id": 4,
+      "theme": "General Usability & Miscellaneous Feedback",
+      "primary_issue": "General UX",
+      "research_relevance": "OUT_OF_SCOPE",
+      "evidence_summary": "General app usability comments, customer service remarks, or minor feature requests unrelated to core trial objectives.",
+      "observed_facts": [
+        "Unclassified app experience comments",
+        "Discussions around promotions and general usability"
+      ],
+      "observed_behavior": "Customers mention unrelated app features or general satisfaction.",
+      "behavioral_mechanism": "This operational/miscellaneous issue has insufficient evidence linking it to category exploration.",
+      "underlying_need": "General platform stability and standard features.",
+      "barrier_or_driver": "N/A",
+      "business_impact": "None",
+      "confidence": "Medium",
+      "confidence_explanation": "Medium confidence because:\n- Observed across 3 sources (play_store, app_store, reddit) in 896 customer reviews.\n- Cluster represents a specific customer problem with moderate signal strength.\n- Contradictory evidence check: 0 opposing reviews identified in dataset.\n- Requires qualitative user interview validation for broader category trial impact.",
+      "signal_strength": "None",
+      "customer_journey_stage": "Evaluation",
+      "alternative_explanations": [],
+      "contradictory_evidence": "No contradictory evidence was found after explicitly reviewing all 1,602 dataset reviews.",
+      "product_opportunity": "Address general app feedback via standard product lifecycle.",
+      "research_hypothesis": "No research hypothesis generated. Current evidence suggests this issue may influence overall platform experience, but does not establish a credible link to category exploration.",
+      "research_questions": [],
+      "why_these_quotes_matter": "Helpful for routing general issues to core app teams but out of scope for discovery.",
+      "assumptions": [],
+      "reasoning_trace": "Operational Issue -> Out of Scope for Category Discovery",
+      "out_of_scope_reason": "Quotes do not mention category exploration or new product discovery.",
+      "example_quotes": [
+        "No offers and no discount - No offers and coupon also not given campare to other blinkit waste",
+        "bahut hi badhiya aap hai bhaiya jisse jab chahe kabhi bhi kuch bhi order kr sakte hai",
+        "User experience is good👍"
+      ],
+      "frequency": 896,
+      "prevalence_score": 5.0,
+      "signal_strength_score": 3.5,
+      "sources": [
+        "play_store",
+        "app_store",
+        "reddit"
+      ],
+      "sentiment": "positive (22.1% negative, 70.0% positive, 7.9% neutral)",
+      "action": "Out of Scope for Research Objective",
+      "suggested_insight": "General usability remarks do not directly impact category blindness hypotheses.",
+      "suggested_research_question": "Can you share your general experience using the Blinkit app and any general feature requests you have?",
+      "status": "Out of Scope"
+    },
+    {
+      "cluster_id": 1,
+      "theme": "Assortment Gaps in Long-Tail Categories",
+      "primary_issue": "Product Options",
+      "research_relevance": "DIRECT",
+      "evidence_summary": "Customers want more healthy options to be available on the platform.",
+      "observed_facts": [
+        "Customer wants healthy options",
+        "Healthy options are not available"
+      ],
+      "observed_behavior": "Customers are looking for more options to purchase",
+      "behavioral_mechanism": "This operational issue has insufficient evidence linking it to category exploration.",
+      "underlying_need": "Customers want to meet their dietary needs",
+      "barrier_or_driver": "Limited product options",
+      "business_impact": "High",
+      "confidence": "Low",
+      "confidence_explanation": "Low confidence because:\n- Derived from a small sample of 14 customer reviews.\n- Requires primary qualitative interview screener validation to confirm behavioral impact.",
+      "signal_strength": "Medium",
+      "customer_journey_stage": "Exploration",
+      "alternative_explanations": [
+        "Customers may not be aware of available options"
       ],
       "contradictory_evidence": "No contradictory evidence was found after explicitly reviewing all 1,602 dataset reviews.",
       "product_opportunity": "Increase customer confidence that desired products will be available when shopping across new categories.",
       "research_hypothesis": "If customers feel confident that niche long-tail items are stocked reliably, they will be more willing to search and purchase from new product categories.",
-      "research_questions": [
-        "When searching for products outside groceries on Blinkit, how do you evaluate whether the selection is adequate?"
-      ],
-      "why_these_quotes_matter": "Quotes demonstrate search abandonment due to perceived long-tail assortment gaps.",
-      "assumptions": [],
-      "reasoning_trace": "Requested long-tail non-grocery product was unavailable ↓ Search Result Abandonment ↓ Perception of Grocery-Only Inventory ↓ Stop Evaluating Non-Staple Items ↓ Reduced Category Trial",
-      "out_of_scope_reason": "",
-      "example_quotes": [
-        "storage and re-delivery options i'm a uni student who has 1.5 weeks between my dorm lease ending and my apartment lease starting. probably going to go camp in eastern europe or with a friend in wales for that period or crash at a friend's (her flat is in the north and my dorm and future apartment are near one another in the south) i'm looking into storage and delivery options and wanted advice on the most lucrative one! all the services i've found charge by the month but since i only need 1.5 weeks i'm hoping to cut costs in some way. i get that it's cheaper per month the longer you store for but i'm literally only using 40% of the time. also wondering if it makes sense to just pay for a service that collects and delivers your stuff since i won't have anyone helping me to move. on the other hand the cost of a 7 seater uber is around £20 one way since i'm moving literally a 10 minute drive away. any thoughts on how i can maximise cost and efficiency? so far i've gotten a quote from box co which amounts to £180.",
-        "My wife sucks. Story time? So, my wife (33)and I (31m)have been together for 15 years, she's my high school sweetheart. We have a 5yo son (that I adore). For 15 years it seems like I've been suck like Sisyphus, pushing a boulder (my wife) that will not take hold. I've always been very chill, let her have all the freedom she needed, and because of her past trauma, I may have been too indulgent. She can't work. Like, at all. After a few years together I pushed her hard so she would work at macdo like I was at the time (a different one though) and she did, but I was like I was sending her to war, and I worked in two different macodnals for 1 total of 10 years (ouch) so I know what it's like. My wife is physically weak, like, surprisingly so, she isn't fat, but she can't run to save her life, and my son easily overpower her. But that's not why she sucks, that's just information about her. She is ALWAYS in a state of exhaustion, and I'm not saying she's faking it, but at some point in 15 years you try to do something about it, she could have endometriosis and we wouldn't know because, she just won't check (and we're in France so she has 0 reasons not to, unless it's another trauma sequel and... Does it start to look like a minefield? Yeah, that's what it is.) I tried to be my very best for her, I treated her well, made sure to be listening and making her issues always my first consideration, I wanted to do right by her. So, we've had a few problems with money, not because we were spending or anything, but because one salary is TIGHT, especially if I don't earn a lot at all, France's minimum. After rent it was a struggle. There was a point where we had to move around constantly after my son was born, and I tried so hard to be the breadwinner they needed me to be. He was born at the start of COVID, so you can understand how fun it was to hustle at that time. After a very toxic cohabitation with my mom (I still took my wife's side, always) the rent jumped an enormous 200€ and we had no choice but to move to her mom's house, really close to being in the street. She had gotten back to work after 2 years of parental leave, and a really hard pregnancy / delivery combo that nearly killed her. As for me, work is hell, and I was still unmedicated for my ADHD at that time, I was struggling, but I pushed forward. I really though I was making something to be proud of. But nope, as soon as we move to her mom's house with all the challenge that came with, she announces that she's having a depression and would like to quit working for a while. I of course, agree, but there goes putting money on the side, so need to make more money, I quit my jobs and find a better paying one (with harsh work condition, like starting a 5am) ... Do keep in mind I'm not forgetting my son, I'm being a good husband and a capable father. I reach the end of my rope, and can't do the heavily physical job well enough, and I'm let go. Which devastated me, and I wasn't able to just go back where I went, burnt that bridge. And then a suspicion I had before moving took form, she had been cheating on me all this time, even before we moved. I had been in denial for a long time. I was also paying for her psychologist which is hilarious. Si this situation sucks right? I'm unloved, out of a job and living at her mother's house, of course I tell her how much she's hurting me with this, she doesn't care, and she actually tell me she can throw me out whenever... Which wasn't as cold as it was insane to say to the father of your child who did his best for you... So I suck it up, luckily, her mother likes me and she for one saw me for who I was, so she didn't kick me out. Also I asked her, what I did wrong for getting that treatment. She said that It wasn't my fault at all, she just wanted him because he was more her type skin tone wise... He also treated her horribly, (not violent) but like, at some point, she kinda deserve it. Like she was ranting to ME about her shitty fling, wow, she definitely had bigger balls than me. I'm thinking about getting divorced, but that wouldn't be a positive financially. And that's really the point where I've been WAY too nice for too long, I get a job, I secure an appart... I tell her I don't need her worthless love, but I still need someone to send my son to school, and pick him up, of course I tell her in no uncertain terms that it was over, that she could even keep her bottom if it makes her happy, as long as he never comes to my home, and never see my son. I even did her another favor and didn't tell my mother/father, or my close friends (only two out of 6, because there was no way I could keep this hidden from decades long friends, real ones) they also didn't talk to anybody about this. So the current situation was. She was a stay at home mom, our son is at school all day, I know what housekeeping demands, and she just doesn't do it, she MIGHT pick up letters and do a load of laundry, that's what she does all day, she watches shows after shows... Still paying for that psychologist by the way. The school is at one minute from home. Walking (did I told you I got a great flat?). Ah, and she makes dinner, but only dinner. She doesn't need to worry about money, AND she get to do whaterer she wants all day. Also we don't have any intimacy or sexual relations, nothing, but that make sense. So I come home after work, and need to do my chores and take care of my son (which, I don't know what she has, but she's way too hard on him, one of the reason I wanted her to consult, and only take care of him if there's no other solution, I ressent her for this, too.) I should mention I lost my father at that time, when we needed to move over to our new apart. And just after she loses her grandfather, her first loss. She tell me she's hurting from that, and I believe her, she want to go on a trip to Portugal for a week, to support her grandmother. I, while still working through My own loss, take care of my son, and the house, and my work. Yesterday 6pm, she was having a shower, and I did something that she thought I would never do, and me too, for the first time ever, I unlocked her phone (see how she trusted me? She knew I knew her code, and because she knew I wouldn't do this, she never bothered to change it), and saw a few Snapchat messages... You know, message with very limited time that dissappear into the ether and awwww what a beautiful message I saw. \"You should come over Tuesday, there's a Mcdo nearby and you need to visit...\" Holy shit. Holy shit. In my inhuman empathy for my awful, awful wife, I had given her ONE rule, ONE rule, do not bring him home. That, too, was too much to ask. Went to the bathroom and told her then and then that it was divorce, I hate myself for having being taken advantage for so long, and I hate her to manage to fuck up even the golden life she has. And she told me, \"but he's my confident\" FUCK OFF with that, that she even tried that on me tells you how worthless she is, I have an easy solution, don't fuck your confident. I was extremely angry at the time, being trust breached AGAIN, but my son was here, and he saw it \"ohh, daddy's reallllly angry\" probably something he had never seen before. He helped me keep my cool. I think in that moment I felt the kinda rage that throw you out of your mind. Still managed to keep my mouth in check. The fact that she was gonna fuck him, in my bed. Ohh lord, makes my blood boil. No respect, nothing. You know I let her oversleep a ton this weekend so she could recuperate or her... Doing very little. I hate how I feel, it's sickening, also think I'm getting paranoid from the repeated betrayal. What she did make no sense, none at all! She Chose to move in with me, could've stayed at her mom's... I hate that she turned my love for her into this abomination of twisted hatred. It makes no fucking sense, none, probably self destructive tendencies, she just had to be a parenting partner, and she had to break my single fucking rule. Her car, mine, her money? 0, her ability to work? 0 And he? He wouldn't even take her in, she told me herself \"we couldn't live together\" he was using her, too. He's as guilty has her, he's 30 too, not a kid, he knew what he was doing, I think my error was to let my wife have her own friends that I didn't need to know, but those friends? Well, they didn't know me, at all, apart from what she was telling them, so of course they felt like hey wouldn't it be great to put them together. Yeah right. What a shitty situation that could've been avoided sooooo easily, and I talked to her this morning (I couldn't sleep) and I asked what did I need to do, and she said she doesn't know... Only that she's unhappy, but it not me that maker her unhappy, in a way that's even more difficult to hear. I don't even know man, what the fuck, I she truly dépressive, but then what of the cheerful messages with him... What the fuck, I hate this.",
-        "good app but the hot wheels is always out of stock please stock the hot wheels first."
-      ],
-      "frequency": 103,
-      "prevalence_score": 5.0,
-      "signal_strength_score": 4.5,
-      "sources": [
-        "reddit",
-        "play_store",
-        "app_store"
-      ],
-      "sentiment": "negative (50.0% negative, 28.8% positive, 19.7% neutral)",
-      "action": "Promote to Suggested Research Question",
-      "relevance_reason": "Evidence explicitly links the issue to category exploration.",
-      "status": "In Scope",
-      "suggested_insight": "If customer confidence in product quality and fulfillment reliability is increased, then customers will be more willing to purchase from new product categories.",
-      "suggested_research_question": "Walk me through your decision process when considering purchases outside your regular order list."
-    },
-    {
-      "cluster_id": 4,
-      "theme": "Excessive Fees and Surge Charges",
-      "primary_issue": "Delivery Experience",
-      "research_relevance": "INDIRECT",
-      "evidence_summary": "Operational feedback regarding delivery speed and staff behavior.",
-      "observed_facts": [
-        "Delivery partner arrived in 15 minutes"
-      ],
-      "observed_behavior": "General feedback on delivery service.",
-      "behavioral_mechanism": "May contribute to general order hesitation: This operational issue has insufficient evidence linking it to category exploration. (Requires qualitative validation for category trial impact).",
-      "underlying_need": "Fast and reliable delivery.",
-      "barrier_or_driver": "Operational logistics performance.",
-      "business_impact": "Low",
-      "confidence": "Medium",
-      "confidence_explanation": "Medium confidence because:\n- Observed across 3 sources (reddit, play_store, app_store) in 546 customer reviews.\n- Cluster represents a specific customer problem with moderate signal strength.\n- Contradictory evidence check: 0 opposing reviews identified in dataset.\n- Requires qualitative user interview validation for broader category trial impact.",
-      "signal_strength": "Low",
-      "customer_journey_stage": "Fulfillment",
-      "alternative_explanations": [],
-      "contradictory_evidence": "Contradictory evidence identified in dataset: 62 reviews report positive, fast delivery experiences (e.g. \"nice service and 10 min dilevery damn guys I love it 💖...\"). This indicates delivery friction is localized rather than platform-wide.",
-      "product_opportunity": "Increase customer price transparency and cost predictability at checkout.",
-      "research_hypothesis": "No research hypothesis generated. Current evidence suggests this issue may influence overall platform experience, but does not establish a credible link to category exploration. Recommend validating through exploratory interviews.",
       "research_questions": [],
-      "why_these_quotes_matter": "Operational delivery feedback without direct category trial mechanism.",
-      "assumptions": [],
-      "reasoning_trace": "Delivery partner arrived in 15 minutes ↓ Added Transaction Cost ↓ General Order Margin Friction ↓ Potential Impact on Basket Building ↓ Category Trial Indirect Impact",
+      "why_these_quotes_matter": "These quotes highlight the importance of having a wide range of healthy options available on the platform to meet customer needs.",
+      "assumptions": [
+        "Customers are looking for healthy options on Blinkit"
+      ],
+      "reasoning_trace": "Operational Issue -> Out of Scope for Category Discovery",
       "out_of_scope_reason": "This operational issue affects general experience but has insufficient evidence linking it to category exploration.",
       "example_quotes": [
-        "fastest delivery and we get almost every possible item!",
-        "Bhai mere city me zepto blinkit nhi isliye jio mart se karta hu lekin 30 mins vala 1 hour me ho jata he delivers me veggies and dairy items nhi karta only cold drinks biscuit oil etc",
-        "Items missing - Every order has some items missing which should be complaint by us. And the resolution is also not provided immediately."
+        "Keep it up - You are doing good You can bring more healthy options",
+        "Unavailable products - Don’t list, if u haven’t got them stored already",
+        "Service is unavailable on Jantar Mantar Road in Connaught Place, New Delhi. This app is the epitome of disappointment, and those behind it seem to have lost touch with what it means to be humane."
       ],
-      "frequency": 546,
-      "prevalence_score": 5.0,
-      "signal_strength_score": 4.5,
+      "frequency": 14,
+      "prevalence_score": 2.0,
+      "signal_strength_score": 2.5,
       "sources": [
-        "reddit",
         "play_store",
-        "app_store"
+        "app_store",
+        "reddit"
       ],
-      "sentiment": "positive (22.5% negative, 64.0% positive, 13.6% neutral)",
-      "action": "Monitor (Loud but vague)",
-      "status": "In Scope",
-      "suggested_insight": "If customer confidence in product quality and fulfillment reliability is increased, then customers will be more willing to purchase from new product categories.",
-      "suggested_research_question": "Walk me through your decision process when considering purchases outside your regular order list."
+      "sentiment": "positive (42.9% negative, 57.1% positive, 0.0% neutral)",
+      "action": "Out of Scope for Research Objective",
+      "relevance_reason": "Evidence explicitly links the issue to category exploration.",
+      "suggested_insight": "",
+      "suggested_research_question": "",
+      "status": "Out of Scope"
     }
   ]
 }
