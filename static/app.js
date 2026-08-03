@@ -670,22 +670,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const pulseResp = await fetch(API_BASE + "/api/pulse");
             const pulseData = await pulseResp.json();
 
-            const wordCountBadge = document.getElementById("pulse-word-count");
-            if (wordCountBadge && pulseData.word_count) {
-                wordCountBadge.textContent = `${pulseData.word_count} / ${pulseData.max_words} words`;
-                if (pulseData.word_count > pulseData.max_words) {
-                    wordCountBadge.style.color = "var(--color-error)";
-                } else {
-                    wordCountBadge.style.color = "var(--color-primary)";
-                }
-            }
-
-            const docLink = document.getElementById("pulse-doc-link");
-            const draftLink = document.getElementById("pulse-draft-link");
-            const pubState = statusData.publish_state || {};
-            if (docLink) docLink.href = pubState.doc_url || "#";
-            if (draftLink) draftLink.href = pubState.draft_url || "https://mail.google.com/mail/u/0/#drafts";
-
             // Render content
             const noteContainer = document.getElementById("pulse-note-content");
             if (noteContainer && pulseData.themes) {
@@ -700,20 +684,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     html += `
                         <div style="background: rgba(70,72,212,0.04); border-left: 4px solid var(--color-primary); padding: 12px 16px; border-radius: 4px;">
                             <span style="font-weight: 600; color: var(--color-on-surface);">${t.headline}</span>
-                        </div>
-                    `;
-                });
-
-                html += `
-                    </div>
-                    <h4 style="font-size: 14px; text-transform: uppercase; color: var(--color-on-surface-variant); margin-bottom: 12px; letter-spacing: 0.05em;">Representative Customer Evidence</h4>
-                    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
-                `;
-
-                pulseData.quotes.forEach(q => {
-                    html += `
-                        <div style="background: rgba(245,158,11,0.04); border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 4px; font-style: italic; color: var(--color-on-surface-variant);">
-                            ${q.paraphrased}
                         </div>
                     `;
                 });
