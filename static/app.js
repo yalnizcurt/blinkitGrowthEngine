@@ -602,7 +602,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 3000);
 
             } else {
-                fetchStatusText.textContent = "❌ " + (data.message || "Failed to trigger pipeline.");
+                let msg = data.message || "Failed to trigger pipeline.";
+                if (msg.includes("run ReviewLens locally")) {
+                    msg += ' <a href="https://github.com/yalnizcurt/blinkitGrowthEngine" target="_blank" style="color: var(--color-primary); font-weight: 600; text-decoration: underline; margin-left: 4px;">GitHub Repository ↗</a>';
+                }
+                fetchStatusText.innerHTML = "❌ " + msg;
                 fetchSubmitBtn.disabled = false;
             }
         } catch (err) {

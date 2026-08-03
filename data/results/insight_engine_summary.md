@@ -3,53 +3,53 @@
 **Business Objective**: *Increase percentage of Monthly Active Customers purchasing from at least one new category every month.*
 
 
-**Total Feedback Analyzed**: 1602 clean customer items across Play Store, App Store, and Reddit.
+**Total Feedback Analyzed**: 911 clean customer items across Play Store, App Store, and Reddit.
 
 ## 🎯 Promoted Product Opportunities & Auditable Reasoning Chains
 
 ### 1. Low Trust in High-Value Purchases
 
-- **Primary Issue**: `quality` | **Relevance**: `DIRECT` | **Journey Stage**: `Post-purchase`
+- **Primary Issue**: `Refunds / Returns` | **Relevance**: `DIRECT` | **Journey Stage**: `Evaluation`
 
 - **Business Impact**: `High` | **Confidence**: `High` (High confidence because:
-- Observed consistently across 3 sources (reddit, play_store, app_store).
-- 224 supporting customer reviews describe the same behavioral mechanism using consistent language.
+- Observed consistently across 3 sources (play_store, app_store, reddit).
+- 86 supporting customer reviews describe the same behavioral mechanism using consistent language.
 - Pure cluster representing one clear customer problem.
-- Contradictory evidence check: 0 opposing reviews identified in dataset.)
+- Contradictory evidence check: 20 opposing reviews identified in dataset.)
 
-- **Evidence Summary**: Customers received damaged or low-quality products, leading to frustration and loss of trust.
+- **Evidence Summary**: Customers reported denied return requests on non-grocery items and missing refund protection.
 
-- **Observed Facts**: Received damaged or low-quality products, Poor delivery experience
+- **Observed Facts**: Return request rejected on non-working earphone, No refund given for defective non-grocery product
 
-- **Observed Behavior (WHAT)**: Customers are frustrated and lose trust in the platform due to poor product quality.
+- **Observed Behavior (WHAT)**: Users restrict purchases to low-risk grocery staples and avoid unfamiliar non-grocery categories.
 
-- **Behavioral Mechanism (WHY)**: *"This poor product quality has a direct impact on customer trust and loyalty."*
+- **Behavioral Mechanism (WHY)**: *"The perceived financial downside of a failed purchase outweighs the expected utility of trying a new category."*
 
-- **Underlying Need / JTBD**: Customers need reliable and high-quality products.
+- **Underlying Need / JTBD**: Financial safety and guaranteed post-purchase protection.
 
-- **Barrier / Driver**: Poor product quality is a significant barrier to customer satisfaction.
+- **Barrier / Driver**: Weak trust in post-purchase refund policies for non-staple categories.
 
 - **Product Opportunity (Solution-Agnostic)**: 🚀 **"Increase customer confidence when purchasing high-value or unfamiliar products."**
 
 - **Research Hypothesis**: 🧪 *"If customers trust that high-value products can be returned without financial loss, they will be more willing to purchase electronics and premium non-grocery products."*
 
-- **Research Questions**: "How does product quality impact customer satisfaction?", "What are the root causes of poor product quality?"
+- **Research Questions**: "Tell me about the last time you decided not to buy a product outside your usual categories on Blinkit.", "What specific return assurances did you look for before deciding?"
 
-- **Alternative Explanations**: Customers may have received damaged products due to shipping issues
+- **Alternative Explanations**: Users prefer specialist e-commerce platforms for electronics.
 
-- **Contradictory Evidence**: Contradictory evidence identified in dataset: 46 reviews report positive product quality or satisfactory support (e.g. "excellent service by Blinkit. Especially for medicines. it provides doctor's consultation ...").
+- **Contradictory Evidence**: Contradictory evidence identified in dataset: 20 reviews report positive product quality or satisfactory support (e.g. "great service nice paking...").
 
-- **Assumptions**: Customers value high-quality products, Poor product quality leads to customer churn
+- **Assumptions**: Reviews reflect actual purchasing hesitation.
 
-- **Full Reasoning Trace**: `Received damaged or low-quality products ↓ Post-Purchase Return Risk ↓ High Financial Downside Fear ↓ Avoid Electronics & Non-Grocery Items ↓ Reduced Category Exploration`
+- **Full Reasoning Trace**: `Return request rejected on non-working earphone ↓ Post-Purchase Return Risk ↓ High Financial Downside Fear ↓ Avoid Electronics & Non-Grocery Items ↓ Reduced Category Exploration`
 
 - **Supporting Verbatim Customer Evidence**:
 
-  > "I ordered charger with cable but after receiving the product the cable quality was very bad .. after complaing with customer support after 2 ,3 attempts the customer support executive denied to help me Telling this isn't their fault so who's responsible for those cheap product sold by this apps.. very frustrated"
+  > "Oh my Bad, but still what does Swiggy do ? Amul themselves wanted to enter quick commerce and they gave the items to Swiggy Instamart and they deliver it via their platform. Swiggy is fully liable for refund but isn't fungus due to the amul like they themselves manufacture and deliver to the Instamart stores. Or is it due to bad storage by Instamart staff"
 
-  > "verify - products given sometimes comes in very bad condition and many times i had got stale and seal broken products nd expired 1 too just recheck everything they deliver because 1 day delay can close the help window and we have to suffer with money wasted and damaged product"
+  > "my one item missing in my order not any refund in my account"
 
-  > "Fraud. These people are cheaters. I ordered Mallika mangoes for our lunch break. Mallika is a premimum quality of mango. When we received them, they were local dushehri mangoes and when eating all the mangoes that we cut were rotten and soiled. We kept them aside and ended up buying mangoes from local vendors. When i tried to contact customer care there was a chat bot and it was not giving me an option to even upload photos of the damaged and wrong products. Frhstrated i uninstalled d app"
+  > "Starting again at an old company but now in charge and SUPER NERVOUS Feeling super nervous. Quick back story, worked for small company x for 20 yr. And left almost 5 yrs ago. I started as admin asst/reception. Left as office mgr/vp e-commerce and media. I needed a break and a change. I consulted for the first 2 yrs regularly in regard to helping the girl that assumed off mgr position. A year ago the owners reached out asking me to come back and run the day to day operations of the company. They are past retirement age and are ready to go. I made outrageous demands as to salary, hiring and firing of employees (ie their family members) if needed, ect. They didn’t balk. I still wasn’t ready to leave where I’ve been for over 3 yrs, and wasn’t ready to return to a place I was stuck in middle management so to speak with no real say so. So I declined. Since they’d made a couple more attempts to bring me back. Finally I agreed to a sit down. I laid it out, no holds barred…what needed to change, what I expected from them as owners ect. They came back with yes to everything. They’ve already started needed changes on their end and I start tomorrow making double what I was making less than 5 yrs ago when I left. Now I have imposter syndrome. :( I’ve met the team, some new and some old employees, I feel good about them as a whole. But I don’t know how to be a boss or run a company. It’s a small company, once the owners fully retire, it’s all on me. 😳😳😳 I like knowing what is expected of me day to day. I’ve always been “tell me what is needed and when and get out of my way, I got this” but now I worry I won’t know how to. Sorry for being so long winded"
 
 
 ---
@@ -57,37 +57,9 @@
 
 ## 📊 Secondary / Monitored Signals
 
-- **Inconsistent Delivery Timeliness** (`Delivery`) — Stage: Post-Purchase | Impact: Medium | Confidence: Medium
-
-- **Excessive Fees and Surge Charges** (`Payment Issues`) — Stage: Pre-Purchase | Impact: Medium | Confidence: Medium
-
-- **Payment Uncertainty at Checkout** (`Payment`) — Stage: Ordering | Impact: Medium | Confidence: Medium
-
-- **Coupon Redemption Failure** (`Coupon/Discount Issue`) — Stage: Ordering | Impact: Medium | Confidence: Low
+- **Excessive Fees and Surge Charges** (`Delivery Experience`) — Stage: Fulfillment | Impact: Low | Confidence: Medium
 
 
 ## 🛑 Out of Scope Themes (Routed to Operational Product Teams)
 
-### 📌 
-
-- **Primary Area**: `` | **Journey Stage**: `` | **Mentions**: 896
-
-- **Out of Scope Rationale**: Quotes do not mention category exploration or new product discovery.
-
-- **Sample Quote**:
-
-  > "No offers and no discount - No offers and coupon also not given campare to other blinkit waste"
-
-
-
-### 📌 Assortment Gaps in Long-Tail Categories
-
-- **Primary Area**: `Product Options` | **Journey Stage**: `Exploration` | **Mentions**: 14
-
-- **Out of Scope Rationale**: This operational issue affects general experience but has insufficient evidence linking it to category exploration.
-
-- **Sample Quote**:
-
-  > "Keep it up - You are doing good You can bring more healthy options"
-
-
+_None_

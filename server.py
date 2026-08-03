@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 PORT = int(os.getenv("PORT", 8080))
 pipeline_lock = threading.Lock()
 pipeline_status = {"status": "idle", "message": "Engine is ready."}
+rate_limits = {}
 
 class InsightEngineRequestHandler(SimpleHTTPRequestHandler):
     def translate_path(self, path):
@@ -99,6 +100,26 @@ class InsightEngineRequestHandler(SimpleHTTPRequestHandler):
             return
 
         elif self.path == "/api/run-pipeline":
+            # Extract client IP
+            client_ip = self.headers.get("X-Forwarded-For") or self.headers.get("X-Real-IP") or self.client_address[0]
+            if client_ip and "," in client_ip:
+                client_ip = client_ip.split(",")[0].strip()
+
+            global rate_limits
+            if client_ip not in rate_limits:
+                rate_limits[client_ip] = 0
+
+            if rate_limits[client_ip] >= 4:
+                self.send_response(429)
+                self.send_header("Content-Type", "application/json")
+                self.send_header("Access-Control-Allow-Origin", "*")
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "status": "error",
+                    "message": "Rate limit exceeded. To prevent API abuse, you are permitted to trigger the discovery flow at most 4 times per IP address."
+                }).encode("utf-8"))
+                return
+
             content_length = int(self.headers.get("Content-Length", 0))
             body_params = {}
             if content_length > 0:
@@ -119,6 +140,9 @@ class InsightEngineRequestHandler(SimpleHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "running", "message": "Pipeline execution is already in progress."}).encode("utf-8"))
                 return
+
+            # Increment count
+            rate_limits[client_ip] += 1
 
             def worker():
                 global pipeline_status
