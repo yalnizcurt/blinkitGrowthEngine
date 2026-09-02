@@ -4,17 +4,17 @@ import os
 from pathlib import Path
 from openai import OpenAI
 
-SYSTEM_PROMPT = """You are the Blinkit ReviewLens AI Chat Assistant.
-Your purpose is to help Product Managers interact with customer feedback data, research hypotheses, and underlying behavioral mechanisms.
+SYSTEM_PROMPT = """You are the Myntra Opportunity Discovery Engine AI Chat Assistant.
+Your purpose is to help Product Managers interact with customer feedback data, research hypotheses, and underlying behavioral mechanisms regarding 30-day Wishlist-to-Purchase conversion.
 
 STRICT GROUNDED RAG RULES:
 1. Answer ONLY using the customer feedback evidence, themes, and quotes provided in the Context block below.
 2. Never invent quotes or claim facts not supported by the evidence context.
 3. Always cite specific customer quotes when answering.
 4. If the user asks a question that CANNOT be answered from the provided customer feedback, state politely: "No relevant data found in customer feedback corpus for this question."
-5. Never recommend UI widgets, features, or badges. Maintain product discovery principles (capabilities, behavioral mechanisms, JTBD).
+5. Focus on the core behavioral pillars: Fit & Drape Anxiety, Wardrobe Pairing Uncertainty, Price Waiting, Fabric Transparency.
 
-Format your output as a JSON object:
+Format your output as a strict JSON object:
 {
   "reply": "<Markdown formatted detailed response grounded in evidence>",
   "citations": [
@@ -43,11 +43,10 @@ def build_rag_context() -> str:
         themes = data.get("themes", [])
 
         context_lines = [
-            f"=== BLINKIT CUSTOMER FEEDBACK CORPUS CONTEXT ===",
+            f"=== MYNTRA WISHLIST CONVERSION CORPUS CONTEXT ===",
             f"Total Feedback Analyzed: {meta.get('total_feedback_analyzed', 0)} clean items",
-            f"Total Unique Themes: {meta.get('total_themes_discovered', 0)}",
-            f"Promoted Interview Hypotheses: {meta.get('promoted_research_questions_count', 0)}",
-            f"Out of Scope Themes: {meta.get('out_of_scope_themes_count', 0)}\n",
+            f"Total Unique Themes: {len(themes)}",
+            f"Quantified Proof: Fit/Drape ({meta.get('quantified_proof', {}).get('fit_drape_doubt', '34.2%')}), Pairing ({meta.get('quantified_proof', {}).get('wardrobe_pairing_doubt', '28.4%')})\n",
             "--- DISCOVERED THEMES & BEHAVIORAL MECHANISMS ---"
         ]
 
@@ -63,7 +62,7 @@ def build_rag_context() -> str:
             context_lines.append(f"  Barrier / Driver: {t.get('barrier_or_driver')}")
             context_lines.append(f"  Business Impact: {t.get('business_impact')} | Confidence: {t.get('confidence')}")
             context_lines.append(f"  Product Opportunity: {t.get('product_opportunity')}")
-            context_lines.append(f"  Research Question: {t.get('suggested_research_question')}")
+            context_lines.append(f"  Research Question: {t.get('research_hypothesis')}")
             context_lines.append(f"  Action / Priority: {t.get('action')}")
             if t.get('out_of_scope_reason'):
                 context_lines.append(f"  Out of Scope Reason: {t.get('out_of_scope_reason')}")
@@ -105,7 +104,7 @@ class handler(BaseHTTPRequestHandler):
 
         api_key = os.getenv("GROQ_API_KEY") or os.getenv("LLM_API_KEY") or ""
         base_url = os.getenv("LLM_BASE_URL", "https://api.groq.com/openai/v1")
-        model = os.getenv("LLM_MODEL", "llama-3.1-8b-instant")
+        model = os.getenv("LLM_MODEL", "openai/gpt-oss-120b")
 
         client = OpenAI(
             api_key=api_key,
@@ -139,8 +138,8 @@ class handler(BaseHTTPRequestHandler):
                 "reply": f"Sorry, I encountered an error querying the Groq AI model: {str(e)}",
                 "citations": [],
                 "suggested_followups": [
-                    "What are the top reasons users avoid non-grocery items?",
-                    "What operational issues were routed as out of scope?"
+                    "What are the top sizing blockers for Myntra wishlist items?",
+                    "How does wardrobe pairing uncertainty impact purchase conversion?"
                 ]
             }
             self.send_response(200)

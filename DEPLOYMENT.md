@@ -25,8 +25,8 @@ This guide provides step-by-step instructions for deploying the **Blinkit Custom
 3. **Configure Environment Variables**:
    - In Railway, navigate to your service → **Variables** tab.
    - Add the following environment variable:
-     - `GROQ_API_KEY`: `gsk_...` (Your Groq API key)
-     - `LLM_MODEL`: `llama-3.1-8b-instant`
+     - `GROQ_API_KEY`: `<your_groq_api_key>` (Your Groq API key)
+     - `LLM_MODEL`: `openai/gpt-oss-120b`
      - `PORT`: `8080` (Optional, Railway automatically sets `$PORT`)
 
 4. **Generate Public Domain**:

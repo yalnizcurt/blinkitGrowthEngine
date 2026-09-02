@@ -7,17 +7,17 @@ import config
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-SYSTEM_PROMPT = """You are the Blinkit ReviewLens AI Chat Assistant.
-Your purpose is to help Product Managers interact with customer feedback data, research hypotheses, and underlying behavioral mechanisms.
+SYSTEM_PROMPT = """You are the Myntra Opportunity Discovery Engine AI Assistant.
+Your purpose is to help Product Managers analyze wishlist-to-purchase hesitation data, research hypotheses, and underlying behavioral mechanisms across Myntra customer feedback.
 
 STRICT GROUNDED RAG RULES:
 1. Answer ONLY using the customer feedback evidence, themes, and quotes provided in the Context block below.
 2. Never invent quotes or claim facts not supported by the evidence context.
 3. Always cite specific customer quotes when answering.
 4. If the user asks a question that CANNOT be answered from the provided customer feedback, state politely: "No relevant data found in customer feedback corpus for this question."
-5. Never recommend UI widgets, features, or badges. Maintain product discovery principles (capabilities, behavioral mechanisms, JTBD).
+5. Focus on behavioral mechanisms (Fit & Drape Uncertainty, Wardrobe Pairing Doubt, Price Waiting, Passive Moodboarding).
 
-Format your output as a JSON object:
+Format your output as a strict JSON object:
 {
   "reply": "<Markdown formatted detailed response grounded in evidence>",
   "citations": [
@@ -49,7 +49,7 @@ def build_rag_context() -> str:
         themes = data.get("themes", [])
 
         context_lines = [
-            f"=== BLINKIT CUSTOMER FEEDBACK CORPUS CONTEXT ===",
+            f"=== MYNTRA WISHLIST CONVERSION FEEDBACK CORPUS CONTEXT ===",
             f"Total Feedback Analyzed: {meta.get('total_feedback_analyzed', 0)} clean items",
             f"Total Unique Themes: {meta.get('total_themes_discovered', 0)}",
             f"Promoted Interview Hypotheses: {meta.get('promoted_research_questions_count', 0)}",
@@ -84,7 +84,7 @@ def build_rag_context() -> str:
 
 def generate_chat_response(messages: List[Dict[str, str]]) -> Dict[str, Any]:
     """
-    Generate grounded AI chat reply using Groq API and LLaMA 3.3 70B.
+    Generate grounded AI chat reply using Groq API with openai/gpt-oss-120b.
     """
     rag_context = build_rag_context()
     user_query = messages[-1].get("content", "") if messages else ""
@@ -98,7 +98,6 @@ def generate_chat_response(messages: List[Dict[str, str]]) -> Dict[str, Any]:
         {"role": "system", "content": f"{SYSTEM_PROMPT}\n\n{rag_context}"}
     ]
 
-    # Include conversation history (last 5 messages)
     for m in messages[-5:]:
         full_messages.append({"role": m["role"], "content": m["content"]})
 
@@ -118,12 +117,7 @@ def generate_chat_response(messages: List[Dict[str, str]]) -> Dict[str, Any]:
             "reply": f"Sorry, I encountered an error querying the Groq AI model: {str(e)}",
             "citations": [],
             "suggested_followups": [
-                "What are the top reasons users avoid non-grocery items?",
-                "What operational issues were routed as out of scope?"
+                "What are the top sizing blockers for Myntra wishlist items?",
+                "How does wardrobe pairing uncertainty impact purchase conversion?"
             ]
         }
-
-if __name__ == "__main__":
-    test_msgs = [{"role": "user", "content": "What are the main reasons users hesitate to buy non-grocery products?"}]
-    res = generate_chat_response(test_msgs)
-    print(json.dumps(res, indent=2))

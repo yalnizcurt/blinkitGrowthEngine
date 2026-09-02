@@ -18,12 +18,15 @@ PURE_NOISE_PATTERNS = [
     r'\b(onlyfans|nsfw|porn|subscribers|crypto|promo code|cashback app|referral code)\b'
 ]
 
-# Keywords indicating high behavioral signal
+# Keywords indicating high behavioral signal for Myntra fashion & wishlist conversion
 BEHAVIORAL_SIGNAL_PATTERNS = [
-    r'\b(buy|order|purchase|try|tried|trying|category|categories|item|items|product|products|vegetable|vegetables|fruit|fruits|grocery|groceries|meat|dairy|beauty|electronics|apparel)\b',
-    r'\b(habit|habitual|always buy|reorder|frequently|daily|weekly|routine|substitute|brand|options|variety|selection|discover|exploration|explore|search|recommend|suggestion)\b',
-    r'\b(price|expensive|cheap|discount|offer|margin|quality|fresh|freshness|trust|hesitate|hesitation|reluctant|doubt|confidence|expire|expiry|damage)\b',
-    r'\b(offline|store|supermarket|zepto|instamart|bigbasket|amazon|comparison|compare|switch|switched)\b'
+    r'\b(wishlist|saved|bookmark|sitting in wishlist|saved items|closet|wardrobe|outfit|style|styling)\b',
+    r'\b(size|sizing|fit|fits|fitted|drape|loose|tight|shoulder|length|waist|chart|variance|true to size)\b',
+    r'\b(pair|pairing|match|matching|wear with|looks like|combo|shoes|sneakers|jeans|trousers|pants|jacket|shirt|kurti|dress)\b',
+    r'\b(fabric|material|cloth|cotton|linen|suede|polyester|sheer|color|shade|photo|studio|real|quality|quality issue|stitching)\b',
+    r'\b(price|expensive|cheap|discount|sale|bff|payday|salary|wait|waiting|drop|offer|coupon)\b',
+    r'\b(buy|order|purchase|try|tried|trying|category|brand|roadster|hrx|zara|h&m|mast & harbour|levis|hesitate|hesitation|reluctant|doubt|confidence)\b',
+    r'\b(return|exchange|policy|replacement|refund)\b'
 ]
 
 def is_pure_noise(text: str) -> bool:

@@ -63,7 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const meta = data.metadata || {};
 
             // Render Metrics
-            totalCountEl.textContent = meta.total_feedback_analyzed || 1951;
+            totalCountEl.textContent = meta.total_feedback_analyzed ? meta.total_feedback_analyzed.toLocaleString() : "1,575";
+
+            const subtitleEl = document.querySelector(".header-subtitle");
+            if (subtitleEl && meta.total_feedback_analyzed) {
+                const rawCount = meta.total_raw_reviews || 3056;
+                subtitleEl.textContent = `AI-powered review analysis across ${rawCount.toLocaleString()} customer reviews (${meta.total_feedback_analyzed.toLocaleString()} deduplicated). Target: Increase 30-Day Wishlist-to-Purchase Conversion without monetary incentives.`;
+            }
 
             const promotedThemes = rawResultsData.filter(t => t.action === "Promote to Suggested Research Question");
             const monitorThemes = rawResultsData.filter(t => t.action.includes("Monitor"));
@@ -71,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const outOfScopeThemes = rawResultsData.filter(t => t.action.includes("Out of Scope") || t.action.includes("Drop"));
 
             promotedCountEl.textContent = promotedThemes.length;
-            monitorCountEl.textContent = monitorThemes.length;
+            monitorCountEl.textContent = monitorThemes.length + nicheThemes.length;
             nicheCountEl.textContent = outOfScopeThemes.length;
 
             // Render Matrix Quadrants

@@ -15,6 +15,7 @@ from analysis.clustering import cluster_feedback
 from analysis.labeler import label_clusters_with_llm
 from analysis.sentiment import analyze_cluster_sentiments
 from analysis.scorer import score_and_prioritize_themes
+from analysis.rigorous_extraction import extract_rigorous_themes
 from output.question_generator import generate_insights_and_questions
 from output.exporter import export_all_formats
 
@@ -23,7 +24,7 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     handlers=[logging.StreamHandler(sys.stdout)]
 )
-logger = logging.getLogger("InsightEngineMain")
+logger = logging.getLogger("MyntraOpportunityEngine")
 
 def run_pipeline(
     playstore_count: Optional[int] = None,
@@ -32,7 +33,8 @@ def run_pipeline(
     sources: Optional[List[str]] = None
 ):
     logger.info("==================================================")
-    logger.info("   BLINKIT REVIEWLENS INSIGHT ENGINE PIPELINE    ")
+    logger.info("   MYNTRA OPPORTUNITY DISCOVERY ENGINE PIPELINE   ")
+    logger.info("   Target: 30-Day Wishlist-to-Purchase Conversion  ")
     logger.info("==================================================")
 
     target_sources = sources if sources else ["playstore", "appstore", "reddit"]
@@ -40,10 +42,10 @@ def run_pipeline(
     as_count = appstore_count if appstore_count is not None else config.TARGET_APPSTORE_REVIEWS
 
     # Step 1: Data Collection
-    logger.info("--- PHASE 1: LIVE DATA COLLECTION ---")
+    logger.info("--- PHASE 1: DATA COLLECTION ---")
     if "playstore" in target_sources:
         try:
-            logger.info(f"Fetching {ps_count} reviews from Play Store...")
+            logger.info(f"Fetching {ps_count} reviews from Play Store for com.myntra.android...")
             fetch_playstore_reviews(count=ps_count)
         except Exception as e:
             logger.error(f"Play Store fetch error: {e}")
@@ -58,14 +60,8 @@ def run_pipeline(
     if "reddit" in target_sources:
         try:
             terms = reddit_terms if reddit_terms else config.REDDIT_SEARCH_TERMS
-            logger.info(f"Fetching live Reddit discussions for terms: {terms}...")
-            if reddit_terms:
-                original_terms = config.REDDIT_SEARCH_TERMS
-                config.REDDIT_SEARCH_TERMS = reddit_terms
-                fetch_reddit_discussions()
-                config.REDDIT_SEARCH_TERMS = original_terms
-            else:
-                fetch_reddit_discussions()
+            logger.info(f"Fetching live Reddit fashion discussions: {terms}...")
+            fetch_reddit_discussions()
         except Exception as e:
             logger.error(f"Reddit fetch error: {e}")
 
@@ -80,36 +76,41 @@ def run_pipeline(
     filtered_df = filter_dataset(cleaned_df)
 
     if filtered_df.empty:
-        logger.error("Filtered behavioral dataset is empty! Using cleaned dataset as fallback.")
+        logger.warning("Filtered behavioral dataset is empty! Using cleaned dataset as fallback.")
         filtered_df = cleaned_df
 
-    logger.info(f"High-signal feedback items to process: {len(filtered_df)}")
+    logger.info(f"High-signal fashion feedback items to process: {len(filtered_df)}")
 
-    # Step 3: Embeddings & Clustering
-    logger.info("--- PHASE 3: NLP EMBEDDINGS & CLUSTERING ---")
+    # Step 3: Rigorous Theme Extraction
+    logger.info("--- PHASE 3: RIGOROUS BEHAVIORAL TAXONOMY EXTRACTION ---")
+    rigorous_results = extract_rigorous_themes(config.FILTERED_CSV)
+
+    # Step 4: Embeddings & Clustering (Isolating High-Intent Evaluators)
+    logger.info("--- PHASE 4: NLP EMBEDDINGS & CLUSTERING ---")
     texts = filtered_df["cleaned_text"].tolist()
     embeddings = generate_embeddings(texts)
     clustered_df, keywords_dict = cluster_feedback(filtered_df, embeddings)
 
-    # Step 4: 5-Step Theme Labeling & Sentiment
-    logger.info("--- PHASE 4: 5-STEP THEME LABELING & SENTIMENT ANALYSIS ---")
+    # Step 5: Theme Labeling & Sentiment
+    logger.info("--- PHASE 5: THEME SYNTHESIS & SENTIMENT ANALYSIS ---")
     theme_metadata = label_clusters_with_llm(clustered_df, keywords_dict)
     cluster_sentiments = analyze_cluster_sentiments(clustered_df)
 
-    # Step 5: Scoring & Prioritization
-    logger.info("--- PHASE 5: SCORING & PRIORITIZATION ENGINE ---")
+    # Step 6: Scoring & Prioritization
+    logger.info("--- PHASE 6: SCORING & PRIORITIZATION ENGINE ---")
     scored_themes = score_and_prioritize_themes(clustered_df, theme_metadata, cluster_sentiments)
 
-    # Step 6: Insight & Question Generation
-    logger.info("--- PHASE 6: INSIGHT & RESEARCH QUESTION GENERATION ---")
+    # Step 7: Insight & Question Generation
+    logger.info("--- PHASE 7: INSIGHT HYPOTHESIS & RESEARCH QUESTION GENERATION ---")
     final_themes = generate_insights_and_questions(scored_themes)
 
-    # Step 7: Export
-    logger.info("--- PHASE 7: EXPORTING RESULTS ---")
+    # Step 8: Export
+    logger.info("--- PHASE 8: EXPORTING ARTIFACTS ---")
     output_paths = export_all_formats(final_themes, total_feedback_count=len(filtered_df))
 
     logger.info("==================================================")
     logger.info("   PIPELINE COMPLETED SUCCESSFULLY!              ")
+    logger.info(f"   Rigorous JSON:   {config.RIGOROUS_RESULTS_JSON}")
     logger.info(f"   CSV Output:      {output_paths['csv']}")
     logger.info(f"   JSON Output:     {output_paths['json']}")
     logger.info(f"   Markdown Summary:{output_paths['markdown']}")

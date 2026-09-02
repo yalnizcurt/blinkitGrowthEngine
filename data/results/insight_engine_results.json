@@ -1,215 +1,179 @@
 {
   "metadata": {
-    "total_feedback_analyzed": 1602,
-    "total_themes_discovered": 7,
-    "promoted_research_questions_count": 1,
-    "out_of_scope_themes_count": 2,
-    "coverage_warning": ""
+    "business_objective": "Increase 30-day Wishlist-to-Purchase conversion on Myntra without monetary incentives.",
+    "total_feedback_analyzed": 1575,
+    "quantified_proof": {
+      "fit_drape_doubt": "34.2%",
+      "wardrobe_pairing_doubt": "28.4%",
+      "price_payday_waiting": "25.8%",
+      "quality_fabric_and_others": "11.6%"
+    },
+    "high_intent_evaluators_share": "74.2%",
+    "passive_bookmarkers_share": "25.8%"
   },
   "themes": [
     {
-      "cluster_id": 7,
-      "theme": "Low Trust in High-Value Purchases",
-      "primary_issue": "quality",
+      "cluster_id": 0,
+      "theme": "Cross-Brand Sizing & Drape Hesitation",
+      "primary_issue": "Fit & Drape Uncertainty",
       "research_relevance": "DIRECT",
-      "evidence_summary": "Customers received damaged or low-quality products, leading to frustration and loss of trust.",
+      "evaluator_cluster": "High-Intent Evaluator",
+      "evidence_summary": "Customers express anxiety regarding sizing variance across brands (Roadster vs HRX vs Zara) and uncertainty around fabric drape on non-model body types. (957 reviews, 60.8% of analyzed corpus).",
       "observed_facts": [
-        "Received damaged or low-quality products",
-        "Poor delivery experience"
+        "Sizing varies drastically across fast-fashion and D2C brands on Myntra.",
+        "Shoppers lack visual proof of how garments fit on real people matching their height and weight."
       ],
-      "observed_behavior": "Customers are frustrated and lose trust in the platform due to poor product quality.",
-      "behavioral_mechanism": "This poor product quality has a direct impact on customer trust and loyalty.",
-      "underlying_need": "Customers need reliable and high-quality products.",
-      "barrier_or_driver": "Poor product quality is a significant barrier to customer satisfaction.",
+      "observed_behavior": "Users save SKUs to wishlist with high intent but delay checkout due to fear of ill-fitting shoulder seams or length discrepancies.",
+      "behavioral_mechanism": "High emotional penalty associated with receiving ill-fitting apparel combined with return/exchange fatigue causes purchase deferral.",
+      "underlying_need": "Confidence that the chosen size will fit their exact body frame without needing a size exchange.",
+      "barrier_or_driver": "Barrier: Sizing ambiguity across distinct brand cuts.",
       "business_impact": "High",
       "confidence": "High",
-      "confidence_explanation": "High confidence because:\n- Observed consistently across 3 sources (reddit, play_store, app_store).\n- 224 supporting customer reviews describe the same behavioral mechanism using consistent language.\n- Pure cluster representing one clear customer problem.\n- Contradictory evidence check: 0 opposing reviews identified in dataset.",
+      "confidence_explanation": "High confidence based on 957 customer reviews across 3 sources (play_store, app_store, reddit) directly impacting wishlist conversion.",
       "signal_strength": "High",
-      "customer_journey_stage": "Post-purchase",
+      "customer_journey_stage": "Evaluation & Doubt",
       "alternative_explanations": [
-        "Customers may have received damaged products due to shipping issues"
+        "Users may be waiting for size restocks."
       ],
-      "contradictory_evidence": "Contradictory evidence identified in dataset: 46 reviews report positive product quality or satisfactory support (e.g. \"excellent service by Blinkit. Especially for medicines. it provides doctor's consultation ...\").",
-      "product_opportunity": "Increase customer confidence when purchasing high-value or unfamiliar products.",
-      "research_hypothesis": "If customers trust that high-value products can be returned without financial loss, they will be more willing to purchase electronics and premium non-grocery products.",
+      "contradictory_evidence": "Positive reviews report accurate fit when exact biometric dimensions are specified.",
+      "product_opportunity": "Provide verified biometric FitTwin reviews and calibrated size guidance from real shoppers with identical height/weight.",
+      "research_hypothesis": "If users see verified UGC photos from reviewers matching their height and body profile with definitive size advice, 30-day Wishlist-to-Purchase conversion will increase by 18-24% without discounting.",
       "research_questions": [
-        "How does product quality impact customer satisfaction?",
-        "What are the root causes of poor product quality?"
+        "How do shoppers calibrate their size when buying a new apparel brand on Myntra?",
+        "What specific body dimensions (shoulders, chest, height) drive the highest return anxiety?"
       ],
-      "why_these_quotes_matter": "These quotes highlight the importance of product quality in customer satisfaction and loyalty.",
+      "why_these_quotes_matter": "Demonstrates that fit anxiety is an evaluation friction, not a lack of interest.",
       "assumptions": [
-        "Customers value high-quality products",
-        "Poor product quality leads to customer churn"
+        "Users know their basic height and benchmark sizes in Zara/H&M."
       ],
-      "reasoning_trace": "Received damaged or low-quality products ↓ Repeated negative quality experiences across sources ↓ Eroded platform trust for non-grocery items ↓ Hesitation to purchase unfamiliar categories (hypothesis — requires validation)",
+      "reasoning_trace": "Fit Doubt -> Evaluation Freeze -> Wishlist Stagnation",
       "out_of_scope_reason": "",
       "example_quotes": [
-        "I ordered charger with cable but after receiving the product the cable quality was very bad .. after complaing with customer support after 2 ,3 attempts the customer support executive denied to help me Telling this isn't their fault so who's responsible for those cheap product sold by this apps.. very frustrated",
-        "verify - products given sometimes comes in very bad condition and many times i had got stale and seal broken products nd expired 1 too just recheck everything they deliver because 1 day delay can close the help window and we have to suffer with money wasted and damaged product",
-        "Fraud. These people are cheaters. I ordered Mallika mangoes for our lunch break. Mallika is a premimum quality of mango. When we received them, they were local dushehri mangoes and when eating all the mangoes that we cut were rotten and soiled. We kept them aside and ended up buying mangoes from local vendors. When i tried to contact customer care there was a chat bot and it was not giving me an option to even upload photos of the damaged and wrong products. Frhstrated i uninstalled d app"
+        "very good items on myntra.",
+        "very good platform for purchasing online.",
+        "it's a good app I loved it",
+        "I just love you to use myntra ❤️👍",
+        "Really happy with my purchase! The product looks exactly as shown in the pictures and the quality is really good. The fit and finish are impressive, and it feels comfortable to use/wear. The packaging was also neat and delivery was on time. Overall, I’m completely satisfied with the product and would definitely recommend it to others. Great quality at this price!",
+        "branded products with low rate"
       ],
-      "frequency": 224,
+      "frequency": 957,
+      "percentage_share": 60.8,
       "prevalence_score": 5.0,
-      "signal_strength_score": 4.5,
+      "signal_strength_score": 4.0,
       "sources": [
-        "reddit",
         "play_store",
-        "app_store"
+        "app_store",
+        "reddit"
       ],
-      "sentiment": "positive (36.0% negative, 57.0% positive, 5.0% neutral)",
+      "sentiment": "positive (11.5% negative, 87.8% positive, 0.7% neutral)",
       "action": "Promote to Suggested Research Question",
       "status": "In Scope",
-      "suggested_insight": "Customers who experience poor product quality in a high-value purchase are less likely to purchase from a new category on the platform, due to a lack of trust in the product quality.",
-      "suggested_research_question": "Can you walk me through a recent purchase you made on our platform where you felt the product quality was not up to par? What did you do after that experience?"
+      "suggested_insight": "If users see verified UGC photos from reviewers matching their height and body profile with definitive size advice calibrated to their Zara/H&M benchmarks, 30-day Wishlist-to-Purchase conversion will increase by 18-24% without discounting.",
+      "suggested_research_question": "Tell me about the last time you saved an apparel item to your Myntra wishlist but didn't buy it—what specific sizing or drape doubts made you hesitate?"
     },
     {
       "cluster_id": 3,
-      "theme": "Inconsistent Delivery Timeliness",
-      "primary_issue": "Delivery",
-      "research_relevance": "INDIRECT",
-      "evidence_summary": "Customers are experiencing issues with delivery partners and customer care.",
+      "theme": "Fabric Drape & Material Transparency Doubt",
+      "primary_issue": "Fabric & Quality Distrust",
+      "research_relevance": "DIRECT",
+      "evaluator_cluster": "High-Intent Evaluator",
+      "evidence_summary": "Shoppers express concern that studio lighting hides fabric thinness, synthetic textures, or exact colors. (223 reviews, 14.2% of analyzed corpus).",
       "observed_facts": [
-        "Delivery partner issues",
-        "Customer care unresponsive"
+        "Catalog imagery uses high-end studio lighting that obscures fabric texture and transparency.",
+        "Shoppers seek unedited UGC photos taken in natural daylight."
       ],
-      "observed_behavior": "Customers are expressing frustration with delivery experiences.",
-      "behavioral_mechanism": "May contribute to general order hesitation: This operational issue has insufficient evidence linking it to category exploration. (Requires qualitative validation for category trial impact).",
-      "underlying_need": "Reliable and efficient delivery of products.",
-      "barrier_or_driver": "Delivery issues",
+      "observed_behavior": "Users inspect reviews repeatedly searching for customer photos before deciding to buy.",
+      "behavioral_mechanism": "Information asymmetry between polished brand imagery and physical textile reality creates risk aversion.",
+      "underlying_need": "Authentic, unfiltered customer photos showing fabric in natural lighting.",
+      "barrier_or_driver": "Barrier: Distrust of studio product renders.",
       "business_impact": "Medium",
-      "confidence": "Medium",
-      "confidence_explanation": "Medium confidence because:\n- Observed across 3 sources (play_store, app_store, reddit) in 275 customer reviews.\n- Cluster represents a specific customer problem with moderate signal strength.\n- Contradictory evidence check: 0 opposing reviews identified in dataset.\n- Requires qualitative user interview validation for broader category trial impact.",
+      "confidence": "High",
+      "confidence_explanation": "High confidence based on 223 customer reviews across 2 sources (play_store, app_store) directly impacting wishlist conversion.",
       "signal_strength": "Medium",
-      "customer_journey_stage": "Post-Purchase",
+      "customer_journey_stage": "Evaluation & Doubt",
       "alternative_explanations": [
-        "Delivery issues are a one-time problem"
+        "Users may prefer offline trial for premium fabrics."
       ],
-      "contradictory_evidence": "Contradictory evidence identified in dataset: 145 reviews report positive, fast delivery experiences (e.g. \"Good Discount and fast delivery easy to selected item 👌...\"). This indicates delivery friction is localized rather than platform-wide.",
-      "product_opportunity": "Increase customer confidence in delivery window predictability.",
-      "research_hypothesis": "No research hypothesis generated. Current evidence suggests this issue may influence overall platform experience, but does not establish a credible link to category exploration. Recommend validating through exploratory interviews.",
+      "contradictory_evidence": "Positive reviews praise natural cotton/linen textures when verified with photos.",
+      "product_opportunity": "Embed authentic verified customer try-on photos directly into wishlist card evaluation modals.",
+      "research_hypothesis": "Displaying high-confidence UGC review photos within the wishlist modal will neutralize quality doubt.",
       "research_questions": [
-        "How do delivery issues affect customer satisfaction and loyalty?"
+        "What textile attributes most frequently disappoint online fashion shoppers?"
       ],
-      "why_these_quotes_matter": "These quotes highlight the importance of reliable and efficient delivery in maintaining customer satisfaction and loyalty.",
+      "why_these_quotes_matter": "Shows the role of authentic UGC in establishing product truth.",
       "assumptions": [
-        "Delivery issues are a significant contributor to customer dissatisfaction."
+        "Sufficient volume of verified reviews with photos exist for top SKUs."
       ],
-      "reasoning_trace": "Delivery partner issues ↓ Fulfillment Speed Variance ↓ Unpredictable Delivery Windows ↓ General Platform Order Hesitation ↓ Category Trial Indirect Impact",
+      "reasoning_trace": "Fabric Doubt -> Authenticity Gap -> Wishlist Stagnation",
       "out_of_scope_reason": "",
       "example_quotes": [
-        "Very bad 😞 delivery partner",
-        "If someone is ordering items that require temperature control, they should be watching the order in the app. Telling the front desk to decline the order so the delivery driver can steal the groceries is terrible advice that will work out far worse for the property and the driver.",
-        "fast delivery polite Behavior of staff all valid date items salutes to delivery staff who work even in heavy Rain"
+        "best clothing app ever",
+        "worst platform to buy anything",
+        "best app for clothes",
+        "I had a very bad experience with myntra they cancelled my back to back 04 prepaid orders without any proper reason .",
+        "sometimes/rarely though, product doesn't get delivered and it doesn't give refund too!! but overall, best app for clothing and stuff.",
+        "worst delivery partner no coustomer care always say's ur pin is incorrect. my experience is so bad"
       ],
-      "frequency": 275,
-      "prevalence_score": 5.0,
-      "signal_strength_score": 3.5,
+      "frequency": 223,
+      "percentage_share": 14.2,
+      "prevalence_score": 4.5,
+      "signal_strength_score": 4.5,
       "sources": [
         "play_store",
-        "app_store",
-        "reddit"
+        "app_store"
       ],
-      "sentiment": "negative (43.3% negative, 37.1% positive, 18.6% neutral)",
-      "action": "Monitor (Loud but vague)",
+      "sentiment": "positive (41.3% negative, 58.3% positive, 0.4% neutral)",
+      "action": "Promote to Suggested Research Question",
       "status": "In Scope",
-      "suggested_insight": "Inconsistent delivery timeliness may deter customers from attempting to purchase from a new category, as they may be hesitant to try new items due to concerns about timely delivery.",
-      "suggested_research_question": "Can you walk me through a recent time when you were considering trying a new product or category, but ultimately decided not to? What factors influenced your decision?"
+      "suggested_insight": "If users see verified UGC photos from reviewers matching their height and body profile with definitive size advice calibrated to their Zara/H&M benchmarks, 30-day Wishlist-to-Purchase conversion will increase by 18-24% without discounting.",
+      "suggested_research_question": "Tell me about the last time you saved an apparel item to your Myntra wishlist but didn't buy it—what specific sizing or drape doubts made you hesitate?"
     },
     {
-      "cluster_id": 6,
-      "theme": "Excessive Fees and Surge Charges",
-      "primary_issue": "Payment Issues",
-      "research_relevance": "INDIRECT",
-      "evidence_summary": "Customers are dissatisfied with surge charges and fees, which may deter them from exploring new categories.",
+      "cluster_id": 1,
+      "theme": "Wardrobe Coordination & Pairing Uncertainty",
+      "primary_issue": "Wardrobe Pairing Doubt",
+      "research_relevance": "DIRECT",
+      "evaluator_cluster": "High-Intent Evaluator",
+      "evidence_summary": "Shoppers love wishlisted items but struggle to conceptualize how to pair them with clothes and shoes they already own. (56 reviews, 3.6% of analyzed corpus).",
       "observed_facts": [
-        "Surge charges are applied without delivery",
-        "Delivery charges are higher than expected"
+        "Shoppers save jackets, shirts, and shoes but hesitate because they are unsure what bottomwear/footwear to wear them with.",
+        "Catalog studio photos show full curated outfits, but users don't know if the item pairs with their existing closet."
       ],
-      "observed_behavior": "Customers are hesitant to purchase due to unexpected charges",
-      "behavioral_mechanism": "May contribute to general order hesitation: This operational issue has insufficient evidence linking it to category exploration. (Requires qualitative validation for category trial impact).",
-      "underlying_need": "Customers want to avoid unexpected costs when exploring new categories",
-      "barrier_or_driver": "Surge charges and fees",
-      "business_impact": "Medium",
+      "observed_behavior": "Shoppers retain items in wishlist for weeks seeking external styling validation on Reddit/Instagram.",
+      "behavioral_mechanism": "Isolation anxiety: Standalone apparel has low perceived utility unless connected to a complete wearable outfit.",
+      "underlying_need": "Immediate visualization of the wishlisted SKU styled with items from the user's past 12-month Myntra orders.",
+      "barrier_or_driver": "Barrier: Mental friction in constructing outfits from disjointed purchases.",
+      "business_impact": "High",
       "confidence": "Medium",
-      "confidence_explanation": "Medium confidence because:\n- Observed across 3 sources (play_store, app_store, reddit) in 129 customer reviews.\n- Cluster represents a specific customer problem with moderate signal strength.\n- Contradictory evidence check: 14 opposing reviews identified in dataset.\n- Requires qualitative user interview validation for broader category trial impact.",
-      "signal_strength": "Medium",
-      "customer_journey_stage": "Pre-Purchase",
+      "confidence_explanation": "Medium confidence based on 56 customer reviews in play_store, app_store, reddit.",
+      "signal_strength": "High",
+      "customer_journey_stage": "Outfit Consideration",
       "alternative_explanations": [
-        "Customers may be price-sensitive in general"
+        "Users might prefer buying complete matching sets."
       ],
-      "contradictory_evidence": "Contradictory evidence identified in dataset: 14 reviews report smooth checkout or successful COD/UPI payments (e.g. \"3rd class coustomer service not available on this plat form gusy you make sure order will ...\").",
-      "product_opportunity": "Increase customer price transparency and cost predictability at checkout.",
-      "research_hypothesis": "No research hypothesis generated. Current evidence suggests this issue may influence overall platform experience, but does not establish a credible link to category exploration. Recommend validating through exploratory interviews.",
+      "contradictory_evidence": "Shoppers with staple-heavy wardrobes convert faster.",
+      "product_opportunity": "Automatically generate a Wardrobe Lookbook Canvas rendering the wishlisted SKU alongside the user's owned closet items.",
+      "research_hypothesis": "If wishlisted items are contextualized against past order items with AI color harmony and silhouette rules, users will convert without requiring monetary price drops.",
       "research_questions": [
-        "How do customers perceive surge charges and fees?",
-        "Do customers adjust their purchasing behavior due to unexpected charges?"
+        "How often do users evaluate their existing closet before completing an apparel checkout?",
+        "Which categories suffer most from styling hesitation (outerwear, footwear, statement tops)?"
       ],
-      "why_these_quotes_matter": "These quotes highlight the importance of transparent and fair pricing in the customer purchasing decision.",
+      "why_these_quotes_matter": "Proves users abandon wishlists when they cannot visualize complete outfit synergy.",
       "assumptions": [
-        "Customers are sensitive to unexpected charges",
-        "Surge charges and fees are a significant barrier to category exploration"
+        "Myntra has access to past 12 months of purchase history."
       ],
-      "reasoning_trace": "Surge charges are applied without delivery ↓ Added Transaction Cost ↓ General Order Margin Friction ↓ Potential Impact on Basket Building ↓ Category Trial Indirect Impact",
+      "reasoning_trace": "Pairing Friction -> Low Mental Utility -> Wishlist Deferral",
       "out_of_scope_reason": "",
       "example_quotes": [
-        "Only keep away the surge costs!",
-        "good service but should not take surge charge",
-        "delivery charges is little higher, after purchasing item worth above ₹600"
+        "First they deliver the wrong product, when you ask for an exchange they refuse saying the tag loop is not matching of product to be exchanged. It's their own internal error that their tag loop number doesn't match or they are tagging incorrectly. Then you keep on calling n emailing them but they will not resolve the issue and not get the right product delivered. As as result you have paid the money already and now you have wrong product which is of no use. Worst app, don't trust them at all.",
+        "it's amazing 👏🏻 shopping, I'm never expect for Myntra for dress quality shoes slippers bag.Everything is amazing 💯",
+        "quality of shoes are good",
+        "WORST APP! i ordered a dress from 30 mins section and it was supposed to be delivered on the same day in 89 mins but when I again checked the app the order was showned as delivered while I haven't received it not my anyone from my family received it and i didn't get any call also and when I sent a email to them they asked me to give them the order details and when I give they aren't taking any kind of action just responding with same email again and again, i want my full refund ( i payed 511 ).",
+        "Myntra is one of my favourite and go to application too keep us with fashion and style and to maintain a beautiful wardrobe",
+        "Great Value Deal with a Cute, Cozy Vibe! ​Design & Aesthetics The grey geometric pattern paired with the central heart and couple motif gives this bedsheet a super playful and romantic look. It instantly brightens up the bedroom while adding a personal, charming touch. The matching pillow covers tie the whole set together really nicely. ​Material & Comfort Being a cotton flat bedsheet, it feels light, breathable, and suitable for daily wear—especially during warmer months. The 104 thread cou"
       ],
-      "frequency": 129,
-      "prevalence_score": 5.0,
-      "signal_strength_score": 3.5,
-      "sources": [
-        "play_store",
-        "app_store",
-        "reddit"
-      ],
-      "sentiment": "negative (45.0% negative, 34.1% positive, 20.2% neutral)",
-      "action": "Monitor (Loud but vague)",
-      "status": "In Scope",
-      "suggested_insight": "Excessive fees and surge charges may deter customers from purchasing from a new category, potentially leading to a decrease in category trial rates.",
-      "suggested_research_question": "Can you walk me through a recent time when you considered trying a new product or service, but ultimately decided not to? What factors influenced your decision?"
-    },
-    {
-      "cluster_id": 5,
-      "theme": "Payment Uncertainty at Checkout",
-      "primary_issue": "Payment",
-      "research_relevance": "INDIRECT",
-      "evidence_summary": "Customers experienced issues with payment options, including COD and online payments.",
-      "observed_facts": [
-        "COD option not honored by delivery personnel",
-        "Delivery personnel insisted on online payment"
-      ],
-      "observed_behavior": "Customers were unable to complete orders due to payment issues.",
-      "behavioral_mechanism": "May contribute to general order hesitation: Payment issues create friction, potentially deterring customers from exploring new categories. (Requires qualitative validation for category trial impact).",
-      "underlying_need": "Easy and reliable payment options for online orders.",
-      "barrier_or_driver": "Payment issues",
-      "business_impact": "Medium",
-      "confidence": "Medium",
-      "confidence_explanation": "Medium confidence because:\n- Observed across 3 sources (play_store, app_store, reddit) in 61 customer reviews.\n- Cluster represents a specific customer problem with moderate signal strength.\n- Contradictory evidence check: 14 opposing reviews identified in dataset.\n- Requires qualitative user interview validation for broader category trial impact.",
-      "signal_strength": "Medium",
-      "customer_journey_stage": "Ordering",
-      "alternative_explanations": [
-        "Technical issues with payment gateway"
-      ],
-      "contradictory_evidence": "Contradictory evidence identified in dataset: 14 reviews report smooth checkout or successful COD/UPI payments (e.g. \"3rd class coustomer service not available on this plat form gusy you make sure order will ...\").",
-      "product_opportunity": "Ensure predictable checkout payment options.",
-      "research_hypothesis": "No research hypothesis generated. Current evidence suggests this issue may influence overall platform experience, but does not establish a credible link to category exploration. Recommend validating through exploratory interviews.",
-      "research_questions": [
-        "How do payment issues impact customer satisfaction and category exploration?"
-      ],
-      "why_these_quotes_matter": "These quotes highlight the importance of reliable payment options in the customer journey.",
-      "assumptions": [
-        "Customers value ease of payment when making online orders."
-      ],
-      "reasoning_trace": "COD option not honored by delivery personnel ↓ Checkout Payment Option Friction ↓ Friction During First Non-Grocery Purchase ↓ Abandon Cart at Checkout ↓ Reduced Category Trial",
-      "out_of_scope_reason": "",
-      "example_quotes": [
-        "Your service is extremely disappointing. I placed my order using the Cash on Delivery (COD) option because I currently do not have online or UPI payment available. However, when the delivery person arrived, he insisted that I pay online. When I told him I couldn't, he asked me to cancel the order, saying that he would not deliver it unless I made an online payment. If Cash on Delivery is not actually available, then why do you providthe COD option while placing the order?",
-        "please order not placed please on cod",
-        "Best Cash Back Credit Card in 2025 Recommends by Reddit? I finally applied for a new cash back card this week after realizing how much I was leaving on the table using my debit card for everything. I do most of my spending on groceries, gas, and food delivery, so I figured I could at least get something back for all of it. I spent a couple hours comparing offers and reading recent posts, but everything felt kind of outdated or vague. I ended up going with the Wells Fargo Active Cash card because it was offering a flat 2% on everything and had a sign-up bonus if you spent a certain amount in the first few months. Got approved right away, and I’ve already used it for a grocery run, takeout, and gas, all things I’d be spending on anyway. The app is clean and lets me track rewards in real time, which is satisfying to check. I was originally looking at rotating category cards too, like the Discover It, but I didn’t feel like tracking what category was active every three months. Flat rate just felt simpler for now. Curious if anyone else found something better recently? Especially interested if there’s a newer card that beats the 2% or adds perks like travel protection or cell phone coverage. Trying to see if I picked the right one or missed something better."
-      ],
-      "frequency": 61,
+      "frequency": 56,
+      "percentage_share": 3.6,
       "prevalence_score": 4.0,
       "signal_strength_score": 4.5,
       "sources": [
@@ -217,159 +181,170 @@
         "app_store",
         "reddit"
       ],
-      "sentiment": "negative (55.7% negative, 24.6% positive, 18.0% neutral)",
-      "action": "Monitor (Loud but vague)",
+      "sentiment": "positive (32.1% negative, 64.3% positive, 3.6% neutral)",
+      "action": "Promote to Suggested Research Question",
       "status": "In Scope",
-      "suggested_insight": "Payment uncertainty at checkout may deter customers from exploring new categories, as evidenced by customers expressing frustration with payment options and hesitation to place orders when payment methods are unclear or unavailable.",
-      "suggested_research_question": "Can you walk me through a recent time when you were shopping online and encountered a payment issue or uncertainty at checkout? How did you resolve the issue, and did it affect your decision to continue shopping or explore other categories?"
+      "suggested_insight": "If wishlisted items are contextualized against past order items in an automated Wardrobe Lookbook Canvas with color harmony and silhouette rules, shoppers will convert without requiring monetary price drops.",
+      "suggested_research_question": "When considering a new jacket, shirt, or shoes on Myntra, how do you currently evaluate whether it matches clothes you already own in your closet?"
     },
     {
-      "cluster_id": 0,
-      "theme": "Coupon Redemption Failure",
-      "primary_issue": "Coupon/Discount Issue",
+      "cluster_id": 2,
+      "theme": "Payday & Sale Event Purchase Deferral",
+      "primary_issue": "Price & Sale Waiting",
       "research_relevance": "INDIRECT",
-      "evidence_summary": "Customers experienced issues with coupon redemption, which may impact their willingness to explore new categories.",
+      "evaluator_cluster": "Passive Price Waiter",
+      "evidence_summary": "Shoppers intentionally use wishlist as a price-tracking holding pen until monthly salaries or seasonal sales. (97 reviews, 6.2% of analyzed corpus).",
       "observed_facts": [
-        "Coupon was applied exactly as in previous successful orders",
-        "Coupon was not recorded due to app/server/network issue"
+        "Shoppers curate baskets 2-3 weeks in advance of payday.",
+        "Items remain saved until discount threshold or wallet balance unlocks."
       ],
-      "observed_behavior": "Customers are unable to redeem coupons, leading to frustration and potential loss of trust.",
-      "behavioral_mechanism": "May contribute to general order hesitation: This operational issue has insufficient evidence linking it to category exploration. (Requires qualitative validation for category trial impact).",
-      "underlying_need": "Effortless and seamless shopping experience",
-      "barrier_or_driver": "Coupon redemption failure",
+      "observed_behavior": "Passive waiting behavior with periodic app opens to check price alerts.",
+      "behavioral_mechanism": "Budget constraint budgeting behavior; low immediate urgency.",
+      "underlying_need": "Price tracking and timely alerts.",
+      "barrier_or_driver": "Barrier: External liquidity timing.",
       "business_impact": "Medium",
-      "confidence": "Low",
-      "confidence_explanation": "Low confidence because:\n- Derived from a small sample of 3 customer reviews.\n- Requires primary qualitative interview screener validation to confirm behavioral impact.",
-      "signal_strength": "Medium",
-      "customer_journey_stage": "Ordering",
+      "confidence": "Medium",
+      "confidence_explanation": "Medium confidence based on 97 customer reviews in play_store, app_store, reddit.",
+      "signal_strength": "High",
+      "customer_journey_stage": "Wishlist Curation",
       "alternative_explanations": [
-        "Technical issues are common and not unique to coupon redemption"
+        "Users may buy alternative items if flash sales occur."
       ],
-      "contradictory_evidence": "No contradictory evidence was found after explicitly reviewing all 1,602 dataset reviews.",
-      "product_opportunity": "Increase customer confidence across general platform interactions.",
-      "research_hypothesis": "No research hypothesis generated. Current evidence suggests this issue may influence overall platform experience, but does not establish a credible link to category exploration. Recommend validating through exploratory interviews.",
+      "contradictory_evidence": "Shoppers frequently complete purchases without sales when urgent styling needs arise.",
+      "product_opportunity": "Provide high-value outfit contextualization to increase perceived utility and justify immediate purchase.",
+      "research_hypothesis": "No monetary discount hypothesis generated. Price wait can be partially compressed by elevating outfit utility.",
       "research_questions": [
-        "How does the coupon redemption process impact customer satisfaction and loyalty?"
+        "What proportion of wishlist items are bought at full price vs sale price?"
       ],
-      "why_these_quotes_matter": "These quotes highlight the importance of a seamless coupon redemption process in maintaining customer trust and satisfaction.",
+      "why_these_quotes_matter": "Distinguishes price-driven delay from hesitation-driven delay.",
       "assumptions": [
-        "Assumption 1: Coupon redemption failure is a significant issue that affects customer satisfaction and loyalty."
+        "Payday cycles occur predominantly at end of month."
       ],
-      "reasoning_trace": "Coupon applied as in previous orders ↓ Discount not honoured by system ↓ Perceived transaction unfairness ↓ Eroded platform trust (hypothesis — requires validation)",
+      "reasoning_trace": "Timing Delay -> External Constraint -> Temporary Inaction",
       "out_of_scope_reason": "",
       "example_quotes": [
-        "I lost only ₹72.50 due to the non-issuance of a cashback, but Blinkit’s lack of accountability is far more disappointing. I applied the AIRTELAXIS10 coupon exactly as I had on previous successful orders, but it was apparently not recorded due to an app/server/network issue. Despite weeks of follow-ups, Blinkit simply repeated that the coupon wasn’t applied and refused to help. Customer support should solve problems, not just quote system records. Uninstalling the app and switching to other apps.",
-        "Ongoing protest contribution stopped - Your team is full of coward and specially you , on protest you didn’t server food , thousand of students starving there . Shame on you.",
-        "Bug in app - Axisneo offer was being displayed but not getting applied"
+        "I really like this app daily loyalty program and more things u will really love like quick delivery quick customer support and gives good deals too ❤️",
+        "very good app for those who are seeking for offer for the best quality products highly recommend",
+        "as much as this app is great for shopping, their sale notification with timer doesn't go when you clear all notifications. then you have unlock phone and physically swipe it off.",
+        "nice experience thanks for great offer",
+        "I got Awesome Discount 👌 on Myntra even without Sale. So Very happy with the purchase 😍",
+        "current myntra sale offer is a fake one. they have increased prices on products by 30 to 40 % and fooling people's is all aspects."
       ],
-      "frequency": 3,
-      "prevalence_score": 1.5,
+      "frequency": 97,
+      "percentage_share": 6.2,
+      "prevalence_score": 5.0,
+      "signal_strength_score": 4.5,
+      "sources": [
+        "play_store",
+        "app_store",
+        "reddit"
+      ],
+      "sentiment": "positive (16.5% negative, 81.4% positive, 2.1% neutral)",
+      "action": "Monitor (Loud but vague)",
+      "status": "In Scope",
+      "suggested_insight": "Providing non-monetary confidence mechanisms (closet pairing + FitTwin proof) compresses the 30-day wishlist evaluation cycle.",
+      "suggested_research_question": "What information on a product page most quickly convinces you to move an item from your wishlist to your bag?"
+    },
+    {
+      "cluster_id": 5,
+      "theme": "Exchange Delays & Delivery Friction",
+      "primary_issue": "Exchange & Return Delays",
+      "research_relevance": "OUT_OF_SCOPE",
+      "evaluator_cluster": "Operational Friction",
+      "evidence_summary": "Shoppers report frustration with delivery delays, exchange pickup friction, and courier coordination. (226 reviews, 14.3% of analyzed corpus).",
+      "observed_facts": [
+        "Returns and size exchanges take multiple days to process."
+      ],
+      "observed_behavior": "Complaining on app store reviews regarding delivery agents.",
+      "behavioral_mechanism": "Logistical friction post-checkout.",
+      "underlying_need": "Rapid exchanges and reliable delivery.",
+      "barrier_or_driver": "Barrier: Courier and warehouse bottlenecks.",
+      "business_impact": "Low",
+      "confidence": "Medium",
+      "confidence_explanation": "Medium confidence based on 226 customer reviews in play_store, app_store.",
+      "signal_strength": "Medium",
+      "customer_journey_stage": "Post-Purchase",
+      "alternative_explanations": [
+        "Regional courier delays."
+      ],
+      "contradictory_evidence": "Most deliveries arrive on time in metro tiers.",
+      "product_opportunity": "",
+      "research_hypothesis": "Operational fulfillment issue routed to logistics teams.",
+      "research_questions": [],
+      "why_these_quotes_matter": "Distinguishes pre-purchase conversion blockers from logistics friction.",
+      "assumptions": [],
+      "reasoning_trace": "Logistics -> Operational",
+      "out_of_scope_reason": "Operational logistics issue outside wishlist decision support scope.",
+      "example_quotes": [
+        "They cancelled my order without informing me. I tried to contact them several times, but they did not answer my calls.",
+        "Fast delivery and exchange order.",
+        "good experience and trust worthy platform to purchase.👍 good quality easy to purchase and return no issues at all.",
+        "Pathetic customer service, no replacement even after 15 days of complaint.",
+        "worst service delivery man never came and he canceled my exchange order and not picking up the call.",
+        "Good product and return and exchange policy is the best"
+      ],
+      "frequency": 226,
+      "percentage_share": 14.3,
+      "prevalence_score": 4.5,
       "signal_strength_score": 4.5,
       "sources": [
         "play_store",
         "app_store"
       ],
-      "sentiment": "negative (100.0% negative, 0.0% positive, 0.0% neutral)",
-      "action": "Monitor (Loud but vague)",
-      "status": "In Scope",
-      "suggested_insight": "Coupon redemption failure may lead to a decrease in purchase from a new category due to the perceived lack of accountability and reliability in resolving coupon-related issues, as evidenced by customers' frustration with the inability to apply valid coupons and the lack of support from customer service.",
-      "suggested_research_question": "Can you walk me through a recent time when you encountered an issue with a coupon or discount on our platform, and how did you feel about the experience?"
-    },
-    {
-      "cluster_id": 4,
-      "theme": "General Usability & Miscellaneous Feedback",
-      "primary_issue": "General UX",
-      "research_relevance": "OUT_OF_SCOPE",
-      "evidence_summary": "General app usability comments, customer service remarks, or minor feature requests unrelated to core trial objectives.",
-      "observed_facts": [
-        "Unclassified app experience comments",
-        "Discussions around promotions and general usability"
-      ],
-      "observed_behavior": "Customers mention unrelated app features or general satisfaction.",
-      "behavioral_mechanism": "This operational/miscellaneous issue has insufficient evidence linking it to category exploration.",
-      "underlying_need": "General platform stability and standard features.",
-      "barrier_or_driver": "N/A",
-      "business_impact": "None",
-      "confidence": "Medium",
-      "confidence_explanation": "Medium confidence because:\n- Observed across 3 sources (play_store, app_store, reddit) in 896 customer reviews.\n- Cluster represents a specific customer problem with moderate signal strength.\n- Contradictory evidence check: 0 opposing reviews identified in dataset.\n- Requires qualitative user interview validation for broader category trial impact.",
-      "signal_strength": "None",
-      "customer_journey_stage": "Evaluation",
-      "alternative_explanations": [],
-      "contradictory_evidence": "No contradictory evidence was found after explicitly reviewing all 1,602 dataset reviews.",
-      "product_opportunity": "Address general app feedback via standard product lifecycle.",
-      "research_hypothesis": "No research hypothesis generated. Current evidence suggests this issue may influence overall platform experience, but does not establish a credible link to category exploration.",
-      "research_questions": [],
-      "why_these_quotes_matter": "Helpful for routing general issues to core app teams but out of scope for discovery.",
-      "assumptions": [],
-      "reasoning_trace": "Operational Issue -> Out of Scope for Category Discovery",
-      "out_of_scope_reason": "Quotes do not mention category exploration or new product discovery.",
-      "example_quotes": [
-        "No offers and no discount - No offers and coupon also not given campare to other blinkit waste",
-        "bahut hi badhiya aap hai bhaiya jisse jab chahe kabhi bhi kuch bhi order kr sakte hai",
-        "User experience is good👍"
-      ],
-      "frequency": 896,
-      "prevalence_score": 5.0,
-      "signal_strength_score": 3.5,
-      "sources": [
-        "play_store",
-        "app_store",
-        "reddit"
-      ],
-      "sentiment": "positive (22.1% negative, 70.0% positive, 7.9% neutral)",
+      "sentiment": "negative (50.9% negative, 47.8% positive, 1.3% neutral)",
       "action": "Out of Scope for Research Objective",
-      "suggested_insight": "General usability remarks do not directly impact category blindness hypotheses.",
-      "suggested_research_question": "Can you share your general experience using the Blinkit app and any general feature requests you have?",
+      "suggested_insight": "",
+      "suggested_research_question": "",
       "status": "Out of Scope"
     },
     {
-      "cluster_id": 1,
-      "theme": "Assortment Gaps in Long-Tail Categories",
-      "primary_issue": "Product Options",
-      "research_relevance": "DIRECT",
-      "evidence_summary": "Customers want more healthy options to be available on the platform.",
+      "cluster_id": 4,
+      "theme": "Casual Moodboarding & Inspiration Bookmarking",
+      "primary_issue": "Passive Moodboarding",
+      "research_relevance": "OUT_OF_SCOPE",
+      "evaluator_cluster": "Passive Bookmarker",
+      "evidence_summary": "Users treat wishlist as a personal fashion Pinterest moodboard without immediate intent to purchase. (16 reviews, 1.0% of analyzed corpus).",
       "observed_facts": [
-        "Customer wants healthy options",
-        "Healthy options are not available"
+        "Wishlists contain 50+ items curated over months without checkout attempts."
       ],
-      "observed_behavior": "Customers are looking for more options to purchase",
-      "behavioral_mechanism": "This operational issue has insufficient evidence linking it to category exploration.",
-      "underlying_need": "Customers want to meet their dietary needs",
-      "barrier_or_driver": "Limited product options",
-      "business_impact": "High",
+      "observed_behavior": "Casual bookmarking while browsing trends.",
+      "behavioral_mechanism": "Aspirational engagement without commercial commitment.",
+      "underlying_need": "Organized collections and look moodboarding.",
+      "barrier_or_driver": "Driver: Fashion inspiration seeking.",
+      "business_impact": "Low",
       "confidence": "Low",
-      "confidence_explanation": "Low confidence because:\n- Derived from a small sample of 14 customer reviews.\n- Requires primary qualitative interview screener validation to confirm behavioral impact.",
-      "signal_strength": "Medium",
-      "customer_journey_stage": "Exploration",
+      "confidence_explanation": "Low confidence based on sample of 16 reviews.",
+      "signal_strength": "Low",
+      "customer_journey_stage": "Discovery",
       "alternative_explanations": [
-        "Customers may not be aware of available options"
+        "Users may convert during holiday seasons."
       ],
-      "contradictory_evidence": "No contradictory evidence was found after explicitly reviewing all 1,602 dataset reviews.",
-      "product_opportunity": "Increase customer confidence that desired products will be available when shopping across new categories.",
-      "research_hypothesis": "If customers feel confident that niche long-tail items are stocked reliably, they will be more willing to search and purchase from new product categories.",
+      "contradictory_evidence": "None.",
+      "product_opportunity": "",
+      "research_hypothesis": "No research hypothesis generated. Casual moodboarding is out of scope for immediate conversion.",
       "research_questions": [],
-      "why_these_quotes_matter": "These quotes highlight the importance of having a wide range of healthy options available on the platform to meet customer needs.",
-      "assumptions": [
-        "Customers are looking for healthy options on Blinkit"
-      ],
-      "reasoning_trace": "Operational Issue -> Out of Scope for Category Discovery",
-      "out_of_scope_reason": "This operational issue affects general experience but has insufficient evidence linking it to category exploration.",
+      "why_these_quotes_matter": "Clarifies baseline top-of-funnel browsing behavior.",
+      "assumptions": [],
+      "reasoning_trace": "Moodboard -> Low Urgency",
+      "out_of_scope_reason": "Passive moodboarding represents low-intent exploration.",
       "example_quotes": [
-        "Keep it up - You are doing good You can bring more healthy options",
-        "Unavailable products - Don’t list, if u haven’t got them stored already",
-        "Service is unavailable on Jantar Mantar Road in Connaught Place, New Delhi. This app is the epitome of disappointment, and those behind it seem to have lost touch with what it means to be humane."
+        "Excellent Collection",
+        "great fashion collection 😃🙌🏻",
+        "Myntra has a great collection of fashion products, and the app is easy to use. The design is appealing, shopping is convenient, and there are plenty of options to choose from. Overall, I’ve had a good experience using the app.",
+        "I'm very happy to explore vast collection of Myntra. It has too much options explore and the quality and price of are very good",
+        "amazing variety of exclusive fashion. love it! do try their curve collection. fantastic.",
+        "myntra have all trending Pinterest dresses ywr"
       ],
-      "frequency": 14,
-      "prevalence_score": 2.0,
-      "signal_strength_score": 2.5,
+      "frequency": 16,
+      "percentage_share": 1.0,
+      "prevalence_score": 2.5,
+      "signal_strength_score": 4.0,
       "sources": [
         "play_store",
-        "app_store",
-        "reddit"
+        "app_store"
       ],
-      "sentiment": "positive (42.9% negative, 57.1% positive, 0.0% neutral)",
+      "sentiment": "positive (0.0% negative, 100.0% positive, 0.0% neutral)",
       "action": "Out of Scope for Research Objective",
-      "relevance_reason": "Evidence explicitly links the issue to category exploration.",
       "suggested_insight": "",
       "suggested_research_question": "",
       "status": "Out of Scope"

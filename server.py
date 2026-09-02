@@ -173,14 +173,23 @@ class InsightEngineRequestHandler(SimpleHTTPRequestHandler):
         self.send_error(404)
 
 def run_server():
-    server_address = ('', PORT)
-    httpd = HTTPServer(server_address, InsightEngineRequestHandler)
-    logger.info(f"Insight Engine Web Dashboard is running on http://localhost:{PORT}")
-    try:
-        httpd.serve_forever()
-    except KeyboardInterrupt:
-        logger.info("Stopping server...")
-        httpd.server_close()
+    global PORT
+    for try_port in [8085, 3000, 8090, 8095, 8081]:
+        try:
+            server_address = ('', try_port)
+            HTTPServer.allow_reuse_address = True
+            httpd = HTTPServer(server_address, InsightEngineRequestHandler)
+            PORT = try_port
+            logger.info(f"⚡ Myntra Opportunity Discovery Engine UI is running on http://localhost:{PORT}")
+            httpd.serve_forever()
+            break
+        except OSError as e:
+            if e.errno == 48:
+                logger.info(f"Port {try_port} in use, trying next port...")
+                continue
+            else:
+                raise e
 
 if __name__ == "__main__":
     run_server()
+
