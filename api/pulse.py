@@ -2,7 +2,7 @@ from http.server import BaseHTTPRequestHandler
 import json
 from pathlib import Path
 
-NOTE_JSON_PATH = Path("data/weekly/note.json")
+NOTE_JSON_PATH = Path(__file__).parent.parent / "data" / "weekly" / "note.json"
 
 class handler(BaseHTTPRequestHandler):
     def do_OPTIONS(self):

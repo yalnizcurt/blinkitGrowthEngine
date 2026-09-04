@@ -2,7 +2,7 @@ from http.server import BaseHTTPRequestHandler
 import json
 from pathlib import Path
 
-BLOCKERS_PATH = Path("data/weekly/blockers.json")
+BLOCKERS_PATH = Path(__file__).parent.parent / "data" / "weekly" / "blockers.json"
 
 class handler(BaseHTTPRequestHandler):
     def do_OPTIONS(self):

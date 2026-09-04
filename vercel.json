@@ -11,29 +11,49 @@
       "use": "@vercel/static"
     }
   ],
-  "headers": [
-    {
-      "source": "/static/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        }
-      ]
-    }
-  ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "api/$1.py"
+      "src": "/api/results",
+      "dest": "/api/results.py"
+    },
+    {
+      "src": "/api/status",
+      "dest": "/api/status.py"
+    },
+    {
+      "src": "/api/chat",
+      "dest": "/api/chat.py"
+    },
+    {
+      "src": "/api/run-pipeline",
+      "dest": "/api/run-pipeline.py"
+    },
+    {
+      "src": "/api/pulse",
+      "dest": "/api/pulse.py"
+    },
+    {
+      "src": "/api/blockers",
+      "dest": "/api/blockers.py"
+    },
+    {
+      "src": "/api/publish",
+      "dest": "/api/publish.py"
+    },
+    {
+      "src": "/api/download-csv",
+      "dest": "/api/download-csv.py"
     },
     {
       "src": "/static/(.*)",
-      "dest": "static/$1"
+      "dest": "/static/$1",
+      "headers": {
+        "Cache-Control": "no-cache, no-store, must-revalidate"
+      }
     },
     {
       "src": "/(.*)",
-      "dest": "static/index.html"
+      "dest": "/static/index.html"
     }
   ]
 }

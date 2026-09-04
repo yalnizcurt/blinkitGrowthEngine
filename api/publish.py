@@ -2,7 +2,7 @@ from http.server import BaseHTTPRequestHandler
 import json
 from pathlib import Path
 
-PUBLISH_STATE_PATH = Path("data/weekly/publish_state.json")
+PUBLISH_STATE_PATH = Path(__file__).parent.parent / "data" / "weekly" / "publish_state.json"
 
 class handler(BaseHTTPRequestHandler):
     def do_OPTIONS(self):

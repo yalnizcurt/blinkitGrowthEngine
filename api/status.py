@@ -2,9 +2,10 @@ from http.server import BaseHTTPRequestHandler
 import json
 from pathlib import Path
 
-BLOCKERS_PATH = Path("data/weekly/blockers.json")
-RESULTS_PATH = Path("data/results/insight_engine_results.json")
-PUBLISH_PATH = Path("data/weekly/publish_state.json")
+BASE_DIR = Path(__file__).parent.parent
+BLOCKERS_PATH = BASE_DIR / "data" / "weekly" / "blockers.json"
+RESULTS_PATH = BASE_DIR / "data" / "results" / "insight_engine_results.json"
+PUBLISH_PATH = BASE_DIR / "data" / "weekly" / "publish_state.json"
 
 class handler(BaseHTTPRequestHandler):
     def do_OPTIONS(self):
