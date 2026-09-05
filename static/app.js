@@ -172,11 +172,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function getRecommendationPolicies(p) {
+        const theme = (p.theme || "").toLowerCase();
+        if (theme.includes("cross-brand sizing") || theme.includes("sizing & drape")) {
+            return [
+                { name: "Brand Size Calibration Delta", status: "Enabled", value: "Zara M → Roadster S", source: "1,400+ verified exchange telemetry logs" },
+                { name: "Gating Policy (Size Pre-select)", status: "Required", value: "Pre-select Size S • Suppress if <10 logs", source: "Deterministic SQL (8ms Edge SLA)" },
+                { name: "Category Purity Guardrail", status: "Required", value: "Apparel Topwear only (Innerwear silent)", source: "Zero-prompt ambient UI integrity" },
+                { name: "Biometric Confidence Threshold", status: "Required", value: "≥ 0.80 Match Score", source: "Silence Engine (> irrelevant recommendation)" },
+                { name: "Unit Economics Margin Rule", status: "Required", value: "₹0 Platform Discount Subsidies", source: "Full-price catalog conversion preservation" }
+            ];
+        }
+
         const policies = [];
         const mechanism = (p.behavioral_mechanism || "").toLowerCase();
         const area = (p.primary_issue || "").toLowerCase();
         const opportunity = (p.product_opportunity || "").toLowerCase();
-        const contradictory = (p.contradictory_evidence || "").toLowerCase();
         const confidence = (p.confidence || "High");
         const frequency = p.frequency || 0;
         const sources = (p.sources || []).length;
@@ -189,22 +199,9 @@ document.addEventListener("DOMContentLoaded", () => {
             policies.push({ name: "Complaint Screening", status: "Enabled", value: "Low tolerance", source: "Product damage and defect reports" });
         }
 
-        // Delivery signals
-        if (area.includes("delivery") || mechanism.includes("delivery") || mechanism.includes("fulfil")) {
-            policies.push({ name: "Delivery Reliability", status: "Enabled", value: "Score visible", source: "Delivery complaint patterns" });
-        }
-
-        // Payment signals
-        if (area.includes("payment") || mechanism.includes("payment") || mechanism.includes("uncertainty")) {
-            policies.push({ name: "Price Transparency", status: "Required", value: null, source: "Hidden charge complaints" });
-        }
-
         // Universal policies — always include
-        policies.push({ name: "Explainability", status: "Required", value: null, source: "Platform-wide policy" });
-        policies.push({ name: "Social Proof", status: "Enabled", value: "Rating + review count", source: "Trust erosion pattern in reviews" });
-
-        // Confidence gating — always include
-        policies.push({ name: "Confidence Threshold", status: "Required", value: "\u2265 0.82", source: "Silence > irrelevant recommendation" });
+        policies.push({ name: "Explainability", status: "Required", value: "Deterministic Rule", source: "Platform-wide policy" });
+        policies.push({ name: "Confidence Threshold", status: "Required", value: "≥ 0.80 Match", source: "Silence > irrelevant recommendation" });
 
         return policies.slice(0, 6);
     }

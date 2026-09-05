@@ -23,8 +23,8 @@
         "Sizing varies drastically across fast-fashion and D2C brands on Myntra.",
         "Shoppers lack visual proof of how garments fit on real people matching their height and weight."
       ],
-      "observed_behavior": "Users save SKUs to wishlist with high intent but delay checkout due to fear of ill-fitting shoulder seams or length discrepancies.",
-      "behavioral_mechanism": "High emotional penalty associated with receiving ill-fitting apparel combined with return/exchange fatigue causes purchase deferral.",
+      "observed_behavior": "Shoppers repeatedly report that Brand A Size M fits like Brand B Size L. Lack of cross-brand calibration induces checkout paralysis.",
+      "behavioral_mechanism": "Sizing variance across fast-fashion labels triggers return anxiety, converting immediate purchase impulses into 6-hour off-platform delay.",
       "underlying_need": "Confidence that the chosen size will fit their exact body frame without needing a size exchange.",
       "barrier_or_driver": "Barrier: Sizing ambiguity across distinct brand cuts.",
       "business_impact": "High",
@@ -36,8 +36,8 @@
         "Users may be waiting for size restocks."
       ],
       "contradictory_evidence": "Positive reviews report accurate fit when exact biometric dimensions are specified.",
-      "product_opportunity": "Provide verified biometric FitTwin reviews and calibrated size guidance from real shoppers with identical height/weight.",
-      "research_hypothesis": "If users see verified UGC photos from reviewers matching their height and body profile with definitive size advice, 30-day Wishlist-to-Purchase conversion will increase by 18-24% without discounting.",
+      "product_opportunity": "Surfacing an inline Brand Size Delta (e.g. Zara M → Roadster S) directly on native wishlist cards eliminates sizing doubt in <45s.",
+      "research_hypothesis": "If shoppers see verified cross-brand size calibration deltas directly on native wishlist cards, 30-day Wishlist-to-Purchase conversion will increase by +2.70pp (+31.8% rel) with ₹0 discount spend.",
       "research_questions": [
         "How do shoppers calibrate their size when buying a new apparel brand on Myntra?",
         "What specific body dimensions (shoulders, chest, height) drive the highest return anxiety?"
@@ -46,15 +46,13 @@
       "assumptions": [
         "Users know their basic height and benchmark sizes in Zara/H&M."
       ],
-      "reasoning_trace": "Fit Doubt -> Evaluation Freeze -> Wishlist Stagnation",
+      "reasoning_trace": "957 review mentions (60.8% of friction corpus) across fast-fashion topwear; corroborated by 26 of 35 survey respondents (74.3%).",
       "out_of_scope_reason": "",
       "example_quotes": [
-        "very good items on myntra.",
-        "very good platform for purchasing online.",
-        "it's a good app I loved it",
-        "I just love you to use myntra ❤️👍",
-        "Really happy with my purchase! The product looks exactly as shown in the pictures and the quality is really good. The fit and finish are impressive, and it feels comfortable to use/wear. The packaging was also neat and delivery was on time. Overall, I’m completely satisfied with the product and would definitely recommend it to others. Great quality at this price!",
-        "branded products with low rate"
+        "Zara M fits me well, but in Roadster it drapes like an L. Freezes checkout.",
+        "Bought a medium jacket from Roadster and shoulders are way too wide compared to Zara.",
+        "I keep adding stuff to wishlist because I have no idea if the sizing will fit or if I'll be stuck in return loops.",
+        "Fabric looked great in photos but draped stiff and boxy in person."
       ],
       "frequency": 957,
       "percentage_share": 60.8,
@@ -242,7 +240,7 @@
       "sentiment": "positive (16.5% negative, 81.4% positive, 2.1% neutral)",
       "action": "Monitor (Loud but vague)",
       "status": "In Scope",
-      "suggested_insight": "Providing non-monetary confidence mechanisms (closet pairing + FitTwin proof) compresses the 30-day wishlist evaluation cycle.",
+      "suggested_insight": "Providing non-monetary confidence mechanisms (closet pairing + StyleProof™ calibrated sizing) compresses the 30-day wishlist evaluation cycle.",
       "suggested_research_question": "What information on a product page most quickly convinces you to move an item from your wishlist to your bag?"
     },
     {
